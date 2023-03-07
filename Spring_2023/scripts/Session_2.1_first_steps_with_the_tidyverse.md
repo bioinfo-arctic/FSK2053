@@ -1,9 +1,12 @@
 ## Data import and reshaping data
 ### Importing Spreadsheets
+```
 # Here we introduce the `tidyverse` packages `readr` and `readxl`, 
 # which facilitate importing data from several formats of spreadsheet files.
 # Then we will use package `tidyr` to produce tidy datasets from messy input tables
 library(tidyverse)
+```
+```
 ### Paths and the Working Directory
 getwd()
 dir.create("Datasets-1")
@@ -17,6 +20,7 @@ fullpath
 file.copy(fullpath, getwd())
 list.files(getwd())
 list.files()
+```
 # Check if the file is now in your working directory using the `file.exists` 
 function:
 file.exists(filename)
