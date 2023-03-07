@@ -21,22 +21,26 @@ file.copy(fullpath, getwd())
 list.files(getwd())
 list.files()
 ```
+```
 # Check if the file is now in your working directory using the `file.exists` 
 function:
 file.exists(filename)
+```
+```
 ### The `readr` and `readxl` packages
 # `readr` is the `tidyverse` library that includes functions for reading data 
 stored in text file spreadsheets into R. 
 # The following functions are available to read-in spreadsheets:
   
-#  | Function | Format | Typical suffix |
-#  |----------|--------|---| 
-#  | read_table | white space separated values | txt |
-#  | read_csv | comma separated values|  csv |
-#  | read_csv2 | semicolon separated values | csv |
-#  | read_tsv | tab delimited separated values | tsv |
-#  | read_delim | general text file format, must define delimiter | txt |
-  
+| Function | Format | Typical suffix |
+|----------|--------|---| 
+| read_table | white space separated values | txt |
+| read_csv | comma separated values|  csv |
+| read_csv2 | semicolon separated values | csv |
+| read_tsv | tab delimited separated values | tsv |
+| read_delim | general text file format, must define delimiter | txt |
+```
+
 #  The `readxl` package provides functions to read in Microsoft Excel formats:
   
 #  | Function | Format | Typical suffix |
