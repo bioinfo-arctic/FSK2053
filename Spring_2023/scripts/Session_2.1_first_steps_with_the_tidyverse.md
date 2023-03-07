@@ -31,7 +31,8 @@ file.exists(filename)
 # `readr` is the `tidyverse` library that includes functions for reading data 
 stored in text file spreadsheets into R. 
 # The following functions are available to read-in spreadsheets:
-  
+```
+
 | Function | Format | Typical suffix |
 |----------|--------|---| 
 | read_table | white space separated values | txt |
@@ -39,23 +40,21 @@ stored in text file spreadsheets into R.
 | read_csv2 | semicolon separated values | csv |
 | read_tsv | tab delimited separated values | tsv |
 | read_delim | general text file format, must define delimiter | txt |
-```
 
-#  The `readxl` package provides functions to read in Microsoft Excel formats:
-  
-#  | Function | Format | Typical suffix |
-#  |----------|--------|---| 
-#  | read_excel | auto detect the format | xls, xlsx|
-#  | read_xls | original format |  xls |
-#  | read_xlsx | new format | xlsx |
+###  The `readxl` package provides functions to read in Microsoft Excel formats:
+
+| Function | Format | Typical suffix |
+|----------|--------|---| 
+| read_excel | auto detect the format | xls, xlsx|
+| read_xls | original format |  xls |
+| read_xlsx | new format | xlsx |
  
-# Note that the Microsoft Excel formats permit you to have more than one 
-spreadsheet in one file. 
-# These are referred to as _sheets_. The functions above read the first sheet by 
-default. 
-# The `excel_sheets` function gives us the names of the sheets in an excel file.
-# These names can then be passed to the `sheet` argument in the three functions 
-above to read sheets other than the first.
+#### Note that the Microsoft Excel formats permit you to have more than one spreadsheet in one file. 
+#### These are referred to as _sheets_. The functions above read the first sheet by default. 
+#### The `excel_sheets` function gives us the names of the sheets in an excel file.
+#### These names can then be passed to the `sheet` argument in the three functions above to read sheets other than the first.
+
+```
 # Read the first six lines
 read_lines(filename, n_max = 6)
 # Read the full file
@@ -64,6 +63,8 @@ dat <- read_csv(filename)
 head(dat)
 class(dat)
 str(dat)
+```
+
 ### R-base functions
 # R-base also provides import functions. These have similar names to those in the 
 `tidyverse`:
