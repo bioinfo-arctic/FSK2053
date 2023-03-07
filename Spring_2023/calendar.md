@@ -1,6 +1,5 @@
 # Course Calendar 2023  
-## 
-tue 11.04.2023	12:15 - 14:00	Lecture L1:Introduction to data science  
+TP Forside link with the current calendar
 https://tp.educloud.no/uit/timeplan/timeplan.php?type=course&id[]=FSK-2053,1&sort=  
 
 ### Week 15
