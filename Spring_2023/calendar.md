@@ -1,6 +1,6 @@
 # Course Calendar 2023  
-TP Forside link with the current calendar
-https://tp.educloud.no/uit/timeplan/timeplan.php?type=course&id[]=FSK-2053,1&sort=  
+[TP Forside link with the current calendar](https://tp.educloud.no/uit/timeplan/timeplan.php?type=course&id[]=FSK-2053,1&sort=)
+
 
 ### Week 15
 | Date           | Time          | Activity                                                                          | Room      | Teaching staff |
