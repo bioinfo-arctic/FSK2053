@@ -26,28 +26,26 @@ list.files()
 function:
 file.exists(filename)
 ```
-```
+
 ### The `readr` and `readxl` packages
-# `readr` is the `tidyverse` library that includes functions for reading data 
-stored in text file spreadsheets into R. 
-# The following functions are available to read-in spreadsheets:
-```
+#### `readr` is the `tidyverse` library that includes functions for reading data stored in text file spreadsheets into R. 
+#### The following functions are available to read-in spreadsheets:
 
 | Function | Format | Typical suffix |
 |----------|--------|---| 
-| read_table | white space separated values | txt |
-| read_csv | comma separated values|  csv |
-| read_csv2 | semicolon separated values | csv |
-| read_tsv | tab delimited separated values | tsv |
-| read_delim | general text file format, must define delimiter | txt |
+| read_table() | white space separated values | txt |
+| read_csv() | comma separated values|  csv |
+| read_csv2() | semicolon separated values | csv |
+| read_tsv() | tab delimited separated values | tsv |
+| read_delim() | general text file format, must define delimiter | txt |
 
-###  The `readxl` package provides functions to read in Microsoft Excel formats:
+####  The `readxl` package provides functions to read in Microsoft Excel formats:
 
 | Function | Format | Typical suffix |
 |----------|--------|---| 
-| read_excel | auto detect the format | xls, xlsx|
-| read_xls | original format |  xls |
-| read_xlsx | new format | xlsx |
+| read_excel() | auto detect the format | xls, xlsx|
+| read_xls() | original format |  xls |
+| read_xlsx() | new format | xlsx |
  
 #### Note that the Microsoft Excel formats permit you to have more than one spreadsheet in one file. 
 #### These are referred to as _sheets_. The functions above read the first sheet by default. 
@@ -66,15 +64,17 @@ str(dat)
 ```
 
 ### R-base functions
-# R-base also provides import functions. These have similar names to those in the 
-`tidyverse`:
-# `read.table`, `read.csv` and `read.delim` for example. There are a couple of 
-important differences. 
+#### R-base also provides import functions. These have similar names to those in the `tidyverse`:
+#### `read.table`, `read.csv` and `read.delim` for example. There are a couple of important differences. 
+
+```
 # To show this we read the data with an R-base function:
 dat2 <- read.csv(filename)
 head(dat2)
 class(dat2)
 str(dat2)
+```
+
 # Some differences with previous R versions:
 # In older R versions, columns of characters were converted to factors by default.
 # They do not anymore. It now depends on what value has been set for 
