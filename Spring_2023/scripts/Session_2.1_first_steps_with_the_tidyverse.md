@@ -33,24 +33,24 @@ file.exists(filename)
 
 | Function | Format | Typical suffix |
 |----------|--------|---| 
-| read_table() | white space separated values | txt |
-| read_csv() | comma separated values|  csv |
-| read_csv2() | semicolon separated values | csv |
-| read_tsv() | tab delimited separated values | tsv |
-| read_delim() | general text file format, must define delimiter | txt |
+| read_table() | white space separated values | .txt |
+| read_csv() | comma separated values|  .csv |
+| read_csv2() | semicolon separated values | .csv |
+| read_tsv() | tab delimited separated values | .tsv |
+| read_delim() | general text file format, must define delimiter | .txt |
 
 ####  The `readxl` package provides functions to read in Microsoft Excel formats:
 
 | Function | Format | Typical suffix |
 |----------|--------|---| 
-| read_excel() | auto detect the format | xls, xlsx|
-| read_xls() | original format |  xls |
-| read_xlsx() | new format | xlsx |
+| read_excel() | auto detect the format | .xls, .xlsx|
+| read_xls() | original format |  .xls |
+| read_xlsx() | new format | .xlsx |
  
-#### Note that the Microsoft Excel formats permit you to have more than one spreadsheet in one file. 
-#### These are referred to as _sheets_. The functions above read the first sheet by default. 
-#### The `excel_sheets` function gives us the names of the sheets in an excel file.
-#### These names can then be passed to the `sheet` argument in the three functions above to read sheets other than the first.
+Note that the Microsoft Excel formats permit you to have more than one spreadsheet in one file.
+These are referred to as _sheets_. The functions above read the first sheet by default.  
+The `excel_sheets()` function gives us the names of the sheets in an excel file.
+These names can then be passed to the `sheet` argument in the three functions above to read sheets other than the first.
 
 ```
 # Read the first six lines
@@ -75,9 +75,11 @@ class(dat2)
 str(dat2)
 ```
 
-# Some differences with previous R versions:
-# In older R versions, columns of characters were converted to factors by default.
-# They do not anymore. It now depends on what value has been set for 
+### Some differences with previous R versions:
+In older R versions, columns of characters were converted to factors by default.  
+They do not anymore. It now depends on what value has been set for. 
+
+```
 default.stringsAsFactors()
 default.stringsAsFactors()
 class(dat$flag_registry)
@@ -86,75 +88,102 @@ head(dat2$flag_registry,n=10)
 dat2 <- read.csv(filename,stringsAsFactors = T)
 class(dat2$flag_registry)
 head(dat2$flag_registry,n=10)
+```
+
 ### Downloading files
-# Another common place for data to reside is on the internet. 
-# We can download these files and then import them or even read them directly from 
-the web. 
-# For example, we are going to download the file GFW-fishing-vessels-v2.csv from 
-our GitHub repository. 
-# The file has the following url:
-  
-url <- "https://raw.githubusercontent.com/DataScienceFishAquac/FSK2053-2021/main/
-datasets/GFW-fishing-vessels-v2.csv"
-# The `read_csv` file can read these files directly:
+Another common place for data to reside is on the internet. 
+We can download these files and then import them or even read them directly from the web.  
+For example, we are going to download the file GFW-fishing-vessels-v2.csv from our GitHub repository.  
+
+The file has the following url:
+```
+url <- "https://raw.githubusercontent.com/DataScienceFishAquac/FSK2053-2021/main/datasets/GFW-fishing-vessels-v2.csv"
+```
+
+The `read_csv()` function can read these files directly:
+
+```
 dat <- read_csv(url)
-# If you want to have a local copy of the file, you can use `download.file`. 
+```
+
+If you want to have a local copy of the file, you can use `download.file()`. 
+
+```
 download.file(url, "local-GFW-fishing-vessels-v2.csv")
 list.files()
-# Two functions that are sometimes useful when downloading data from the internet 
-are
-# `tempdir` and `tempfile`. 
-# `tempdir` creates a directory with a name that is very likely to be unique. 
-# Similarly, `tempfile` creates a character string, not a file, that is likely to 
-be a unique filename:
+```
+
+Two functions that are sometimes useful when downloading data from the internet are `tempdir()` and `tempfile()`. 
+`tempdir()` creates a directory with a name that is very likely to be unique. 
+Similarly, `tempfile()` creates a character string, not a file, that is likely to be a unique filename:
+
+```
 tempfile()  
-# So you can run commands like these which erases the temporary file once it 
-imports the data:
+```
+
+So you can run commands like these which erases the temporary file once it imports the data:
+
+```
 tmp_filename <- tempfile()
 download.file(url, tmp_filename)
 dat <- read_csv(tmp_filename)
 file.remove(tmp_filename)
 head(dat)
+```
+
 ### Nuances
-# When reading in spreadsheets many things can go wrong. 
-# The file might have a multiline header, missing cells, or it might use an 
-unexpected [encoding]
-# https://en.wikipedia.org/wiki/Character_encoding 
-# We recommend you read this [post](https://www.joelonsoftware.com/2003/10/08/the-
-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-
-unicode-and-character-sets-no-excuses/). 
-# With experience you will learn how to deal with different challenges. 
-# Carefully reading the help files for the functions discussed here will help. 
-# Two other functions that are helpful are `scan` and `readLines`. 
-# With scan you can read in each cell of a file. Here is an example:
+When reading in spreadsheets many things can go wrong. 
+The file might have a multiline header, missing cells, or it might use an unexpected [encoding](https://en.wikipedia.org/wiki/Character_encoding)  
+We recommend you read this [post](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/). 
+With experience you will learn how to deal with different challenges.  
+Carefully reading the `help()` files for the functions discussed here will help.  
+Two other functions that are helpful are `scan()` and `readLines()`.  
+With `scan()` you can read in each cell of a file. Here is an example:
+
+```
 x <- scan(url, sep=",", what = "c")
 x[1:60]
+```
+
 ### Removing a file
-# Now that we are done with the example we will remove the example file we copied 
-over 
-# to our working directory using the function `file.remove`.
+Now that we are done with the example, we will remove the example file we copied over to our working directory using the function `file.remove()`.
+
+```
 file.remove("local-GFW-fishing-vessels-v2.csv")
+```
+
 ## Tidy data
+
+```
 library(tidyverse)
 names(dat)
 years <- as.character(paste0("fishing_hours_",2012:2020))
-# We will filter our results for just four countries and then 
-# we will select just a smaller set of variables
+```
+
+We will filter our results for just four countries and then we will select just a smaller set of variables
+
+```
 wide_data <- dat %>% 
   filter(flag_gfw %in% c("NOR","GBR","ESP","CHN")) %>%
   select(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw,all_of(years))
 head(wide_data)
-# We can represent the fishing hours per vessel for 2020
+```
+
+We can represent the fishing hours per vessel for 2020
+
+```
 wide_data %>% ggplot(aes(tonnage_gt_gfw, fishing_hours_2020, color = flag_gfw)) +
   geom_point()
-# However, if we want to represent several years in the plot, we cannot do that 
-directly
-# Because the table is in wide_format. We have to change it to tidy data
-# There are two important differences between the wide and tidy formats. 
-# First, in the wide format, each row includes several observations. 
-# Second, one of the variables, year, is stored in the header.
-# The `ggplot` code we introduced earlier no longer works for all the years. 
-# So to use the `tidyverse` we need to wrangle this data into `tidy` format.
+```
+
+However, if we want to represent several years in the plot, we cannot do that directly. Because the table is in **wide_format** . We have to change it to **tidy_data**.
+
+There are two important differences between the wide and tidy formats.  
+First, in the **wide_format**, each row includes several observations. 
+Second, one of the variables, year, is stored in the header.
+The `ggplot` code we introduced earlier no longer works for all the years. 
+So to use the __tidyverse__ library we need to wrangle this data into __tidy__ format.
+
 ## Reshaping data
 # Having data in `tidy` format is what makes the `tidyverse` flow. 
 # After the first step in the data analysis process, importing data, a common next 
