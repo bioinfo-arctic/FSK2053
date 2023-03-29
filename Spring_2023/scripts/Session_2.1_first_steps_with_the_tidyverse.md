@@ -1,3 +1,4 @@
+
 ## Data import and reshaping data
 ### Importing Spreadsheets
 ```
@@ -185,40 +186,43 @@ The `ggplot` code we introduced earlier no longer works for all the years.
 So to use the __tidyverse__ library we need to wrangle this data into __tidy__ format.
 
 ## Reshaping data
-# Having data in `tidy` format is what makes the `tidyverse` flow. 
-# After the first step in the data analysis process, importing data, a common next 
-step is
-# to reshape the data into a form that facilitates the rest of the analysis. 
-# The `tidyr` package includes several functions that are useful for tidying data. 
-### `gather`
-# One of the most used functions in this package is `gather`, which converts wide 
-data into tidy data. 
-# Let's see a simple example with our data. Here we have the fishing hours data in 
-wide format:
+Having data in `tidy` format is what makes the `tidyverse` flow. 
+After the first step in the data analysis process, importing data, a common next 
+step is to reshape the data into a form that facilitates the rest of the analysis. The `tidyr` package includes several functions that are useful for tidying data. 
+
+####  The `gather()` function
+
+One of the most used functions in this package is `gather()`, which converts wide 
+data into tidy data.
+
+Let's see a simple example with our data. Here we have the fishing hours data in wide format:
+```
 head(wide_data)
-# We have to specify the names of the new columns that will be created with 
-"variable" and "value"
-# And the third argument will be the names of the columns that will be gathered 
-into tidy format
+```
+To use `gather()`, we need to specify the names of the new columns that will be created with the arguments
+_variable_ and _value_. The third argument will be the names of the columns that will be gathered 
+into the tidy format.
+```
 tidy_data <- wide_data %>% gather("variable","value",all_of(years))
-# The first argument sets the column/variable name that will hold the variable that
-is currently kept
-# in the wide data column names. We can name it anything. 
-# The second argument sets the column/variable name that will hold the values in 
-the column cells.
 tidy_data
-# A more practical solution would be to call them `year` and `fishing hours` like 
-this:
+```
+The first argument sets the column/variable name that will hold the variable that
+is currently kept in the wide data column names. We can name it anything. The second argument sets the column/variable name that will hold the values in the column cells.
+
+#### A more practical solution would be to call the columns `year` and `fishing hours` like this:
+```
 tidy_data <- wide_data %>% gather("year","fishing_hours",all_of(years))
 tidy_data
-# Finally, we would like to change the contents of the cells for year to the 
-"numeric year"
-# We can use the function gsub() which will replace (substitute) a string for 
-another one
-# Note that the result is still a character string
+```
+Finally, we would like to change the contents of the cells for year to the "numeric year".
+We can use the function `gsub()` which will replace (substitute) a string for another one.
+
+#### Note that the result is still a character string
+```
 tidy_data$year <- gsub("fishing_hours_","",tidy_data$year)
 class(tidy_data$year)
-# Now we can represent the plot for all years together
+```
+Now we can represent the plot for all years together
 tidy_data %>% ggplot(aes(tonnage_gt_gfw, fishing_hours, color = flag_gfw)) +
   geom_point()
 # And now we can use different shapes for every year
