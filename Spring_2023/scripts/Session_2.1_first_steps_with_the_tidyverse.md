@@ -1,4 +1,5 @@
 
+
 ## Data import and reshaping data
 ### Importing Spreadsheets
 ```
@@ -187,9 +188,9 @@ So to use the __tidyverse__ library we need to wrangle this data into __tidy__ f
 
 ## Reshaping data
 Having data in `tidy` format is what makes the `tidyverse` flow. 
-After the first step in the data analysis process, importing data, a common next 
-step is to reshape the data into a form that facilitates the rest of the analysis. The `tidyr` package includes several functions that are useful for tidying data. 
+After the first step in the data analysis process, importing data, a common next step is to reshape the data into a form that facilitates the rest of the analysis. The `tidyr` package includes several functions that are useful for tidying data. 
 
+---
 ####  The `gather()` function
 
 One of the most used functions in this package is `gather()`, which converts wide 
@@ -222,90 +223,112 @@ We can use the function `gsub()` which will replace (substitute) a string for an
 tidy_data$year <- gsub("fishing_hours_","",tidy_data$year)
 class(tidy_data$year)
 ```
-Now we can represent the plot for all years together
+We can represent the plot for all years together
+```
 tidy_data %>% ggplot(aes(tonnage_gt_gfw, fishing_hours, color = flag_gfw)) +
   geom_point()
-# And now we can use different shapes for every year
+```
+And we can use different shapes for every year
+```
 tidy_data %>% ggplot(aes(tonnage_gt_gfw, fishing_hours, color = flag_gfw)) +
   geom_point(aes(shape = year))
-# Since the shape palette is no good for more than 6 values, we will change colors 
-and shape
+```
+Since the shape palette is not good for more than 6 values, we will change colors and shape
+```
 tidy_data %>% ggplot(aes(tonnage_gt_gfw, fishing_hours, color = year)) +
   geom_point(aes(shape = flag_gfw))
-# Another way to write this code is to specify which columns will **not** be 
-gathered 
-# rather than all the columns that will be gathered:
-tidy_data <- wide_data %>% gather("year","fishing_hours",-
-c(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw))
-# Mutate and transmute
-# We can create new columns (mutate) or overwrite existing ones using the function 
-mutate()
-# The existing columns will be preserved
+```
+Another way to write this code is to specify which columns will **not** be gathered rather than all the columns that will be gathered:
+```
+tidy_data <- wide_data %>% gather("year","fishing_hours",-c(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw))
+```
+---
+#### The functions `mutate()`  and `transmute()`
+We can create new columns or overwrite existing ones using the function `mutate()`.
+The existing columns will be preserved.
+```
 tidy_data <- wide_data %>% 
-  gather("year_string","fishing_hours",-
-c(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw)) %>% 
+  gather("year_string","fishing_hours",-c(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw)) %>% 
   mutate(year = gsub("fishing_hours_","",year_string))
-# If we use the same name, the column will be overwritten
+```
+If we use the same name, the column will be overwritten.
+```
 tidy_data <- wide_data %>% 
-  gather("year","fishing_hours",-c(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw)) 
-%>% 
+  gather("year","fishing_hours",-c(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw)) %>% 
   mutate(year = gsub("fishing_hours_","",year))
-# We can use the function transmute to create a whole new tibble with new 
-variables.
-# The existing variables will be removed:
+```
+We can use the function `transmute()` to create a whole new _tibble_ with new variables.
+The existing variables will be removed:
+```
 tidy_data2 <- wide_data %>% 
-  gather("year","fishing_hours",-c(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw)) 
-%>% 
-  transmute(tonnage = as.integer(tonnage_gt_gfw),year = 
-gsub("fishing_hours_","",year),
-            hours = fishing_hours)
-# Note that we have a lot of observations containing NA values. 
-# We can remove the observations with NA using drop_na()
+  gather("year","fishing_hours",-c(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw)) %>% 
+  transmute(tonnage = as.integer(tonnage_gt_gfw),year = gsub("fishing_hours_","",year), 
+  hours = fishing_hours)
+```
+Note that we have a lot of observations containing _NA_ values. 
+We can remove the observations with _NA_ using `drop_na()`
+```
 tidy_data <- wide_data %>% 
-  gather("year","fishing_hours",-c(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw)) 
-%>% 
-  mutate(year = gsub("fishing_hours_","",year))  %>% drop_na()
-### `spread`
-# It is sometimes useful for data wrangling purposes to convert tidy data into wide
-data. 
-# We often use this as an intermediate step in tidying up data. 
-# The `spread` function is basically the inverse of `gather`. 
-# The first argument tells `spread` which variable will be used as the column 
-names. 
-# The second argument specifies which variable to use to fill out the cells:
+  gather("year","fishing_hours",-c(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw)) %>% 
+  mutate(year = gsub("fishing_hours_","",year)) %>% 
+  drop_na()
+```
+---
+#### The  `spread()` function
+It is sometimes useful for data wrangling purposes to convert tidy data into wide data. 
+We often use this as an intermediate step in tidying up data. 
+The `spread()` function is basically the inverse of `gather()`. 
+ - The first argument tells `spread` which variable will be used as the column names. 
+ - The second argument specifies which variable to use to fill out the cells:
+```
 new_wide_data <- tidy_data %>% spread(year, fishing_hours)
-# Note that NA values are added when there are missing values for a given vessel
 new_wide_data
-# This is useful, for example, if we want to select only the vessels that worked 
-during all the years in the record
-new_wide_data_all <- tidy_data %>% spread(year, fishing_hours) %>% drop_na()
-### `pivot_longer` and `pivot_wider`
-# `pivot_longer` is another way to produce a tidy (`longer`) dataset from a 
-wide_data table.
-# Remember that we used the function gather() like this:
+```
+Note that _NA_ values are added when there are missing values for a given vessel
+
+This is useful, for example, if we want to select only the vessels that worked during all the years in the record
+```
+new_wide_data_all <- tidy_data %>% 
+	spread(year, fishing_hours) %>% 
+	drop_na()
+```
+---
+#### The functions `pivot_longer()` and `pivot_wider()`
+`pivot_longer()` is another way to produce a tidy **longer** dataset from a wide data table.
+Remember that we used the function `gather()` like this:
+```
 tidy_data <- wide_data %>% gather("year","fishing_hours",all_of(years))  %>% 
   mutate(year = gsub("fishing_hours_","",year))
-# We can get the same result using pivot_longer().
-# We need three parameters:
-# The set of columns whose names are values, not variables. In this example, those 
-columns are all_of(years)
-# The name of the variable to move the column names to. Here it is "year".
-# The name of the variable to move the column values to. Here it’s "fishing_hours".
-tidy_data <- wide_data %>% pivot_longer(all_of(years),names_to = "year", values_to 
-= "fishing_hours")  %>% drop_na()
-# We add the mutate command for changing the year column
-tidy_data <- wide_data %>% pivot_longer(all_of(years),names_to = "year", values_to 
-= "fishing_hours") %>% 
-  mutate(year = gsub("fishing_hours_","",year))  %>% drop_na()
-# Also, we can use pivot_wider() to get a wide dataframe from the tidy data_frame.
-# Now we need just two parameters:
-# The column to take variable names from. Here, it’s year.
-# The column to take values from. Here it’s fishing_hours.
-new_wide_data <- tidy_data %>% pivot_wider(names_from = year, 
-values_from=fishing_hours)
-# pivot_longer() is the replacement for gather() and pivot_wider() is the 
-replacement for spread().
-# Both are designed to be simpler and can handle more cases than gather and spread.
+```
+We can get the same result using `pivot_longer()`.
+We need three parameters:
+- The set of columns whose names are values, not variables. In this example, those columns are `all_of(years)`.
+- The name of the variable to move the column names to. Here it is "year".
+- The name of the variable to move the column values to. Here it’s "fishing_hours".
+
+```
+tidy_data <- wide_data %>%
+	pivot_longer(all_of(years),names_to = "year", values_to = "fishing_hours") %>% 
+	drop_na()
+```
+We add the `mutate()` function for changing the year column
+```
+tidy_data <- wide_data %>% 
+	pivot_longer(all_of(years),names_to = "year", values_to = "fishing_hours") %>% 
+	mutate(year = gsub("fishing_hours_","",year)) %>% 
+	drop_na()
+```
+Also, we can use `pivot_wider()` to get a wide data_frame from the tidy data_frame.
+Now we need just two parameters:
+ - The column to take variable names from. Here, it’s year.
+ - The column to take values from. Here it’s fishing_hours.
+```
+new_wide_data <- tidy_data %>% 
+	pivot_wider(names_from = year, values_from=fishing_hours)
+```
+The function `pivot_longer()` is the replacement for `gather()`and `pivot_wider()` is the replacement for `spread()`.
+
+Both are designed to be simpler and can handle more cases than gather and spread.
 # The Tidyverse developers highly recommends to use the new functions, although 
 gather() and spread() are not going away but will not be actively developed.
 ### `separate`
