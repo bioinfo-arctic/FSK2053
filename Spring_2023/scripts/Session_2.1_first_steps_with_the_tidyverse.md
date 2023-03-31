@@ -328,105 +328,119 @@ new_wide_data <- tidy_data %>%
 ```
 The function `pivot_longer()` is the replacement for `gather()`and `pivot_wider()` is the replacement for `spread()`.
 
-Both are designed to be simpler and can handle more cases than gather and spread.
-# The Tidyverse developers highly recommends to use the new functions, although 
-gather() and spread() are not going away but will not be actively developed.
-### `separate`
-# The data wrangling shown above was simple compared to what is usually required. 
-# This is because the data came from a structured table source
-# Here is another example that is slightly more complicated. 
-# It includes two variables: life expectancy as well as fertility. 
-# However, the way they are stored is not tidy and, as we will explain, not 
-optimal.
-# We will download it from our Github repository:
-url <- "https://raw.githubusercontent.com/DataScienceFishAquac/FSK2053-2021/main/
-datasets/fertility-life_expectancy.csv"
-# The `read_csv` file can read these files directly:
+Both are designed to be simpler and can handle more cases than `gather()` and `spread()`.
+The **tidyverse** developers highly recommends to use the new functions, although `gather()` and `spread()` are not going away but will not be actively developed.
+
+---
+
+#### The function `separate()` 
+
+The data wrangling shown above was simple compared to what it is usually required. This is because the data came from a structured table source.
+Here is another example that is slightly more complicated. It includes two variables: life expectancy as well as fertility. 
+However, the way they are stored is not tidy and, as we will explain, not optimal.
+We will download it from our Github repository:
+```
+url <- "https://raw.githubusercontent.com/DataScienceFishAquac/FSK2053-2021/main/datasets/fertility-life_expectancy.csv"
+```
+The `read_csv()` file can read these files directly:
+```
 raw_dat <- read_csv(url)
 head(raw_dat)
-# First note that the data is in wide format. Second, note that now there are 
-values for two variables 
-# with the column names encoding which column represents which variable. 
-# We can start the data wrangling with the `gather` function, We will call the 
-variable `key`, the default:
-dat_fert <- raw_dat %>% gather(key, value, -country)
+```
+First note that the data is in wide format. Second, note that now there are values for two variables with the column names encoding which column represents which variable. 
+We can start the data wrangling with the `gather()` function, We will call the variable `key`, the default:
+```
+dat_fert <- raw_dat %>% 
+	gather(key, value, -country)
 head(dat_fert)  
-# The result is not exactly what we refer to as tidy since each observation is 
-associated with two rows instead of one.
-# We want to have the values from the two variables, fertility and life expectancy,
-in two separate columns.
-# The first challenge to achieve this is to separate the `key` column into the year
-and the variable type. 
-# Note that the entries in this column separate the year from the variable name 
-with an underscore: 
+```
+The result is not exactly what we refer to as tidy, since each observation is associated with two rows instead of one.
+We want to have the values from the two variables, fertility and life expectancy, in two separate columns.
+The first challenge to achieve this is to separate the `key` column into the year and the variable type. 
+Note that the entries in this column separate the year from the variable name with an underscore: 
+```
 dat_fert$key[1:5]
-# Encoding multiple variables in a column name is such a common problem that the 
-`readr` package includes a function 
-# to separate these columns into two or more. 
-# The `separate` function takes three arguments: (1) the name of the column to be 
-separated, 
-# (2) the names to be used for the new columns and (3) the character that separates
-the variables.
-# So a first attempt at this is:
-dat_new <- dat_fert %>% separate(key, c("year", "variable_name"), "_")
-# Actually, because "_" is the default separator we can simply write:
-dat_new <- dat_fert %>% separate(key, c("year", "variable_name"))
-# However, we run into a problem. Note that we receive the warning `Expected 2 
-pieces. Additional pieces discarded in 112 rows:`
-# and that the `life_expectancy` variable is truncated to `life`. 
-# This is because the `_` is used to separate `life` and `expectancy` not just year
-and variable name. 
-# We could add a third column to catch this and let the `separate` function know 
-which column to fill in with NA, when there is no third value.
-# Here we tell it to fill the column on the right:
-dat_new <- dat_fert %>% separate(key, 
-                 c("year", "first_variable_name", "second_variable_name"), 
-                 fill = "right")
-# However, if we read the `separate` help file we find that a better approach is to
-merge the last two variables
-# when there is an extra separation:
-dat_new <- dat_fert %>% separate(key, c("year", "variable_name"), sep = "_", extra 
-= "merge")
+```
+Encoding multiple variables in a column name is such a common problem that the `readr()` package includes a function to separate these columns into two or more. 
+The `separate()` function takes 3 arguments: 
+
+1. The name of the column to be separated
+2. The names to be used for the new columns 
+3. The character that separates the variables
+
+So a first attempt at this is:
+```
+dat_new <- dat_fert %>% 
+	separate(key, c("year", "variable_name"), "_")
+```
+Actually, because "_" is the default separator we can simply write:
+```
+dat_new <- dat_fert %>% 
+	separate(key, c("year", "variable_name"))
+```
+However, we run into a problem. Note that we receive the warning:
+```
+Expected 2 pieces. Additional pieces discarded in 112 rows:
+```
+and the `life_expectancy` variable is truncated to `life`. 
+This is because the `_` is used to separate `life` and `expectancy` not just year and variable name. 
+We could add a third column to catch this and let the `separate` function know which column to fill in with _NA_, when there is no third value.
+Here we tell it to fill the column on the right:
+```
+dat_new <- dat_fert %>% 
+	separate(key, c("year", "first_variable_name", "second_variable_name"), fill = "right")
+```
+However, if we read the `separate` help file we find that a better approach is to merge the last two variables when there is an extra separation:
+```
+dat_new <- dat_fert %>% 
+	separate(key, c("year", "variable_name"), sep = "_", extra = "merge")
 dat_new
-# This achieves the separation we wanted. The dataset is almost in tidy format. 
-# But the column 'value' is merging two variables.
-# This is not optimal, for example, for plotting purposes.
-# So we want to create a column for each variable. We can use the `spread` 
-function:
-dat_new <- dat_fert %>% separate(key, c("year", "variable_name"), sep = "_", extra 
-= "merge") %>%
-  spread(variable_name, value) 
+```
+This achieves the separation we wanted. The dataset is almost in tidy format. 
+ But the column 'value' is merging two variables. This is not optimal, for example, for plotting purposes.
+So we want to create a column for each variable. 
+We can use the `spread` function:
+```
+dat_new <- dat_fert %>%
+	separate(key, c("year", "variable_name"), sep = "_", extra = "merge") %>%
+	spread(variable_name, value) 
 dat_new
-# The data is now in tidy format with one row for each observation with three 
-variables: `year`, `fertility` and `life expectancy`.
-# Now we can plot the data:
+```
+The data is now in tidy format with one row for each observation with three variables: `year`, `fertility` and `life expectancy`.
+
+---
+
+#### Now we can plot the data:
+```
 dat_new %>% ggplot(aes(x=year),color = country,) +
   geom_line(aes(y = life_expectancy, group=country, colour = country))  +
   geom_line(aes(y = fertility/.1, group=country,colour = country, 
 linetype="fertility"),linetype="dashed") +
   scale_y_continuous(sec.axis = sec_axis(~.*.1, name = "fertility")) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-### `unite`
-# It is sometimes useful to do the inverse of `separate`, i.e. unite two columns 
-into one. 
-# So, although this is *not* an optimal approach, had we used this command to 
-separate: 
+```
+---
+#### The function`unite()`
+It is sometimes useful to do the inverse of `separate`, i.e. unite two columns into one. 
+So, although this is *not* an optimal approach, had we used this command to separate: 
+```
 dat_new <- dat_fert %>% 
-  separate(key, c("year", "first_variable_name", "second_variable_name"), fill = 
-"right")  
+	separate(key, c("year", "first_variable_name", "second_variable_name"), fill = "right")
 dat_new
-# We can achieve the same final result by uniting the second and third column like 
-this:
+```
+We can achieve the same final result by uniting the second and third column like this:
+```
 dat_new <- dat_fert  %>% 
-  separate(key, c("year", "first_variable_name", "second_variable_name"), fill = 
-"right") %>%
+  separate(key, c("year", "first_variable_name", "second_variable_name"), fill = "right") %>%
   unite(variable_name, first_variable_name, second_variable_name, sep = "_")
 dat_new
-# Then spreading the columns:
+```
+Then spreading the columns:
+```
 dat_new <- dat_fert   %>% 
-  separate(key, c("year", "first_variable_name", "second_variable_name"), fill = 
-"right") %>%
+  separate(key, c("year", "first_variable_name", "second_variable_name"), fill = "right") %>%
   unite(variable_name, first_variable_name, second_variable_name, sep = "_") %>%
   spread(variable_name, value) %>%
   rename(fertility = fertility_NA)
 dat_new
+```
