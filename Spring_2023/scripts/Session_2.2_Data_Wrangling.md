@@ -210,7 +210,7 @@ countries_fishing <- global_summaries %>%
 ```
 ---
 ### Additional `dplyr` verbs
-#### The verb `count()`
+#### The function `count()`
 count() is a quick shortcut for the common combination of group_by() and summarise() used to count the number of rows per group.
 ```
 count(global_summaries,Stock)
@@ -222,7 +222,7 @@ global_summaries %>%
 	summarise(count = n())
 ```
 
-#### The verb `rename()`
+#### The function `rename()`
 The purpose of this function is obvious. 
 An example:
 ```
