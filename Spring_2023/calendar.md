@@ -5,7 +5,7 @@
 ### Week 15
 | Date           | Time          | Activity                                                                          | Room      | Teaching staff |
 |----------------|---------------|-----------------------------------------------------------------------------------|-----------|----------------|
-| tue 11.04.2023 | 12:15 - 14:00 | Lecture L1: Introduction to data science                                           | NFH D-110 | D.K. Morais       |
+| tue 11.04.2023 | 12:15 - 14:00 | Lecture L1: Introduction to data science                                           | [NFH D-110](https://link.mazemap.com/nQZzCB0U) | D.K. Morais       |
 | thu 13.04.2023 | 12:15 - 14:00 | Lecture L2: data wrangling                                                        | NFH D-110 | D.K. Morais        |
 ### Week 16
 | Date           | Time          | Activity                                                                          | Room      | Teaching staff |
