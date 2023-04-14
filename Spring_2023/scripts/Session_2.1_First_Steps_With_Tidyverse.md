@@ -2,14 +2,16 @@
 
 ## Data import and reshaping data
 ### Importing Spreadsheets
+
+#### Here we introduce the `tidyverse` packages `readr` and `readxl`, which facilitate importing data from several formats of spreadsheet files.
+
+Then we will use package `tidyr` to produce tidy datasets from messy input tables
 ```
-# Here we introduce the `tidyverse` packages `readr` and `readxl`, 
-# which facilitate importing data from several formats of spreadsheet files.
-# Then we will use package `tidyr` to produce tidy datasets from messy input tables
 library(tidyverse)
 ```
-```
+
 ### Paths and the Working Directory
+```
 getwd()
 dir.create("Datasets-1")
 setwd("Datasets-1/")
@@ -23,12 +25,12 @@ file.copy(fullpath, getwd())
 list.files(getwd())
 list.files()
 ```
+Check if the file is now in your working directory using the `file.exists()` 
 ```
-# Check if the file is now in your working directory using the `file.exists` 
 function:
 file.exists(filename)
 ```
-
+---
 ### The `readr` and `readxl` packages
 #### `readr` is the `tidyverse` library that includes functions for reading data stored in text file spreadsheets into R. 
 #### The following functions are available to read-in spreadsheets:
@@ -64,7 +66,7 @@ head(dat)
 class(dat)
 str(dat)
 ```
-
+---
 ### R-base functions
 #### R-base also provides import functions. These have similar names to those in the `tidyverse`:
 #### `read.table`, `read.csv` and `read.delim` for example. There are a couple of important differences. 
@@ -77,7 +79,7 @@ class(dat2)
 str(dat2)
 ```
 
-### Some differences with previous R versions:
+#### Some differences with previous R versions:
 In older R versions, columns of characters were converted to factors by default.  
 They do not anymore. It now depends on what value has been set for. 
 
@@ -92,7 +94,7 @@ class(dat2$flag_registry)
 head(dat2$flag_registry,n=10)
 ```
 
-### Downloading files
+#### Downloading files
 Another common place for data to reside is on the internet. 
 We can download these files and then import them or even read them directly from the web.  
 For example, we are going to download the file GFW-fishing-vessels-v2.csv from our GitHub repository.  
@@ -132,7 +134,7 @@ dat <- read_csv(tmp_filename)
 file.remove(tmp_filename)
 head(dat)
 ```
-
+---
 ### Nuances
 When reading in spreadsheets many things can go wrong. 
 The file might have a multiline header, missing cells, or it might use an unexpected [encoding](https://en.wikipedia.org/wiki/Character_encoding)  
@@ -147,14 +149,14 @@ x <- scan(url, sep=",", what = "c")
 x[1:60]
 ```
 
-### Removing a file
+#### Removing a file
 Now that we are done with the example, we will remove the example file we copied over to our working directory using the function `file.remove()`.
 
 ```
 file.remove("local-GFW-fishing-vessels-v2.csv")
 ```
-
-## Tidy data
+---
+### Tidy data
 
 ```
 library(tidyverse)
