@@ -1,10 +1,12 @@
+## Handling multiple datasets
+
 Load the dataset from the _Github_ repository and we will tidy it following the instructions from Lecture 2
 ```
 url <- "https://raw.githubusercontent.com/DataScienceFishAquac/FSK2053-2021/main/datasets/GFW-fishing-vessels-v2.csv"
 dat_vessels <- read_csv(url)
 ```
 
-Now we will select the variables we want to keep and stored it in a wide_table format
+Now we will select the variables we want to keep and stored it in a wide table format
 ```
 wide_data_vessels <- dat_vessels %>% 
   select(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw,paste0("fishing_hours_",2012:2020))
