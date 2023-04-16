@@ -9,15 +9,15 @@ dat_vessels <- read_csv(url)
 Now we will select the variables we want to keep and stored it in a wide table format
 ```
 wide_data_vessels <- dat_vessels %>% 
-  select(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw,paste0("fishing_hours_",2012:2020))
+	select(mmsi,flag_gfw,vessel_class_gfw,tonnage_gt_gfw,paste0("fishing_hours_",2012:2020))
 wide_data_vessels
 ```
 We will tidy up this table, and will remove all observations with _NA_
 ```
 tidy_data_vessels <- wide_data_vessels %>% 
-  pivot_longer(names_to = "year",values_to = "fishing_hours", paste0("fishing_hours_",2012:2020)) %>%
-  mutate(year = gsub("fishing_hours_","",year)) %>%
-  drop_na()
+	pivot_longer(names_to = "year",values_to = "fishing_hours", paste0("fishing_hours_",2012:2020)) %>%
+	mutate(year = gsub("fishing_hours_","",year)) %>%
+	drop_na()
 tidy_data_vessels
 ```
 
@@ -48,12 +48,12 @@ data_tuna <- dat %>%
 	mutate(Stock = gsub(" tuna Global","",Stock))  %>%
 	mutate(Individuals = round(Catches / case_when(
 		Stock == "Albacore" ~ 0.033,
-	    Stock == "Atlantic bluefin" ~ 0.235,
-	    Stock == "Bigeye" ~ 0.120,
-	    Stock == "Pacific bluefin" ~ 0.066,
-	    Stock == "Skipjack" ~ 0.019,
-	    Stock == "Southern bluefin" ~ 0.140,
-	    Stock == "Yellowfin" ~ 0.120
+		Stock == "Atlantic bluefin" ~ 0.235,
+		Stock == "Bigeye" ~ 0.120,
+		Stock == "Pacific bluefin" ~ 0.066,
+		Stock == "Skipjack" ~ 0.019,
+		Stock == "Southern bluefin" ~ 0.140,
+		Stock == "Yellowfin" ~ 0.120
   )))
 global_summaries_by_country <- data_tuna %>% 
 	group_by(Stock, Country) %>% 
@@ -71,12 +71,11 @@ summary_tuna <- global_summaries_by_country %>%
 summary_tuna
 ```
 
-Now we have the table of tuna catches with the column "Country".
-We have to relate this variable with the codes in the _flag_GFW_ column in the _summary_vessels_ table.
-This will be apparently difficult. 
-However, in R there is almost always am open-source solution shared by some other person who had the same problem before.
+Now we have the table of tuna catches with the column "Country".  
+We have to relate this variable with the codes in the _flag_GFW_ column in the _summary_vessels_ table.  
+This looks difficult. However, in R there is almost always an open-source solution shared by someone who had the same problem before.
 
-Looking in Google for "country codes in R" we will know of package countrycode
+Looking in Google for "country codes in R" we will find of package `countrycode`
 ```
 install.packages("countrycode")
 library(countrycode)
