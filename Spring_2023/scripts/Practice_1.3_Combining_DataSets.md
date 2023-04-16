@@ -91,7 +91,8 @@ summary_vessels$flag_gfw
 
 Now we can mutate the country column in the summary_tuna table:
 ```
-summary_tuna <- summary_tuna %>% mutate(Country_code = countrycode(countryname(Country),origin="country.name",destination="iso3c"))
+summary_tuna <- summary_tuna %>% 
+	mutate(Country_code = countrycode(countryname(Country),origin="country.name",destination="iso3c"))
 summary_tuna
 ```
 Finally, we have two datasets with a valid unique key (Country_code and flag_gfw)
@@ -105,25 +106,26 @@ What would have happened had we applied right_join?
 merged_right <- right_join(summary_tuna,summary_vessels, by = c("Country_code" = "flag_gfw"))
 ```
 Now we can represent the data and explore the relationships
-We will learn more about how to use ggplot2 to improve our visualizations in Session 3
+We will learn more about how to use ggplot2 to improve our visualizations in the Practice 3
 ```
 install.packages("ggrepel")
-library(ggrepel) # This library allows to add nice labels to the points in a plot
+library(ggrepel) # This library allows us to add nice labels to the points in a plot
 
 merged_table %>% 
 	rename(`Fishing effort (ton-hours)` = Total_effort, `Total tuna catch (ton)` = Catch) %>%
 	ggplot(aes(x=`Fishing effort (ton-hours)`, y=`Total tuna catch (ton)`)) +
 	geom_point(aes(color=`Total tuna catch (ton)`,size=`Fishing effort (ton-hours)`)) +
-	geom_label_repel(aes(label=Country_code),box.padding=0.35,point.padding = 0.5)
+	geom_label_repel(aes(label=Country_code), box.padding = 0.35, point.padding = 0.5)
 ```
 
 Since the X axis is clearly skewed towards China, we can add a logarithmic transformation of this axis
 ```
-merged_table %>% rename(`Fishing effort (ton-hours)` = Total_effort, `Total tuna catch (ton)` = Catch) %>%
-  ggplot(aes(x=`Fishing effort (ton-hours)`, y=`Total tuna catch (ton)`)) +
-  geom_point(aes(color=`Total tuna catch (ton)`,size=`Fishing effort (ton-hours)`)) +
-  geom_label_repel(aes(label=Country_code), box.padding = 0.35, point.padding = 0.5) +
-  scale_x_log10(
-    breaks = scales::trans_breaks("log10", function(x) 10^x),
-    labels = scales::trans_format("log10", scales::math_format(10^.x)))
+merged_table %>% 
+	rename(`Fishing effort (ton-hours)` = Total_effort, `Total tuna catch (ton)` = Catch) %>%
+	ggplot(aes(x=`Fishing effort (ton-hours)`, y=`Total tuna catch (ton)`)) +
+	geom_point(aes(color=`Total tuna catch (ton)`,size=`Fishing effort (ton-hours)`)) +
+	geom_label_repel(aes(label=Country_code), box.padding = 0.35, point.padding = 0.5) +
+	scale_x_log10(
+	breaks = scales::trans_breaks("log10", function(x) 10^x),
+	labels = scales::trans_format("log10", scales::math_format(10^.x)))
 ```
