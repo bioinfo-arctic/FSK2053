@@ -1,6 +1,6 @@
 
 ## Introduction to bioinformatics
-#### For this class, you need to follow the tutorial presented in the [Lecture 7 - Bioinformatics and biological data.](https://uit.instructure.com/courses/28991/modules/items/809233)
+#### For this class, you need to have finished the tutorial presented in the [Lecture 7 - Bioinformatics and biological data.](https://uit.instructure.com/courses/28991/modules/items/809233)
 #### Don't forget to turn on your  [virtual machine](https://labs.azure.com/register/detno9f2n)
 
 ---
@@ -164,4 +164,4 @@ cat header.txt R1_table.txt > final_R1_table.txt
 
 Now we have a nice table to help us compare the sequences using a alignment free algorithm. Shall we create a script that does all the steps in a workflow and apply it to the R2 file?
 
-Lets build it in a text editor in our own computers and transfer it to the server. Remember to use the `history` command and the up arrow key.
+Lets build it in a text editor in our own computers and transfer it to the server. Remember to use the `history` command and the *up* arrow key.
