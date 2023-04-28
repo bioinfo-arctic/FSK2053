@@ -117,8 +117,8 @@ Now lets use this structure in combination with `head` and `tail` commands to ch
 ```
 head fasta_files/A4_R1.fasta
 tail fasta_files/A4_R1.fasta
-head -n 3 /data/fasta_files/A4_R1.fasta
-tail -n 3 /data/fasta_files/A4_R1.fasta
+head -n 3 fasta_files/A4_R1.fasta
+tail -n 3 fasta_files/A4_R1.fasta
 ```
 
 Now, if we combine the behavior of a `for loop` and the output of `head` and `tail` combined by a linux pipe "|", we can access line by line of our sequences: 
@@ -126,7 +126,7 @@ Now, if we combine the behavior of a `for loop` and the output of `head` and `ta
 Let's create the command step by step:
 First printing line by line:
 ```
-for i in {1..40} ; do echo seq $1; head -n $i nucl_freq_counter/sequences_R1.txt | tail -n 1 ; done
+for i in {1..40} ; do echo seq $i; head -n $i nucl_freq_counter/sequences_R1.txt | tail -n 1 ; done
 ```
 Now, we need a counter, let's try the `wc -m` combined with the `head -n 1`. See what `wc -m` does using the`wc --help` parameter.
 
