@@ -115,8 +115,8 @@ Now lets use this structure in combination with `head` and `tail` commands to ch
 `head` by default, shows the first 10 lines of a file. If we pass the parameter *-n*, we can control how many lines it will print. `tail` shows us the last 10 lines of a file and has the same *-n*  parameter. Lets try:
 
 ```
-head /data/fasta_files/A4_R1.fasta
-tail /data/fasta_files/A4_R1.fasta
+head fasta_files/A4_R1.fasta
+tail fasta_files/A4_R1.fasta
 head -n 3 /data/fasta_files/A4_R1.fasta
 tail -n 3 /data/fasta_files/A4_R1.fasta
 ```
