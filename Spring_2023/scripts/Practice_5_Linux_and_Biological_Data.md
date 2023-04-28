@@ -68,7 +68,7 @@ bioawk -c '{print ">" $name "\n" $seq}' ./data/A4_A006_R2_FSK2053.fastq
 In order to create a new file, we need to forward the output of the commands into a new file:
 ```
 bioawk -c '{print ">" $name "\n" $seq}' ./data/A4_A006_R1_FSK2053.fastq > ./fasta_files/A4_R1.fasta
-bioawk -c '{print ">" $name "\n" $seq}' ./data/A4_A006_R2_FSK2053.fastq > ./fasta_files/A4_R1.fasta
+bioawk -c '{print ">" $name "\n" $seq}' ./data/A4_A006_R2_FSK2053.fastq > ./fasta_files/A4_R2.fasta
 ```
 Now count the number of sequences in the fasta files
 ```
