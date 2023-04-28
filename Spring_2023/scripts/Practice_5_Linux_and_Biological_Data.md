@@ -62,13 +62,13 @@ We know that a fastq file should have 4 lines per sequence. And a fasta file sho
 Lets create a fasta file from our fastq files and ignore the quality information for now:
 ```
 mkdir fasta_files
-bioawk -c '{print ">" $name "\n" $seq}' ./data/A4_A006_R1_FSK2053.fastq
-bioawk -c '{print ">" $name "\n" $seq}' ./data/A4_A006_R2_FSK2053.fastq
+bioawk -c fastx  '{print ">" $name "\n" $seq}' ./data/A4_A006_R1_FSK2053.fastq
+bioawk -c fastx '{print ">" $name "\n" $seq}' ./data/A4_A006_R2_FSK2053.fastq
 ```
 In order to create a new file, we need to forward the output of the commands into a new file:
 ```
-bioawk -c '{print ">" $name "\n" $seq}' ./data/A4_A006_R1_FSK2053.fastq > ./fasta_files/A4_R1.fasta
-bioawk -c '{print ">" $name "\n" $seq}' ./data/A4_A006_R2_FSK2053.fastq > ./fasta_files/A4_R2.fasta
+bioawk -c fastx '{print ">" $name "\n" $seq}' ./data/A4_A006_R1_FSK2053.fastq > ./fasta_files/A4_R1.fasta
+bioawk -c fastx '{print ">" $name "\n" $seq}' ./data/A4_A006_R2_FSK2053.fastq > ./fasta_files/A4_R2.fasta
 ```
 Now count the number of sequences in the fasta files
 ```
