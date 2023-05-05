@@ -70,7 +70,7 @@ Phylogentics in R needs various packages such as `msa` (Bonatesta et
 al), `bios2mds`,(Pele et al) and `phangorn` (Schliep et al). One benefit
 of using R functions to calculate the phylogentic tree is that you dont
 need some other software(s) which are many times OS dependent and hence,
-unpredictable.
+unpredictable. Also you may need xquartz (https://www.xquartz.org) if you use macOS.
 
 ## 1. Install or load R packages
 
@@ -80,33 +80,34 @@ needs to be downloaded using **Bioconductor**. Type “msa r package” in
 google and find relevant bioconductor package. Read relevant information
 about how to download msa.
 
-    #load packages
+ if (!require("BiocManager", quietly = TRUE))
+      install.packages("BiocManager")
+    BiocManager::install(version = "3.16")
+    BiocManager::install("msa")
+    
+    # install packages using install.packages()
+
+    # load packages
     library(tinytex)
     library(msa) 
     library(bios2mds) 
     library(phangorn) 
     system.file("tex", "texshade.sty", package="msa") # needed for Latex/Texshade related function to work
     
-    if (!require("BiocManager", quietly = TRUE))
-      install.packages("BiocManager")
-    BiocManager::install(version = "3.16")
-    
-    # BiocManager::install("msa")
-    
-    
-
 ## 2. Alignment of nucleotide sequences
 
 ### 2.1 read sequences in fasta format into msa
 
-    mysequencefile <- readDNAStringSet("phylogenetics_tree.fasta", format = "fasta") 
+To run any analysis in R one need to make an initial object (i.e., exporting a file from thr hardisk to R)
+
+    mysequencefile <- readDNAStringSet("phylogenetics_tree.fasta", format = "fasta") # imports/reads fasta file into object called mysequencefile 
 
 ### 2.2 run multiple alignemnt analysis using `muscle` program
 
 This following step can lot of time, depending on number of sequences
 and length. Here it will go fast.
 
-    alignmuscle  <- msa(mysequencefile,method = "Muscle") 
+    alignmuscle  <- msa(mysequencefile,method = "Muscle") # running multiple sequence alignment (msa) analysis
 
 The following step is optional. The frame of reference for aligned
 sequences is static (and already defined), so manipulation of these
@@ -120,21 +121,22 @@ will try to mask first 10 bases of alignment.
 
 #### mask sequences
 
-    myMaskedAlignment <- alignmuscle #rename object  alignmuscle
+    myMaskedAlignment <- alignmuscle #rename object alignmuscle to myMaskedAlignment
     colM <- IRanges(start=1, end=10) #select ranges to mask
     colmask(myMaskedAlignment) <- colM #rename object colM
     myMaskedAlignment # view object with masked sequences
 
-The result for masking is written to a pdf file.
-
 If you want to see alignments look pretty with different colours for
-different bases as in some GUI based programs. We try one simple script,
-there are lot of options in `msaPrettyPrint` function.
+different bases as in some GUI based programs. We try one simple script usinf function msaPrettyPrint
+There are lot of options in `msaPrettyPrint` function to make it more pretty
 
     msaPrettyPrint(alignmuscle, output="pdf", y=c(1, 633),
                    subset=c(1:6), showNames="none", showLogo="top",
                    logoColors="rasmol", shadingMode="similar",
                    showLegend=FALSE, askForOverwrite=FALSE)
+                   
+ Just check in your working directory, is there any pdf file with name alignment.pdf. If it is there then you are good. 
+if not, 
 
 You might see the following error message:
 
@@ -185,22 +187,22 @@ pretty alignment to show for now :/
 ------------------------------------------------------------------------
 
 Once you are done with alignment, next step is making the phylogenetic
-tree. This follwing function converts a multiple sequence alignment
+tree. Follwing function converts a multiple sequence alignment
 object to formats used in other sequence analysis packages. Benefit of
-this is that you can directly proceed to other packages without reading
+this is that you can directly proceed to other packages (such as phangorn) without reading
 the input again.
 
     alignmentfish <- msaConvert(alignmuscle, type= "phangorn::phyDat")
 
 optional: you may want to write alignment file to hard disk use
-following command and use it someother non R based programs.
+following command and use it someother non R based programs(example MEGA 11).
 
     export.fasta(alignmuscle2, outfile = "test_alignment.fa", ncol = 60, open = "w")
 
 Optional: if you want to read disk written alignment file
-test\_alignment.fa use this command.
+test_alignment.fa use following command.
 
-    alignmentfish1 <-read.phyDat(alignmentfish, type = "dna", format = "fasta")
+    alignmentfish1 <-read.phyDat("test_alignment.fa", type = "dna", format = "fasta")
 
 Now we will try to do some phylogenetic trees based on different
 methods.
@@ -209,12 +211,14 @@ methods.
 
 ### 3.1 Distance based phylogenetic tree construction
 
-First calculate a distance matrix
+First calculate a pairwise distance matrix (like a table, if there are 3 sequences to compare, you comapre distance between seq 1 and 2, seq 1 and 3)
 
     dm <- dist.ml(alignmentfish)  #calculate distance matrix using dist.ml from phangorn
+    dm # print matrix in R studio terminal
 
 Now use object dm to costruct two distance based phylogenetic trees
-`treeUPGMA  <- upgma(dm) #calculate upgma/NJ tree using upgma nad nj function from package phangron. treeNJ  <- NJ(dm)`
+
+treeUPGMA  <- upgma(dm) #calculate upgma/NJ tree using upgma nad nj function from package phangron. treeNJ  <- NJ(dm)
 
 Plot trees using generic function.
 
