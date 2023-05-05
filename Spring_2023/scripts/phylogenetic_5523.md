@@ -12,7 +12,7 @@ We will do a fun exercise before we do a real phylogenetic tree
 construction. Can you place these new organisms in order? And give your
 rationale for your placement of that organism in this tree.
 
-![](https://raw.githubusercontent.com/shri1984/study-images/main/Picture1.jpg?token=GHSAT0AAAAAACCFFFMC5RONLSSBPRYSKJBGZCUWWBQ)
+![](https://raw.githubusercontent.com/shri1984/study-images/main/Picture1.jpg?token=GHSAT0AAAAAACCFFFMC4SMSTPDOPD4ZFBWMZCUY2XQ)
 
 ### Building a phylogenetic tree using some anatomical characters
 
@@ -20,7 +20,7 @@ Table below contains charatcters to make our tree. + indicates presence
 and 0 represents absence. This data taken from Principles of biology by
 Robert Bear (table from khan academy) with some modifications.
 
-![](https://raw.githubusercontent.com/shri1984/study-images/main/Screen%20Shot%202023-05-03%20at%2012.23.01.png?token=GHSAT0AAAAAACCFFFMDFNA5P5PWHFBIYVHCZCUWUQQ)
+![](https://raw.githubusercontent.com/shri1984/study-images/main/Screen%20Shot%202023-05-03%20at%2012.23.01.png?token=GHSAT0AAAAAACCFFFMC5ZQDHWNFLF6UXKXUZCUY3OA)
 
 One important thing we should know from above table is what forms the
 ancestral trait, and which are derived traits. This is important to make
