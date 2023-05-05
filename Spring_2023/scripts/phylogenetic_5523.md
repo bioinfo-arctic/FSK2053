@@ -86,6 +86,14 @@ about how to download msa.
     library(bios2mds) 
     library(phangorn) 
     system.file("tex", "texshade.sty", package="msa") # needed for Latex/Texshade related function to work
+    
+    if (!require("BiocManager", quietly = TRUE))
+      install.packages("BiocManager")
+    BiocManager::install(version = "3.16")
+    
+    # BiocManager::install("msa")
+    
+    
 
 ## 2. Alignment of nucleotide sequences
 
