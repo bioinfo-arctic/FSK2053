@@ -218,7 +218,8 @@ First calculate a pairwise distance matrix (like a table, if there are 3 sequenc
 
 Now use object dm to costruct two distance based phylogenetic trees
 
-treeUPGMA  <- upgma(dm) #calculate upgma/NJ tree using upgma nad nj function from package phangron. treeNJ  <- NJ(dm)
+    treeUPGMA  <- upgma(dm) #calculate upgma/NJ tree using upgma nad nj function from package phangron. 
+    treeNJ  <- NJ(dm)
 
 Plot trees using generic function.
 
