@@ -357,7 +357,7 @@ Optionally, You can give model (one you get from fit) input to the tree building
    
   If you want write tree into a text file (newick format) you need to create an object first (tree_stdbs).
 
-     tree_stdbs <- plotBS(midpoint(fit_mt$tree), bs, p = 50, type="n", main="Standard bootstrap") # assigning standard bootstrap values to our tree; this is the default method
+     tree_stdbs <- plotBS(midpoint(fit_mt$tree), bs, p = 50, type="n", main="Standard bootstrap") # making tree_stdb object instead of plotting on screen
 
 #### exporting trees tree with standard bootstrap values in `newick` format.
 
