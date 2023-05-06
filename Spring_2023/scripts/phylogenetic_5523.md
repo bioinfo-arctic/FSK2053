@@ -200,7 +200,9 @@ optional: you may want to write alignment file to hard disk use
 following command and use it someother non R based programs(example MEGA 11).
 
     alignusclealign <- msaConvert(alignmuscle, type = "bios2mds::align" ) # convert to align (bio2mds package) object.
+    
 if you dont convert to align format, you get error that "object of class 'align' or named list of 'class' expected"
+
     export.fasta(alignmuscle, outfile = "test_alignment.fa", ncol = 60, open = "w") # bio2mds function to write file to hardisk
 
 Optional: if you want to read disk written alignment file
