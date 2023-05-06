@@ -316,7 +316,7 @@ functions from package àpe\`.
 
     rooted_tree <- root(treeRatchet, outgroup = "KM224857_Esox_lucius", resolve.root = TRUE,
                            edgelabel = TRUE) # outgroup = look at the fasta header. you need exact name.
-    plotBS(rooted_tree) ### plot rooted_tree with plotBS function
+    plotBS(rooted_tree, type="phylogram") ### plot rooted_tree with plotBS function
     
     add.scale.bar()
 
@@ -340,7 +340,7 @@ Optionally, You can give model (one you get from fit) input to the tree building
     fit_mt <- pml_bb(mt, control = pml.control(trace = 0)) #infers a phylogentic tree using maximum likelihood algorithm
     fit_mt # see the tree on r studio terminal
 
-    bs <- bootstrap.pml(fit_mt, bs=100, optNni=TRUE, control = pml.control(trace = 0)) #do a standard bootstrapping 
+    bs <- bootstrap.pml(fit_mt, bs=100, optNni=TRUE, control = pml.control(trace = 0)) #do a standard bootstrapping. rememember there are many options this function can take, not the only one mentioned here. it can take function optim.pml parameters here.
 
     plotBS(midpoint(fit_mt$tree), bs, p = 50, type="p", main="Standard bootstrap") # plot trees with midpoint rooting 
     
@@ -351,7 +351,7 @@ Optionally, You can give model (one you get from fit) input to the tree building
     rooted_tree <- root(fit_mt$tree, outgroup = "KM224857_Esox_lucius", resolve.root = TRUE,
                            edgelabel = TRUE) # outgroup = look at the fasta header. you need exact name.
                            
-    plotBS(rooted_tree) # plot rooted tree. Note, that we used out group to root the tree, against midpoint in the previous step
+    plotBS(rooted_tree, bs) # plot rooted tree. Note, that we used out group to root the tree, against midpoint in the previous step
     
     add.scale.bar() #horizontal bar giving the scale of the branch lengths 
    
