@@ -199,9 +199,9 @@ the input again.
 optional: you may want to write alignment file to hard disk use
 following command and use it someother non R based programs(example MEGA 11).
 
-    alignusclealign <- msaConvert(alignmuscle, type = "bios2mds::align" ) # convert to align (bio2mds package) object.
+    alignusclealign <- msaConvert(alignmuscle, type = "bios2mds::align" ) # convert to align class object ( for bio2mds package) object.
     
-if you dont convert to align format, you get error that "object of class 'align' or named list of 'class' expected"
+if you dont convert msa object to align format, you get error that "object of class 'align' or named list of 'class' expected"
 
     export.fasta(alignmuscle, outfile = "test_alignment.fa", ncol = 60, open = "w") # bio2mds function to write file to hardisk
 
@@ -264,7 +264,7 @@ function from phangron.
 
 plot the bootstrap values on tree branches
 
-    plotBS(treeUPGMA, bs_upgma, main="UPGMA") #plot bootstrap values
+    plotBS(treeUPGMA, bs_upgma, main="UPGMA") #plot bootstrap values on a phylogenetic tree. 
 
 ### 3.2 Parsimony based trees
 
