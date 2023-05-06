@@ -337,14 +337,14 @@ or protein models with the AIC, AICc or BIC,
 
 Optionally, You can give model inut to the tree building function. Or let the program to choose best model based on the criteria (without you specifiying anything) and pass it to tree building algorithm (in this case you combine multiple scripts from above in script)
 
-    fit_mt <- pml_bb(mt, control = pml.control(trace = 0))
-    fit_mt
+    fit_mt <- pml_bb(mt, control = pml.control(trace = 0)) #infers a phylogentic tree using maximum likelihood algorithm
+    fit_mt # see the tree on r studio terminal
 
     bs <- bootstrap.pml(fit_mt, bs=100, optNni=TRUE, control = pml.control(trace = 0)) #do a standard bootstrapping 
 
     plotBS(midpoint(fit_mt$tree), bs, p = 50, type="p", main="Standard bootstrap") # plot trees with midpoint rooting 
     
-    add.scale.bar()
+    add.scale.bar() #horizontal bar giving the scale of the branch lengths to a plot of a phylogenetic tree 
     
  Using a out group species from alignment
  
@@ -353,7 +353,7 @@ Optionally, You can give model inut to the tree building function. Or let the pr
                            
     plotBS(rooted_tree) # plot rooted tree. Note, that we used out group to root the tree, against midpoint in the previous step
     
-    add.scale.bar()
+    add.scale.bar() #horizontal bar giving the scale of the branch lengths 
    
   If you want write tree into a text file (newick format) you need to create an object first (tree_stdbs).
 
