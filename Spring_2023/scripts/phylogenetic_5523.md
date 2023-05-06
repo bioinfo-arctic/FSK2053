@@ -330,12 +330,12 @@ As a first step, we will try to find the best fitting substition model.
 For this we use the function `modelTest` to compare different nucleotide
 or protein models with the AIC, AICc or BIC,
 
-    fit <- as.pml(mt, "BIC") #choose best model based on BIC criteria
+    fit <- as.pml(mt, "BIC") #choose best model based on BIC criteria.
+    fit # to see which model fits the observed data
 
 #### make a ml tree
 
-Or let the program to choose best model based on the criteria (without you specifiying anything) and pass
-it to tree building algorithm.
+Optionally, You can give model inut to the tree building function. Or let the program to choose best model based on the criteria (without you specifiying anything) and pass it to tree building algorithm (in this case you combine multiple scripts from above in script)
 
     fit_mt <- pml_bb(mt, control = pml.control(trace = 0))
     fit_mt
@@ -344,10 +344,16 @@ it to tree building algorithm.
 
     plotBS(midpoint(fit_mt$tree), bs, p = 50, type="p", main="Standard bootstrap") # plot trees with midpoint rooting 
     
+    add.scale.bar()
+    
  Using a out group species from alignment
  
     rooted_tree <- root(fit_mt$tree, outgroup = "KM224857_Esox_lucius", resolve.root = TRUE,
                            edgelabel = TRUE) # outgroup = look at the fasta header. you need exact name.
+                           
+    plotBS(rooted_tree)
+    
+    add.scale.bar()
    
   If you want write tree into a text file (newick format) you need to create an object first (tree_stdbs).
 
