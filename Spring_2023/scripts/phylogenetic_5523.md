@@ -31,7 +31,7 @@ trait is present only in the outgroup you can call it ancestral trait. A
 derived trait is a trait or character that appears somewhere on a
 lineage descended from common ancestor.
 
-We will start building a tree now. Lampery lacks all the traits listed
+We will start building a phylogenetic tree now. Lampery lacks all the traits listed
 in the table. Hence we can assume that ancestors for these group of
 organisms lacked these listed traits. Presence of any or all features
 indicates they are derived traits.
@@ -76,7 +76,7 @@ unpredictable. Also you may need xquartz (https://www.xquartz.org) if you use ma
 
 Some of the packages (phangorn, tinytex, and bios2mds) can be directly
 downloadable from R studio “packages” tab. However, **msa package**
-needs to be downloaded using **Bioconductor**. Type “msa r package” in
+needs to be downloaded using **Bioconductor**. Bioconducotr is repository of r libraries centered around biomolecule analysis. Type “msa r package” in
 google and find relevant bioconductor package. Read relevant information
 about how to download msa.
 
@@ -101,13 +101,13 @@ about how to download msa.
 To run any analysis in R one need to make an initial object (i.e., exporting a file from thr hardisk to R)
 
     mysequencefile <- readDNAStringSet("phylogenetics_tree.fasta", format = "fasta") # imports/reads fasta file into object called mysequencefile 
-
+    mysequencefile # look into what is there in this object
 ### 2.2 run multiple alignemnt analysis using `muscle` program
 
 This following step can lot of time, depending on number of sequences
 and length. Here it will go fast.
 
-    alignmuscle  <- msa(mysequencefile,method = "Muscle") # running multiple sequence alignment (msa) analysis
+    alignmuscle  <- msa(mysequencefile,method = "Muscle") # running multiple sequence alignment (msa) analysis using algorithm muscle
 
 The following step is optional. The frame of reference for aligned
 sequences is static (and already defined), so manipulation of these
@@ -125,6 +125,8 @@ will try to mask first 10 bases of alignment.
     colM <- IRanges(start=1, end=10) #select ranges to mask
     colmask(myMaskedAlignment) <- colM #rename object colM
     myMaskedAlignment # view object with masked sequences
+    
+   This masked sequence can be used to make tree from unmasked bases (partial data). Try this alignment file to make a tree.
 
 If you want to see alignments look pretty with different colours for
 different bases as in some GUI based programs. We try one simple script usinf function msaPrettyPrint
@@ -211,7 +213,7 @@ methods.
 
 ### 3.1 Distance based phylogenetic tree construction
 
-First calculate a pairwise distance matrix (like a table, if there are 3 sequences to compare, you comapre distance between seq 1 and 2, seq 1 and 3)
+First calculate a pairwise distance matrix (like a table, if there are 3 sequences to compare, you comapre distance (which is base difference) between seq 1 and 2, seq 1 and 3)
 
     dm <- dist.ml(alignmentfish)  #calculate distance matrix using dist.ml from phangorn
     dm # print matrix in R studio terminal
@@ -221,7 +223,7 @@ Now use object dm to costruct two distance based phylogenetic trees
     treeUPGMA  <- upgma(dm) #calculate upgma/NJ tree using upgma nad nj function from package phangron. 
     treeNJ  <- NJ(dm)
 
-Plot trees using generic function.
+Plot trees using generic function. You can some other options within this function to make tree prettier. 
 
     plot(treeUPGMA, main="UPGMA")
     plot(treeNJ, "unrooted", main="NJ")
@@ -232,11 +234,13 @@ perform bootstrapping.
 ### 3.1a Run bootstrapping
 
 Bootstrapping is a test or metric that uses random sampling with
-replacement and falls under the broader class of resampling methods. It
-uses sampling with replacement to estimate the sampling distribution for
+replacement and falls under the broader class of resampling methods. 
+The bootstrap value is the proportion of replicate phylogenies that 
+recovered a particular clade from the original phylogeny that was 
+built using the original alignment. Ituses sampling with replacement to estimate the sampling distribution for
 the estimator (Ojha et al 2022). Basic idea is building same tree
 leaving out some portion of evidence and check if same clades appear
-even after leaving out some data
+even after leaving out some data. 
 
 First we need to write a function
 
