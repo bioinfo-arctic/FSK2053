@@ -351,7 +351,7 @@ Optionally, You can give model inut to the tree building function. Or let the pr
     rooted_tree <- root(fit_mt$tree, outgroup = "KM224857_Esox_lucius", resolve.root = TRUE,
                            edgelabel = TRUE) # outgroup = look at the fasta header. you need exact name.
                            
-    plotBS(rooted_tree)
+    plotBS(rooted_tree) # plot rooted tree. Note, that we used out group to root the tree, against midpoint in the previous step
     
     add.scale.bar()
    
