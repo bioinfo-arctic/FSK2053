@@ -316,6 +316,8 @@ functions from package àpe\`.
 
     rooted_tree <- root(treeRatchet, outgroup = "KM224857_Esox_lucius", resolve.root = TRUE,
                            edgelabel = TRUE) # outgroup = look at the fasta header. you need exact name.
+    plotBS(rooted_tree) ### plot rooted_tree with plotBS function
+    
     add.scale.bar()
 
 ### 3.3 Maximum Likelihood
@@ -341,9 +343,15 @@ it to tree building algorithm.
     bs <- bootstrap.pml(fit_mt, bs=100, optNni=TRUE, control = pml.control(trace = 0)) #do a standard bootstrapping 
 
     plotBS(midpoint(fit_mt$tree), bs, p = 50, type="p", main="Standard bootstrap") # plot trees with midpoint rooting 
+    
+ Using a out group species from alignment
+ 
+    rooted_tree <- root(fit_mt$tree, outgroup = "KM224857_Esox_lucius", resolve.root = TRUE,
+                           edgelabel = TRUE) # outgroup = look at the fasta header. you need exact name.
+   
+  If you want write tree into a text file (newick format) you need to create an object first (tree_stdbs).
 
-    tree_stdbs <- plotBS(midpoint(fit_mt$tree), bs, p = 50, type="n", main="Standard bootstrap")
-    ##assigning standard bootstrap values to our tree; this is the default method
+     tree_stdbs <- plotBS(midpoint(fit_mt$tree), bs, p = 50, type="n", main="Standard bootstrap") # assigning standard bootstrap values to our tree; this is the default method
 
 #### exporting trees tree with standard bootstrap values in `newick` format.
 
