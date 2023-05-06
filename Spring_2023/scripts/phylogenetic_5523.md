@@ -273,7 +273,7 @@ changes ncecessary to describe the data for a given tree type.
 
 #### Calculate parsimony tree
 
-    treeRatchet  <- pratchet(alignmentfish, trace = 0, minit=100, maxit = 1000) # pratchet is an algorithm to calculate parsimony tree. lower number of iterations (maxit) for the example (to run less than 5 seconds), keep default values (maxit, minit, k) or increase them for real life analyses.
+    treeRatchet  <- pratchet(alignmentfish, trace = 0, minit=100, maxit = 1000) # pratchet is an algorithm to calculate parsimony scores. lower number of iterations (maxit) for the example (to run less than 5 seconds), keep default values (maxit, minit, k) or increase them for real life analyses.
     parsimony(treeRatchet, alignmentfish)
 
     #assign edge length (number of substitutions)
@@ -290,8 +290,8 @@ changes ncecessary to describe the data for a given tree type.
 ##### Root tree with option midpoint, a method to root the tree.
 
 Midpoint rooting method calculates tip to tip distances and then places
-the root point halfway between two longest tips.It assuen rate of
-evolution is constant (equal substitution rates) in the tree. It is an
+the root point halfway between two longest tips.It assumes rate of
+evolution is constant (equal substitution rates throught he branch) in the tree. It is an
 ideal method if you lack a proper outgtoup (absence or lack of
 knowledge), like in virus phylogenomics.
 
@@ -307,8 +307,8 @@ choose close or very distant species as ourgroup. if you want to root a
 tree with specific species (need prior knowledge) then you need to use
 functions from package àpe\`.
 
-    rooted_tree <- root(treeRatchet, outgroup = "Esox lucius", resolve.root = TRUE,
-                           edgelabel = TRUE)
+    rooted_tree <- root(treeRatchet, outgroup = "KM224857_Esox_lucius", resolve.root = TRUE,
+                           edgelabel = TRUE) # outgroup = look at the fasta header. you need exact name.
     add.scale.bar()
 
 ### 3.3 Maximum Likelihood
@@ -325,7 +325,7 @@ or protein models with the AIC, AICc or BIC,
 
 #### make a ml tree
 
-Or let the program to choose best model based on the criteria and pass
+Or let the program to choose best model based on the criteria (without you specifiying anything) and pass
 it to tree building algorithm.
 
     fit_mt <- pml_bb(mt, control = pml.control(trace = 0))
