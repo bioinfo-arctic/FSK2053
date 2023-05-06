@@ -351,7 +351,7 @@ Optionally, You can give model (one you get from fit) input to the tree building
     rooted_tree <- root(fit_mt$tree, outgroup = "KM224857_Esox_lucius", resolve.root = TRUE,
                            edgelabel = TRUE) # outgroup = look at the fasta header. you need exact name.
                            
-    plotBS(rooted_tree, bs) # plot rooted tree. Note, that we used out group to root the tree, against midpoint in the previous step
+    plotBS(rooted_tree, bs) # plot rooted tree with Bootstrapping values. Note, that we used out group to root the tree, against midpoint in the previous step
     
     add.scale.bar() #horizontal bar giving the scale of the branch lengths 
    
