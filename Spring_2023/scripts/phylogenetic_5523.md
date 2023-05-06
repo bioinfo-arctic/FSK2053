@@ -72,6 +72,9 @@ of using R functions to calculate the phylogentic tree is that you dont
 need some other software(s) which are many times OS dependent and hence,
 unpredictable. Also you may need xquartz (https://www.xquartz.org) if you use macOS.
 
+
+The fasta file phyologenetics_tree.fasta contains COI sequences belong to salmonids. It also contains two unknown sequences. Apart from building a phylogenetic tree, we should able to identify those unknowns (most closely related to) which of these salmonids.
+
 ## 1. Install or load R packages
 
 Some of the packages (phangorn, tinytex, and bios2mds) can be directly
