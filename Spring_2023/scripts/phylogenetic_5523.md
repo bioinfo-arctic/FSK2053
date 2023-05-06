@@ -237,14 +237,15 @@ Bootstrapping is a test or metric that uses random sampling with
 replacement and falls under the broader class of resampling methods. 
 The bootstrap value is the proportion of replicate phylogenies that 
 recovered a particular clade from the original phylogeny that was 
-built using the original alignment. Ituses sampling with replacement to estimate the sampling distribution for
-the estimator (Ojha et al 2022). Basic idea is building same tree
-leaving out some portion of evidence and check if same clades appear
-even after leaving out some data. 
+built using the original alignment. Basic idea is building same tree
+leaving out some portion of evidence (few bases are randomly removed from all the sequences at particular position) and check if same clades appear
+even after leaving out some data. It uses sampling with replacement to estimate the sampling distribution for
+the estimator (Ojha et al 2022). 
+example: ![](https://github.com/shri1984/study-images/blob/14bd0e4e8f9226b9e749f08e431f617b94a58159/3-s2.0-B9780128096338202598-f20259-01-9780128114148.jpg)
 
 First we need to write a function
 
-    fun <- function(x) upgma(dist.ml(x)) ## function calculates distance first and then tree is calculated from alignment. function fun performs tree building on the input x using the upgma algorithm after calculating the pairwise distance between elements using dist.ml.
+    fun <- function(x) upgma(dist.ml(x)) ## function calculates distance first and then tree is calculated from distance matrix. function fun performs tree building on the input x (i.e alignemtn) using the upgma algorithm after calculating the pairwise distance between elements using dist.ml.
 
 Then need to calculate boot strap values through bootstrap.phyDat
 function from phangron.
@@ -266,14 +267,14 @@ changes ncecessary to describe the data for a given tree type.
 
 #### Calculate parsimony tree
 
-    treeRatchet  <- pratchet(alignmentfish, trace = 0, minit=100, maxit = 1000) ##lower number of iterations for the example (to run less than 5 seconds), keep default values (maxit, minit, k) or increase them for real life analyses.
+    treeRatchet  <- pratchet(alignmentfish, trace = 0, minit=100, maxit = 1000) # pratchet is an algorithm to calculate parsimony tree. lower number of iterations (maxit) for the example (to run less than 5 seconds), keep default values (maxit, minit, k) or increase them for real life analyses.
     parsimony(treeRatchet, alignmentfish)
 
     #assign edge length (number of substitutions)
     treeRatchet  <- acctran(treeRatchet,alignmentfish) 
 
-    #remove edges of length 0
-    treeRatchet <- di2multi(treeRatchet)
+    #remove edges of length 0 (0 substititutions)
+    treeRatchet <- di2multi(treeRatchet) # deletes all branches smaller than branch length tolerance
 
     #### remove duplicate trees
     if(inherits(treeRatchet, "multiPhylo")){
