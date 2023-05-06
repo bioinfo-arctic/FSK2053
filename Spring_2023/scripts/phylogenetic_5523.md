@@ -241,8 +241,14 @@ built using the original alignment. Basic idea is building same tree
 leaving out some portion of evidence (few bases are randomly removed from all the sequences at particular position) and check if same clades appear
 even after leaving out some data. It uses sampling with replacement to estimate the sampling distribution for
 the estimator (Ojha et al 2022). 
-example: ![](https://github.com/shri1984/study-images/blob/14bd0e4e8f9226b9e749f08e431f617b94a58159/3-s2.0-B9780128096338202598-f20259-01-9780128114148.jpg)
 
+example: 
+![](https://github.com/shri1984/study-images/blob/14bd0e4e8f9226b9e749f08e431f617b94a58159/3-s2.0-B9780128096338202598-f20259-01-9780128114148.jpg)
+ 
+ in the above image different columns are taken for diferent boostrap runs with replacements. Colums are shuffled and tree is calculated. Here 2/3 times A|BC branching.
+ 
+from Mariadossou et al 2019
+ 
 First we need to write a function
 
     fun <- function(x) upgma(dist.ml(x)) ## function calculates distance first and then tree is calculated from distance matrix. function fun performs tree building on the input x (i.e alignemtn) using the upgma algorithm after calculating the pairwise distance between elements using dist.ml.
