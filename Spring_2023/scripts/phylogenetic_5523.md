@@ -333,7 +333,7 @@ or protein models with the AIC, AICc or BIC,
     fit <- as.pml(mt, "BIC") #choose best model based on BIC criteria.
     fit # to see which model fits the observed data
 
-#### make a ml tree
+#### make a maximum likelihood tree
 
 Optionally, You can give model inut to the tree building function. Or let the program to choose best model based on the criteria (without you specifiying anything) and pass it to tree building algorithm (in this case you combine multiple scripts from above in script)
 
