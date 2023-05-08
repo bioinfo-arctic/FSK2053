@@ -85,7 +85,6 @@ They do not anymore. It now depends on what value has been set for.
 
 ```
 default.stringsAsFactors()
-default.stringsAsFactors()
 class(dat$flag_registry)
 class(dat2$flag_registry)
 head(dat2$flag_registry,n=10)
