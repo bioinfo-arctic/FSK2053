@@ -20,7 +20,7 @@ nucleotide polymorphisms reveal a genetic cline across the north‐east
 Atlantic and enable powerful population assignment in the European
 lobster\]. Evolutionary Applications\_ 12, 1881--1899.
 
-The first goal of this study, therefore, was to explore broad and fine scale population structure across the range of European lobster (Homarus gammarus) using a panel of informative SNP markers. 
+The first goal of study (Jenkins et al 2019) was to explore broad and fine scale population structure across the range of European lobster (Homarus gammarus) using a panel of informative SNP markers. 
 
 
 ![](https://raw.githubusercontent.com/shri1984/study-images/main/eva12849-fig-0001.webp?token=GHSAT0AAAAAACCFFFMC5BXZ3TZGLXDMSUI2ZCZ7ECA)
