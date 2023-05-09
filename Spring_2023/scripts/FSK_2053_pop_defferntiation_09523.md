@@ -20,6 +20,9 @@ nucleotide polymorphisms reveal a genetic cline across the north‐east
 Atlantic and enable powerful population assignment in the European
 lobster\]. Evolutionary Applications\_ 12, 1881--1899.
 
+The first goal of this study, therefore, was to explore broad and fine scale population structure across the range of European lobster (Homarus gammarus) using a panel of informative SNP markers. 
+
+
 ![](https://raw.githubusercontent.com/shri1984/study-images/main/eva12849-fig-0001.webp?token=GHSAT0AAAAAACCFFFMC5BXZ3TZGLXDMSUI2ZCZ7ECA)
 
 
@@ -27,7 +30,7 @@ lobster\]. Evolutionary Applications\_ 12, 1881--1899.
 ### Load or install packages
 
 All the packages below can be downloaded from packages tab in R studio.
-However you need to download a bioconductor package called "SNPRelate".
+However, you need to download a bioconductor package called "SNPRelate" which we need for StAMPP package.
 BiocManager::install("SNPRelate")
 
     Library(SNPRelate)
