@@ -1,7 +1,7 @@
 # Bioinformatics Practical 4. Population differentiation
 
 The genotype data for individuals appear in various formats, depending
-on the analysis and software. The standard formats are gene pop (Raymond
+on the analysis and software. The standard formats are genepop (Raymond
 and Rousset), structure (Pritchard et al.), and some specially made CSV
 files (from genotyping machines). Various stand-alone (for Windows, Mac
 and Linux) population genetics analysis tools exist. One limitation of
@@ -19,6 +19,10 @@ Jenkins TL, Ellis CD, Triantafyllidis A, Stevens JR (2019). \[Single
 nucleotide polymorphisms reveal a genetic cline across the north‐east
 Atlantic and enable powerful population assignment in the European
 lobster\]. Evolutionary Applications\_ 12, 1881--1899.
+
+![](https://raw.githubusercontent.com/shri1984/study-images/main/eva12849-fig-0001.webp?token=GHSAT0AAAAAACCFFFMC5BXZ3TZGLXDMSUI2ZCZ7ECA)
+
+
 
 ### Load or install packages
 
