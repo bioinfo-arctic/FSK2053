@@ -93,7 +93,7 @@ about how to download msa.
     # load packages
     library(tinytex)
     library(msa) 
-    library(bios2mds) 
+    library(bios2mds) # you need Xquartz from xquartz.org
     library(phangorn) 
     system.file("tex", "texshade.sty", package="msa") # needed for Latex/Texshade related function to work
     
