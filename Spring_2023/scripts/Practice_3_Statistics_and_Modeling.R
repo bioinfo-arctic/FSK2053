@@ -7,6 +7,9 @@
 # install.packages("FSA")
 # install.packages("FSAdata")
 
+if (!require('devtools')) install.packages('devtools'); require('devtools')
+devtools::install_github('droglenc/FSAmisc')
+
 library(tidyverse)
 library(FSA)
 library(FSAdata)
@@ -22,10 +25,12 @@ dat_green_tidy <- dat_greens %>% pivot_longer(c(set1,set2,set3),names_to = "set"
 dat_green_tidy
 
 # Explore the data (load the library RColorBrewer first):
+
 library("RColorBrewer")
+
 display.brewer.all(colorblindFriendly = TRUE)
 
-dat_green_tidy %>%  ggplot(aes(x=species,y=catch)) +
+dat_green_tidy %>% ggplot(aes(x=species,y=catch)) +
   geom_boxplot(aes(fill=species)) +
   geom_jitter(aes(color=species),width = 0.25, alpha = 0.8) +
   scale_color_brewer(palette="Dark2") +
@@ -54,7 +59,10 @@ dat_green_tidy %>%  ggplot(aes(x=catch)) +
 
 #### NORMALITY TEST
 # They do not look to follow normal distributions. We can check this using the QQ-plot and the Shapiro-Wilk test
+# install.packages("ggpubr")
 library(ggpubr) # This is for function ggqqplot()
+
+
 # Get the data for both species as separate vectors
 catch_coho <- dat_green_tidy %>% filter(species=="Coho.Salmon") %>% pull(catch) 
 catch_dolly <- dat_green_tidy %>% filter(species=="Dolly.Varden") %>% pull(catch)
@@ -66,8 +74,8 @@ shapiro.test(catch_dolly)
 # So there are significant differences between the normal distribution and the experimental values.
 
 ##### HOMOSCEDASTICITY TEST
-bartlett.test(dat_green_tidy$catch,dat_green_tidy$species)
 library(car)
+bartlett.test(dat_green_tidy$catch,dat_green_tidy$species)
 leveneTest(catch ~ species, data = dat_green_tidy)
 # The variances are not homogeneous either
 
@@ -104,6 +112,7 @@ shapiro.test(residuals_coho)
 ggqqplot(residuals_coho)
 # Check for homoscedasticity:
 leveneTest(catch ~ set, data = dat_coho)
+leveneTest(catch ~ as.factor(set), data = dat_coho) # having set as a factor won't give a warning
 bartlett.test(dat_coho$catch,dat_coho$set)
 # So, the ANOVA assumptions are not met (residuals are not normal and variances are not homogeneous)
 
@@ -114,6 +123,8 @@ kruskal.test(catch ~ set, data = dat_coho)
 # When an ANOVA or Kruskal-Wallis test is significant, we have to perform pairwise post-hoc tests
 # For Kruskal-Wallis test, the suitable non-parametric is the pairwise Mann-Whitney-Wilcoxon test:
 pairwise.wilcox.test(dat_coho$catch, dat_coho$set)
+
+pairwise.t.test(dat_coho$catch, dat_coho$set)
 # We see that the only significant difference is Set 1 from Set 3.
 
 # The same test for the Dolly Varden charr is as follows:
@@ -124,6 +135,7 @@ plot(anova_test_dolly)
 residuals_dolly <- anova_test_dolly$residuals
 ggplot(as_tibble(residuals_dolly),aes(residuals_dolly)) + geom_histogram()
 shapiro.test(residuals_dolly)
+
 ggqqplot(residuals_dolly)
 # Check for homoscedasticity:
 # leveneTest(catch ~ set, data = dat_dolly)
@@ -163,9 +175,19 @@ grid.arrange(plot1,plot2,plot3,plot4,ncol=2,nrow=2)
 
 # We can get a matrix of correlation plots for all numerical variables in the dataset
 # Using function ggpairs() from package GGally
+install.packages("GGally")
 library(GGally)
-dat_halibut %>% select_if(is.numeric) %>%
+
+dat_halibut %>% 
+  select_if(is.numeric) %>%
   ggpairs()
+
+#! scale of geom_density and diagonal graph of GGpairs() function
+# dat_halibut %>% ggplot(aes(x=year)) +
+#   geom_density()
+# 
+# dat_halibut %>% ggplot(aes(x=year)) +
+#   geom_histogram()
 
 # Let's explore the relationship between landings and mortality:
 dat_halibut %>% ggplot(aes(x=land,y=fmort)) +
@@ -177,12 +199,12 @@ dat_halibut %>% ggplot(aes(x=land,y=fmort)) +
   geom_smooth(method="lm")
 
 # Perform the correlation test
-cor.test(dat_halibut$land,dat_halibut$fmort)
+cor.test(dat_halibut$land, dat_halibut$fmort, method="pearson")
 # Apparently, the correlation is significant:
 # Pearson's r = 0.4583; p = 0.001196
 # However, let's check the equivalent non-parametric test
 # Non-parametric Spearman's rho correlation coeeficient:
-cor.test(dat_halibut$land,dat_halibut$fmort,method="spearman")
+cor.test(dat_halibut$land, dat_halibut$fmort, method="spearman")
 # Now, the correlation is non-significant: p = 0.137
 # By the scatter plot, we can appreciate that the data are probably heteroscedastic (variances are not homogeneous)
 
@@ -236,14 +258,28 @@ summary(model_ruff)
 anova(model_ruff)
 plot(model_ruff)
 
-cor.test(data_ruffe$Lg_weight, data_ruffe$Lg_length)
-cor.test(data_ruffe$Lg_weight, data_ruffe$Lg_length,method="spearman")
+cor.test(data_ruffe$Lg_weight, data_ruffe$Lg_length, method = "pearson")
+cor.test(data_ruffe$Lg_weight, data_ruffe$Lg_length,method = "spearman")
 
 residuals_ruff <- model_ruff$residuals
 ggplot(as_tibble(residuals_ruff),aes(residuals_ruff)) + geom_histogram()
 shapiro.test(residuals_ruff)
 ggqqplot(residuals_ruff)
-fitPlot(model_ruff) # This function belongs to package FSA
+
+FSAmisc::fitPlot(model_ruff)
+
+# Solution for using fitPlot() from package FSAmisc 
+# Found at : https://derekogle.com/fishR/2021-05-25-fitPlot-replacement
+# pd <- position_dodge(width=0.1)
+# data_ruffe %>% ggplot(aes(x=Lg_length,y=Lg_weight)) +
+#   stat_summary(fun.data=mean_cl_normal,geom="errorbar",width=0.2,position=pd) + 
+#   stat_summary(fun=mean,geom="line",aes(group=maturity),position=pd) +  
+#   stat_summary(fun=mean,geom="point",position=pd)
+# 
+# data_ruffe %>% ggplot(aes(x=Lg_length,y=Lg_weight)) +
+#   stat_summary(fun.data=mean_cl_normal,geom="errorbar",width=0.2,position=pd) + 
+#   stat_summary(fun=mean,geom="point",position=pd)
+
 # Even though the data points fit in a straight line, the residuals do not follow a normal distribution.
 
 # We can get a similar plot with ggplot
@@ -282,19 +318,33 @@ data_ruffe %>% ggplot(aes(x=Lg_length,y=Lg_weight)) +
 #################################################################
 ### Generalized linear models
 #################################################################
+#! Reading resources
+#! https://timnewbold.github.io/teaching_resources/GLMs.html
+#! https://timnewbold.github.io/teaching.html
+#! https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003531
+#! Add to canvas
+#!  Multivariate data analyses
+#! 
+
+
+#! Refresh on anova outputs + INteractions interpretations
+#! http://campus.murraystate.edu/academic/faculty/cmecklin/STA265/_book/anova-with-interaction.html#:~:text=In%20ANOVA%2C%20an%20interaction%20is,all%20levels%20of%20another%20factor.
 # The catches from Greens Creek Mine are actually counts (positive integer values)
-# Counts  usually follow a Poisson distribution.
+# Counts usually follow a Poisson distribution.
 # Linear models can be generalized to use residual distributions different from the normal, but, for example, Poisson distribution
 # Residues can be modelled as Poisson for both regressions and anovas (numerical or categorical variables)
 # You can use this line to perform a simple Poisson GLM 
 # glm(y ~ x, family = poisson) 
 # Now we will use glm to model our data on GreensCreekMine
 model_greens <- glm(catch ~ species + set, data=dat_green_tidy, family= poisson)
+# model_greens <- glm(catch ~ species + set, data=dat_green_tidy)
+# model_greens <- lm(catch ~ species + set, data=dat_green_tidy)
 plot(model_greens)
 summary(model_greens)
-anova(model_greens)
+# anova(model_greens)
+anova(model_greens, test="chi")
 
-# Remember the plot
+# Remember the plot?
 dat_green_tidy %>%  
   ggplot(aes(x=set,y=catch)) +
   geom_boxplot(aes(fill=species)) +
@@ -310,6 +360,10 @@ model_greens_interac <- glm(catch ~ species * set, data=dat_green_tidy, family= 
 plot(model_greens_interac)
 summary(model_greens_interac)
 anova(model_greens_interac)
+
+anova(model_greens, model_greens_interac)
+model_green_simpler <- lm(catch ~ set, data = dat_green_tidy)
+anova(model_greens, model_green_simpler)
 
 # Actually, since the interaction is significant, we should produce two different models (separated for each species)
 
@@ -331,7 +385,7 @@ summary(model_greens_coho_null)
 
 # To compare both models, we can use anova()
 anova(model_greens_coho_null,model_greens_coho,test = "Chisq")
-
+# anova(model_greens_coho, test = "Chi")
 # The same for Dolly Varden charr
 
 model_greens_dolly <- glm(catch ~ set, data=dat_dolly, family= poisson)
@@ -366,6 +420,13 @@ data_ruffe %>% ggplot(aes(x=length,y=known_sex)) +
 binom_glm <- glm(known_sex ~ length, data=data_ruffe,family=binomial)
 summary(binom_glm)
 fitPlot(binom_glm)
+
+# pd <- position_dodge(width=0.1)
+# data_ruffe %>% ggplot(aes(x=length,y=known_sex)) +
+#   stat_summary(fun.data=mean_cl_normal,geom="errorbar",width=0.2,position=pd) +
+#   stat_summary(fun=mean,geom="line",aes(group=length),position=pd) +
+#   stat_summary(fun=mean,geom="point",position=pd)
+
 
 # if we want to know the inflection point of the model, 
 # we can just divide the negative intercept estimate by the slope estimate. 
