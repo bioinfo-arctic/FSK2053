@@ -1,5 +1,5 @@
 ###############################################################################################################
-### In this hands-on session we will show see examples of basic hypothesis testing for different types of variables
+### In this hands-on session we will see examples of basic hypothesis testing for different types of variables
 ### and we will see how to perform simple linear models in R
 ###############################################################################################################
 
