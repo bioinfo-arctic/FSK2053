@@ -13,7 +13,7 @@ The `Mobaxterm` interface:
 The `Linux terminal` accessible from the start local terminal button:
 ![Linux terminal](https://raw.githubusercontent.com/bioinfo-arctic/FSK2053/main/Spring_2024/images/mobaxterm_terminal_picture.png)
 
-#### Alternative display:
+#### Navigating directories:
 ```bash
 # To begin, let's learn how to navigate the file system.
 # Display the current directory using 'pwd' (print working directory).
@@ -27,4 +27,52 @@ cd ~/fish_population_data
 
 # List files with details using 'ls -l'.
 ls -l
+```
+
+#### Viewing file contents:
+```
+# To view the contents of a file named 'salmon_data.txt', use 'cat'.
+cat salmon_data.txt
+
+# For a large file, it's better to use 'less' for a scrollable view.
+less tuna_data.csv
+
+# You can sort a list of fish species in a file alphabetically.
+sort fish_species_list.txt
+```
+
+#### Creating Directories and Files
+```
+# Create a new directory for shellfish studies.
+mkdir shellfish_studies
+
+# Inside this directory, create an empty file for your oyster measurements.
+cd shellfish_studies
+touch oyster_measurements.txt
+```
+
+#### Editing Files
+```
+
+```
+
+#### Using Wildcards
+
+```
+```
+
+#### Redirecting Output
+```
+```
+
+#### Piping Commands
+```
+```
+
+#### 
+```
+```
+
+#### 
+```
 ```
