@@ -13,23 +13,6 @@ The `Mobaxterm` interface:
 The `Linux terminal` accessible from the start local terminal button:
 ![Linux terminal](https://raw.githubusercontent.com/bioinfo-arctic/FSK2053/main/Spring_2024/images/mobaxterm_terminal_picture.png)
 
- To begin, let's learn how to navigate the file system.
- Display the current directory using 'pwd' (print working directory).
-```
-pwd
-```
-Now, let's list all files and directories in the current location.
-```
-ls
-```
-To change to a directory where you might store fish population data, use the command `cd`.
-```
-cd ~/fish_population_data
-```
-List files with details using `ls -l`
-```
-ls -l
-```
 #### Alternative display:
 ```bash
 # To begin, let's learn how to navigate the file system.
