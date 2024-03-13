@@ -1,20 +1,21 @@
 
-
 ## Data import and reshaping data
 ### Importing Spreadsheets
 
 #### Here we introduce the `tidyverse` packages `readr` and `readxl`, which facilitate importing data from several formats of spreadsheet files.
+One of the initial strugles in R is how to allow R to access your data, so you can manipulate it. 
+It is the same idea as opening a file in a program like *Word* or *Excel*. The difference here is that in R, you need a command for opening or loading your data.
 
-Then we will use package `tidyr` to produce tidy datasets from messy input tables
 ```
 library(tidyverse)
 ```
 
 ### Paths and the Working Directory
+One simple way to handle datasets 
 ```
 getwd()
-dir.create("Datasets-1")
-setwd("Datasets-1/")
+dir.create("Datasets")
+setwd("Datasets/")
 getwd()
 path <- "~/Downloads/Datasets"
 list.files(path)
@@ -79,20 +80,6 @@ class(dat2)
 str(dat2)
 ```
 
-#### Some differences with previous R versions:
-In older R versions, columns of characters were converted to factors by default.  
-They do not anymore. It now depends on what value has been set for. 
-
-```
-default.stringsAsFactors()
-class(dat$flag_registry)
-class(dat2$flag_registry)
-head(dat2$flag_registry,n=10)
-dat2 <- read.csv(filename,stringsAsFactors = T)
-class(dat2$flag_registry)
-head(dat2$flag_registry,n=10)
-```
-
 #### Downloading files
 Another common place for data to reside is on the internet. 
 We can download these files and then import them or even read them directly from the web.  
@@ -100,7 +87,8 @@ For example, we are going to download the file GFW-fishing-vessels-v2.csv from o
 
 The file has the following url:
 ```
-url <- "https://raw.githubusercontent.com/DataScienceFishAquac/FSK2053-2021/main/datasets/GFW-fishing-vessels-v2.csv"
+url <- "https://raw.githubusercontent.com/bioinfo-arctic/FSK2053/main/Spring_2024/data/GFW-fishing-vessels-v2.csv"
+
 ```
 
 The `read_csv()` function can read these files directly:
