@@ -4,25 +4,50 @@
 
 #### Here we introduce the `tidyverse` packages `readr` and `readxl`, which facilitate importing data from several formats of spreadsheet files.
 One of the initial strugles in R is how to allow R to access your data, so you can manipulate it. 
-It is the same idea as opening a file in a program like *Word* or *Excel*. The difference here is that in R, you need a command for opening or loading your data.
+It is the same idea as opening a file in a program like *Word* or *Excel*. The difference here is that in R you need a command for opening or loading your data.
 
 ```
 library(tidyverse)
 ```
 
 ### Paths and the Working Directory
-One simple way to handle datasets 
+One simple way to handle datasets is to set your *working directory* to the same folder as the data.
+In our case, we can set it to the **Documents** folder. As usually it is an easy to find folder.
+It is not a good practice, but for now, it will be a soft start. 
+In the future we will create a folder with the purpose of storing all the information necessary to process our data.
+
 ```
+# This command will tell you what is your current working directory
 getwd()
+# If it is not the "Documents" folder, you will need to find the address of your **Documents** folder and add it to the command setwd(dir = "path_of_your_Documents_folder")
+
+# Check if you correcly entered the folder
+getwd()
+
+# Create a variable that stores your working directory address
+path <- getwd()
+# For me this would be the same as
+path <- "C:/Users/dmo042/OneDrive - UiT Office 365/Documents"
+
+# This next command creates a folder:
 dir.create("Datasets")
+
+# And with this command you can enter the folder you just created:
 setwd("Datasets/")
-getwd()
-path <- "~/Downloads/Datasets"
+
+# Check what are the files in your working directory
 list.files(path)
+
+# Add the name of the file we will use to an object
 filename <- "GFW-fishing-vessels-v2.csv"
+
+# Store the full path of our file
 fullpath <- file.path(path, filename)
 fullpath
+
+# Copy files between folders
 file.copy(fullpath, getwd())
+
 list.files(getwd())
 list.files()
 ```
