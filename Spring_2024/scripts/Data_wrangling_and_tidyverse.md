@@ -19,7 +19,7 @@ In the future we will create a folder with the purpose of storing all the inform
 ```
 # This command will tell you what is your current working directory
 getwd()
-# If it is not the "Documents" folder, you will need to find the address of your **Documents** folder and add it to the command setwd(dir = "path_of_your_Documents_folder")
+# If it is not the "Documents" folder, you will need to find the address of your "Documents" folder and add it to the command setwd(dir = "path_of_your_Documents_folder")
 
 # Check if you correcly entered the folder
 getwd()
