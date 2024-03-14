@@ -1,6 +1,6 @@
 
 # Practical Introduction to Linux
-### In this class you will learn how to use the basic commands in a Linux terminal and how to create a organize your own scripts.
+### In this class you will learn how to use the basic commands in a Linux terminal and how to create and organize your own scripts.
 
 The interface to access the Linux commands and manipulate files and directories programmatically is the `bash` programming language and the `terminal`.
 
