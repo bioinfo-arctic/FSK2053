@@ -2,7 +2,7 @@
 
 Load the dataset from the _Github_ repository and we will tidy it following the instructions from Lecture 2
 ```
-url <- "https://raw.githubusercontent.com/DataScienceFishAquac/FSK2053-2021/main/datasets/GFW-fishing-vessels-v2.csv"
+url <- "https://raw.githubusercontent.com/bioinfo-arctic/FSK2053/main/Spring_2024/data/GFW-fishing-vessels-v2.csv"
 dat_vessels <- read_csv(url)
 ```
 
@@ -39,7 +39,7 @@ summary_vessels
 On the other hand, we have the summary table of tuna catches from Session 2.2
 
 ```
-url <- "https://raw.githubusercontent.com/DataScienceFishAquac/FSK2053-2021/main/datasets/global_tuna_catches_stock_2000-2010.csv"
+url <- "https://raw.githubusercontent.com/bioinfo-arctic/FSK2053/main/Spring_2024/data/global_tuna_catches_stock_2000-2010.csv"
 dat <- read_csv(url)
 data_tuna <- dat %>% 
 	select(!starts_with("S_20")) %>%
