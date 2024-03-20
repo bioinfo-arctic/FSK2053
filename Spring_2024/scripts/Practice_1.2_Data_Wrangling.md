@@ -10,7 +10,7 @@ The functions are: select(), filter(), arrange(), mutate(), summarise(), and gro
 library(tidyverse)
 #### Import the global tuna catches dataset from Github
 
-url <- "https://raw.githubusercontent.com/DataScienceFishAquac/FSK2053-2021/main/datasets/global_tuna_catches_stock_2000-2010.csv"
+url <- "https://raw.githubusercontent.com/bioinfo-arctic/FSK2053/main/Spring_2024/data/global_tuna_catches_stock_2000-2010.csv"
 dat <- read_csv(url)
 dat
 ```
