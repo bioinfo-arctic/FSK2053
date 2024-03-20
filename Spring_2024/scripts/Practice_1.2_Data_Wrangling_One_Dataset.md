@@ -17,7 +17,7 @@ dat
 ---
 ### The function `select()`
 `select()` allows to select columns of a _tibble_ based on their names or based on their position/order.
-The global tuna catches dataset was downloaded from the FAO website. http://www.fao.org/fishery/statistics/tuna-catches/query/en.
+The global tuna catches dataset was downloaded from the FAO website. https://www.fao.org/fishery/en/collection/tuna_nomcatch?lang=en.
 These data table are not optimal in several ways.
 1) First, there are some columns that are completely empty.
    - We are going to use the `select()` function to  keep only those columns that contain data values. 
