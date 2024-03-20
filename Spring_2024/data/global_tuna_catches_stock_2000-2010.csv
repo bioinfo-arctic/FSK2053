@@ -1,0 +1,331 @@
+Stock,Country,Gear Type,2000,S_2000,2001,S_2001,2002,S_2002,2003,S_2003,2004,S_2004,2005,S_2005,2006,S_2006,2007,S_2007,2008,S_2008,2009,S_2009,2010,S_2010
+Albacore tuna Global,Argentina,Gear not known,0,-,0,-,0,-,12,,18,,0,-,0,-,0,-,0,-,0,-,0,-
+Albacore tuna Global,Australia,Gear not known,50,,50,,50,,50,,51,,50,,50,,50,,0,-,0,-,0,-
+Albacore tuna Global,Australia,Longlines (nei),408,,727,,621,,599,,694,,750,,2602,,1937,,1287,,1543,,764,
+Albacore tuna Global,Australia,Mechanized lines and pole-and-lines,0,-,7,,0,-,0,-,0,-,4,,0,-,0,-,0,-,0,-,0,-
+Albacore tuna Global,Australia,Trolling lines,1,,3,,6,,4,,7,,5,,1,,0,-,0,-,0,-,0,-
+Albacore tuna Global,Brazil,Gear not known,0,-,0,-,0,-,0,-,2,,0,-,8,,20,,97,,34,,30,
+Albacore tuna Global,Brazil,Longlines (nei),3763,,6240,,2863,,1846,,284,,359,,267,,221,,235,,149,,207,
+Albacore tuna Global,Brazil,Mechanized lines and pole-and-lines,627,,619,,363,,803,,235,,197,,85,,293,,156,,18,,34,
+Albacore tuna Global,Brazil,Purse seines,26,,4,,0,-,0,-,0,-,0,-,0,-,0,-,0,-,1,,0,-
+Albacore tuna Global,Cabo Verde,Purse seines,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,5,,0,-
+Albacore tuna Global,Canada,Gear not known,19,,9,,14,,24,,4,,12,,15,,5,,11,,2,,0,-
+Albacore tuna Global,Canada,Longlines (nei),103,,42,,99,,32,,23,,40,,12,,20,,22,,8,,14,
+Albacore tuna Global,Canada,Trolling lines,4816,,5191,,5166,,6735,,7905,,4882,,5954,,6157,,5478,,5724,,6505,
+Albacore tuna Global,China,Longlines (nei),2163,,4394,,4513,,8178,,6899,,5256,,7562,,5740,,15438,,21030,,18868,
+Albacore tuna Global,France,Gear not known,5749,,6065,,4352,,3412,,2312,,7037,,6218,,2971,,2894,,1120,,1286,
+Albacore tuna Global,France,Longlines (nei),506,,641,,324,,398,,535,,964,,786,,984,,670,,573,,433,
+Albacore tuna Global,France,Mechanized lines and pole-and-lines,43,,5,,13,,0,-,11,,0,-,70,,15,,6,,0,-,0,-
+Albacore tuna Global,France,Purse seines,373,,685,,377,,671,,100,,601,,1223,,347,,1030,,355,,177,
+Albacore tuna Global,France,Trolling lines,0,-,0,-,0,-,9,,14,,9,,0,-,4,,0,-,1,,0,-
+Albacore tuna Global,India,Longlines (nei),0,-,0,-,0,-,0,-,151,,151,,155,,226,,109,,163,,197,
+Albacore tuna Global,Indonesia,Gear not known,0,-,0,-,0,-,0,-,0,-,20,,260,,314,,743,,1163,,1163,
+Albacore tuna Global,Indonesia,Longlines (nei),2659,,3240,,2790,,5870,,12644,,11575,,7792,,13434,,17135,,14111,,10670,
+Albacore tuna Global,Italy,Gear not known,918,,381,,401,,3126,,2116,,1059,,0,-,1220,,5,,1780,,0,-
+Albacore tuna Global,Italy,Longlines (nei),2712,,2445,,3631,,3786,,1555,,1190,,1995,,2739,,2083,,919,,1110,
+Albacore tuna Global,Italy,Purse seines,0,-,0,-,0,-,0,-,0,-,0,-,2589,,58,,15,,25,,0,-
+Albacore tuna Global,Japan,Gear not known,289,,230,,526,,280,,145,,485,,318,,300,,1647,,224,,224,
+Albacore tuna Global,Japan,Longlines (nei),36796,,38184,,33157,,28552,,27981,,32665,,33651,,33200,,28847,,31027,,32144,
+Albacore tuna Global,Japan,Mechanized lines and pole-and-lines,21572,,29448,,48465,,36121,,32359,,16150,,15406,,37768,,19060,,31263,,21757,
+Albacore tuna Global,Japan,Purse seines,2408,,974,,3303,,627,,7200,,850,,364,,5682,,826,,2088,,320,
+Albacore tuna Global,Japan,Trolling lines,645,,416,,787,,922,,772,,665,,460,,519,,549,,410,,410,
+Albacore tuna Global,"Korea, Republic of",Longlines (nei),1137,,2223,,3898,,3087,,2154,,5075,,1779,,1837,,2304,,2597,,2798,
+Albacore tuna Global,Madagascar,Longlines (nei),0,-,0,-,9,,9,,0,-,76,,26,,33,,25,,24,,71,
+Albacore tuna Global,Mexico,Gear not known,428,,18,,0,-,29,,107,,107,,107,,107,,107,,107,,107,
+Albacore tuna Global,Morocco,Gear not known,0,-,0,-,55,,81,,120,,0,-,0,-,0,-,0,-,0,-,0,-
+Albacore tuna Global,Morocco,Longlines (nei),0,-,0,-,0,-,0,-,0,-,178,,98,,96,,99,,250,,0,-
+Albacore tuna Global,New Zealand,Gear not known,0,-,2,,1,,1,,1,,1,,0,-,0,-,0,-,0,-,0,-
+Albacore tuna Global,New Zealand,Longlines (nei),1344,,2614,,2545,,2971,,1248,,602,,496,,357,,382,,422,,456,
+Albacore tuna Global,New Zealand,Mechanized lines and pole-and-lines,72,,4,,0,-,0,-,0,-,2,,3,,0,-,0,-,0,-,0,-
+Albacore tuna Global,New Zealand,Trolling lines,3336,,2736,,3012,,3721,,3212,,2855,,2043,,1736,,3352,,1794,,1834,
+Albacore tuna Global,Philippines,Longlines (nei),100,,68,,0,-,0,-,1,,72,,0,-,173,,247,,170,,176,
+Albacore tuna Global,Portugal,Gear not known,2,,0,-,0,-,1,,2,,0,-,0,-,0,-,6,,0,-,10,
+Albacore tuna Global,Portugal,Longlines (nei),22,,1,,9,,37,,287,,206,,115,,146,,141,,308,,114,
+Albacore tuna Global,Portugal,Mechanized lines and pole-and-lines,741,,1177,,2347,,930,,234,,392,,21,,81,,517,,54,,179,
+Albacore tuna Global,Portugal,Trolling lines,0,-,38,,31,,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-
+Albacore tuna Global,Senegal,Longlines (nei),0,-,0,-,0,-,0,-,0,-,0,-,67,,0,-,0,-,0,-,0,-
+Albacore tuna Global,South Africa,Gear not known,60,,386,,325,,82,,298,,288,,324,,1696,,1033,,101,,94,
+Albacore tuna Global,South Africa,Longlines (nei),105,,158,,211,,133,,61,,59,,109,,92,,135,,149,,101,
+Albacore tuna Global,South Africa,Mechanized lines and pole-and-lines,3463,,6715,,6057,,3323,,4153,,2856,,3365,,2024,,2334,,4822,,3975,
+Albacore tuna Global,Spain,Gear not known,13,,12,,26,,0,-,29,,40,,60,,94,,31,,0,-,0,-
+Albacore tuna Global,Spain,Longlines (nei),669,,849,,1371,,250,,272,,1447,,1361,,1921,,1489,,1929,,1127,
+Albacore tuna Global,Spain,Mechanized lines and pole-and-lines,10862,,5006,,4741,,7324,,7893,,10067,,14181,,8376,,7403,,4939,,5840,
+Albacore tuna Global,Spain,Purse seines,417,,341,,223,,713,,76,,72,,447,,246,,324,,116,,158,
+Albacore tuna Global,Spain,Trolling lines,5013,,4245,,4093,,5193,,7477,,10165,,10277,,6089,,5233,,4437,,7009,
+Albacore tuna Global,Taiwan Province of China,Longlines (nei),61358,,64896,,64348,,57471,,48312,,39335,,38957,,44118,,37289,,39279,,47179,
+Albacore tuna Global,United Kingdom,Gear not known,14,,0,-,0,-,0,-,0,-,5,,8,,21,,50,,65,,96,
+Albacore tuna Global,United Kingdom,Longlines (nei),0,-,0,-,0,-,0,-,0,-,3,,16,,22,,10,,11,,26,
+Albacore tuna Global,United States of America,Gear not known,2116,,1858,,2721,,2584,,2050,,2117,,645,,753,,475,,379,,502,
+Albacore tuna Global,United States of America,Longlines (nei),1715,,4720,,6630,,4563,,2939,,3341,,4452,,5559,,4029,,4244,,4530,
+Albacore tuna Global,United States of America,Mechanized lines and pole-and-lines,69,,139,,378,,59,,125,,66,,23,,21,,6,,2218,,6,
+Albacore tuna Global,United States of America,Purse seines,4,,51,,3,,3,,1,,2,,0,-,0,-,0,-,0,-,0,-
+Albacore tuna Global,United States of America,Trolling lines,12078,,13317,,11724,,15676,,14392,,8902,,13109,,12159,,10840,,10812,,10437,
+Albacore tuna Global,Viet Nam,Longlines (nei),0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,4,
+Atlantic bluefin tuna Global,Algeria,Gear not known,852,,986,,602,,1586,,288,,195,,100,,107,,888,,0,-,0,-
+Atlantic bluefin tuna Global,Algeria,Longlines (nei),700,,109,,186,,0,-,167,,712,,88,,754,,339,,0,-,0,-
+Atlantic bluefin tuna Global,Algeria,Purse seines,778,,917,,922,,0,-,753,,623,,850,,650,,84,,0,-,0,-
+Atlantic bluefin tuna Global,Canada,Gear not known,548,,517,,588,,543,,509,,563,,687,,433,,546,,468,,440,
+Atlantic bluefin tuna Global,Canada,Longlines (nei),47,,20,,53,,28,,43,,36,,48,,58,,30,,65,,90,
+Atlantic bluefin tuna Global,China,Longlines (nei),80,,68,,39,,19,,41,,24,,42,,72,,119,,42,,38,
+Atlantic bluefin tuna Global,France,Gear not known,465,,572,,627,,828,,421,,1127,,1146,,1115,,319,,464,,353,
+Atlantic bluefin tuna Global,France,Longlines (nei),0,-,0,-,0,-,0,-,2,,0,-,95,,1,,0,-,9,,0,-
+Atlantic bluefin tuna Global,France,Mechanized lines and pole-and-lines,91,,105,,150,,130,,47,,0,-,50,,128,,67,,62,,83,
+Atlantic bluefin tuna Global,France,Purse seines,6780,,6119,,5810,,5549,,6562,,8328,,7591,,9543,,2536,,2918,,1546,
+Atlantic bluefin tuna Global,Italy,Gear not known,756,,863,,987,,621,,599,,529,,402,,93,,166,,202,,531,
+Atlantic bluefin tuna Global,Italy,Longlines (nei),287,,260,,395,,354,,261,,309,,285,,217,,216,,193,,521,
+Atlantic bluefin tuna Global,Italy,Purse seines,2801,,3256,,3246,,3742,,3637,,3960,,4006,,4311,,1854,,2339,,0,-
+Atlantic bluefin tuna Global,Japan,Longlines (nei),3523,,3083,,3501,,3068,,3123,,3241,,2828,,2355,,2923,,2084,,1508,
+Atlantic bluefin tuna Global,"Korea, Republic of",Longlines (nei),6,,0,-,0,-,0,-,3,,1,,79,,0,-,0,-,0,-,0,-
+Atlantic bluefin tuna Global,"Korea, Republic of",Purse seines,0,-,0,-,0,-,0,-,700,,1145,,0,-,276,,335,,102,,0,-
+Atlantic bluefin tuna Global,Libya,Gear not known,44,,74,,107,,71,,34,,42,,0,-,0,-,0,-,0,-,0,-
+Atlantic bluefin tuna Global,Libya,Longlines (nei),1002,,1867,,331,,170,,393,,318,,187,,158,,51,,34,,0,-
+Atlantic bluefin tuna Global,Libya,Purse seines,502,,0,-,200,,512,,872,,730,,1140,,1200,,1267,,1047,,645,
+Atlantic bluefin tuna Global,Mexico,Longlines (nei),29,,10,,12,,22,,9,,10,,14,,7,,7,,10,,14,
+Atlantic bluefin tuna Global,Morocco,Gear not known,2263,,2858,,2102,,1895,,1695,,1598,,1931,,2436,,1950,,1911,,1348,
+Atlantic bluefin tuna Global,Morocco,Longlines (nei),0,-,0,-,0,-,2,,8,,16,,273,,108,,528,,0,-,107,
+Atlantic bluefin tuna Global,Morocco,Purse seines,660,,150,,884,,660,,1077,,883,,182,,515,,0,-,367,,98,
+Atlantic bluefin tuna Global,Portugal,Gear not known,41,,18,,20,,27,,18,,9,,25,,23,,24,,47,,57,
+Atlantic bluefin tuna Global,Portugal,Longlines (nei),459,,447,,160,,35,,1,,61,,83,,5,,12,,5,,0,-
+Atlantic bluefin tuna Global,Portugal,Mechanized lines and pole-and-lines,2,,2,,7,,1,,8,,6,,0,-,1,,0,-,0,-,0,-
+Atlantic bluefin tuna Global,Portugal,Purse seines,0,-,0,-,0,-,0,-,0,-,0,-,1,,0,-,0,-,0,-,1,
+Atlantic bluefin tuna Global,Spain,Gear not known,2153,,1448,,1690,,894,,979,,918,,832,,1378,,1215,,1223,,921,
+Atlantic bluefin tuna Global,Spain,Longlines (nei),495,,648,,436,,584,,532,,487,,687,,759,,815,,590,,240,
+Atlantic bluefin tuna Global,Spain,Mechanized lines and pole-and-lines,1728,,2168,,2411,,1248,,1753,,2017,,1065,,1903,,1728,,1197,,641,
+Atlantic bluefin tuna Global,Spain,Purse seines,1676,,1453,,1686,,1886,,1778,,2242,,2013,,1649,,1645,,1167,,804,
+Atlantic bluefin tuna Global,Spain,Trolling lines,192,,151,,80,,39,,112,,195,,125,,0,-,1,,0,-,0,-
+Atlantic bluefin tuna Global,Taiwan Province of China,Longlines (nei),313,,633,,666,,445,,51,,277,,9,,0,-,0,-,0,-,0,-
+Atlantic bluefin tuna Global,United Kingdom,Gear not known,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,1,,0,-
+Atlantic bluefin tuna Global,United States of America,Gear not known,871,,1355,,1582,,1079,,758,,458,,406,,657,,689,,926,,714,
+Atlantic bluefin tuna Global,United States of America,Longlines (nei),242,,130,,224,,299,,275,,212,,206,,173,,233,,334,,213,
+Atlantic bluefin tuna Global,United States of America,Purse seines,275,,196,,208,,265,,32,,178,,4,,28,,0,-,11,,0,-
+Bigeye tuna Global,Australia,Gear not known,0,-,0,-,0,-,12,,23,,3,,8,,21,,0,-,0,-,0,-
+Bigeye tuna Global,Australia,Longlines (nei),1202,,1693,,1421,,1230,,983,,822,,558,,1077,,1054,,788,,523,
+Bigeye tuna Global,Brazil,Gear not known,0,-,0,-,0,-,0,-,74,,1,,7,,17,,14,,88,,6,
+Bigeye tuna Global,Brazil,Longlines (nei),2761,,2534,,2583,,2375,,1377,,1014,,1423,,928,,785,,1009,,1049,
+Bigeye tuna Global,Brazil,Mechanized lines and pole-and-lines,6,,126,,0,-,81,,42,,56,,48,,650,,159,,93,,97,
+Bigeye tuna Global,Brazil,Purse seines,0,-,0,-,0,-,0,-,0,-,10,,0,-,0,-,0,-,0,-,0,-
+Bigeye tuna Global,Cabo Verde,Gear not known,2,,0,-,1,,1,,1,,0,-,1,,0,-,1,,3,,0,-
+Bigeye tuna Global,Cabo Verde,Purse seines,0,-,0,-,0,-,0,-,0,-,1092,,1436,,1147,,1068,,824,,1163,
+Bigeye tuna Global,Canada,Gear not known,41,,21,,14,,21,,8,,18,,25,,6,,24,,5,,6,
+Bigeye tuna Global,Canada,Longlines (nei),285,,220,,265,,161,,135,,169,,172,,137,,107,,107,,97,
+Bigeye tuna Global,China,Longlines (nei),11243,,15071,,18557,,31489,,26837,,23570,,26402,,24711,,21790,,21681,,20032,
+Bigeye tuna Global,France,Gear not known,20,,6,,48,,5,,6,,310,,14,,243,,0,-,0,-,0,-
+Bigeye tuna Global,France,Longlines (nei),162,,74,,51,,66,,127,,631,,561,,712,,503,,351,,320,
+Bigeye tuna Global,France,Mechanized lines and pole-and-lines,1921,,1593,,786,,758,,587,,597,,571,,1130,,141,,269,,156,
+Bigeye tuna Global,France,Purse seines,10686,,9272,,10897,,8517,,8152,,8394,,7844,,7148,,8598,,9033,,8193,
+Bigeye tuna Global,India,Longlines (nei),3,,0,-,0,-,0,-,3931,,2279,,4268,,3585,,1700,,3913,,2951,
+Bigeye tuna Global,Indonesia,Gear not known,3102,,2842,,3054,,2754,,1635,,1684,,3363,,4580,,5226,,7799,,7841,
+Bigeye tuna Global,Indonesia,Longlines (nei),21657,,22895,,28478,,15465,,14056,,12136,,11909,,13505,,16070,,12202,,12478,
+Bigeye tuna Global,Indonesia,Mechanized lines and pole-and-lines,3731,,2897,,2485,,2012,,2197,,2684,,2859,,2180,,3038,,1812,,1812,
+Bigeye tuna Global,Indonesia,Purse seines,176,,178,,160,,170,,207,,186,,214,,237,,295,,286,,286,
+Bigeye tuna Global,Indonesia,Trolling lines,981,,875,,690,,635,,663,,501,,474,,525,,655,,633,,633,
+Bigeye tuna Global,Japan,Gear not known,14,,29,,35,,37,,26,,106,,50,,68,,93,,105,,105,
+Bigeye tuna Global,Japan,Longlines (nei),94763,,96643,,92954,,80535,,79638,,68704,,71575,,76214,,64865,,57619,,49493,
+Bigeye tuna Global,Japan,Mechanized lines and pole-and-lines,1917,,1377,,1757,,857,,3393,,1334,,3820,,1977,,1604,,1570,,2242,
+Bigeye tuna Global,Japan,Purse seines,747,,592,,649,,812,,524,,849,,547,,987,,965,,1571,,606,
+Bigeye tuna Global,Japan,Trolling lines,190,,182,,126,,105,,83,,135,,101,,124,,138,,115,,115,
+Bigeye tuna Global,"Korea, Republic of",Longlines (nei),40826,,36304,,39170,,28721,,31830,,30623,,26355,,19124,,24255,,24618,,26049,
+Bigeye tuna Global,Libya,Longlines (nei),400,,31,,593,,593,,0,-,0,-,4,,0,-,0,-,0,-,0,-
+Bigeye tuna Global,Madagascar,Longlines (nei),0,-,0,-,2,,2,,0,-,155,,31,,32,,23,,22,,66,
+Bigeye tuna Global,Madagascar,Trolling lines,32,,33,,33,,32,,32,,28,,30,,31,,30,,33,,33,
+Bigeye tuna Global,Mexico,Longlines (nei),44,,3,,7,,4,,5,,4,,3,,3,,1,,1,,3,
+Bigeye tuna Global,Mexico,Purse seines,0,-,0,-,0,-,0,-,0,-,0,-,6,,0,-,327,,1334,,11,
+Bigeye tuna Global,Morocco,Gear not known,770,,857,,913,,889,,929,,0,-,0,-,0,-,0,-,0,-,0,-
+Bigeye tuna Global,Morocco,Longlines (nei),0,-,0,-,0,-,0,-,0,-,519,,887,,700,,802,,795,,276,
+Bigeye tuna Global,New Zealand,Gear not known,0,-,0,-,1,,1,,8,,1,,1,,0,-,1,,0,-,0,-
+Bigeye tuna Global,New Zealand,Longlines (nei),421,,481,,201,,204,,177,,175,,177,,213,,133,,253,,131,
+Bigeye tuna Global,Philippines,Gear not known,5043,,4410,,4389,,4941,,4618,,3273,,3662,,3547,,3074,,3565,,2267,
+Bigeye tuna Global,Philippines,Longlines (nei),2327,,1330,,1674,,2270,,2838,,3278,,3657,,4531,,3809,,2473,,1702,
+Bigeye tuna Global,Portugal,Gear not known,0,-,0,-,0,-,0,-,0,-,93,,2,,0,-,64,,0,-,283,
+Bigeye tuna Global,Portugal,Longlines (nei),1,,0,-,170,,82,,41,,327,,457,,659,,606,,468,,537,
+Bigeye tuna Global,Portugal,Mechanized lines and pole-and-lines,1497,,1605,,2421,,1572,,3161,,3721,,4627,,4871,,2738,,5121,,2872,
+Bigeye tuna Global,Senegal,Gear not known,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,7,
+Bigeye tuna Global,Senegal,Longlines (nei),0,-,0,-,0,-,0,-,0,-,0,-,33,,3,,0,-,0,-,0,-
+Bigeye tuna Global,Senegal,Mechanized lines and pole-and-lines,1131,,1308,,565,,474,,561,,721,,1267,,804,,926,,1041,,843,
+Bigeye tuna Global,Senegal,Trolling lines,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,1,,8,
+Bigeye tuna Global,South Africa,Gear not known,0,-,0,-,0,-,0,-,0,-,1,,0,-,8,,2,,0,-,0,-
+Bigeye tuna Global,South Africa,Longlines (nei),234,,169,,598,,356,,294,,295,,138,,227,,365,,323,,315,
+Bigeye tuna Global,South Africa,Mechanized lines and pole-and-lines,48,,104,,22,,8,,49,,1,,6,,15,,23,,32,,8,
+Bigeye tuna Global,Spain,Gear not known,0,-,0,-,0,-,144,,114,,0,-,0,-,0,-,3,,16,,0,-
+Bigeye tuna Global,Spain,Longlines (nei),645,,286,,443,,925,,1053,,155,,671,,510,,483,,442,,994,
+Bigeye tuna Global,Spain,Mechanized lines and pole-and-lines,4084,,3897,,3164,,4158,,3838,,4417,,3783,,3008,,1956,,3854,,2819,
+Bigeye tuna Global,Spain,Purse seines,30197,,21204,,23030,,19521,,15943,,17133,,18544,,13777,,18990,,22187,,18300,
+Bigeye tuna Global,Spain,Trolling lines,141,,103,,38,,19,,54,,85,,5,,12,,0,-,0,-,3,
+Bigeye tuna Global,Taiwan Province of China,Longlines (nei),63513,,80220,,102592,,108034,,103011,,74135,,59487,,69078,,51846,,60151,,47773,
+Bigeye tuna Global,United Kingdom,Longlines (nei),0,-,0,-,0,-,0,-,0,-,18,,3,,0,-,0,-,32,,2,
+Bigeye tuna Global,United States of America,Gear not known,54,,401,,65,,382,,346,,382,,721,,477,,228,,221,,466,
+Bigeye tuna Global,United States of America,Longlines (nei),3450,,3322,,5260,,4376,,4866,,5444,,5168,,6396,,6486,,5151,,5964,
+Bigeye tuna Global,United States of America,Purse seines,5304,,2290,,2219,,1350,,1395,,0,-,0,-,0,-,0,-,0,-,0,-
+Bigeye tuna Global,United States of America,Trolling lines,207,,226,,586,,37,,149,,86,,56,,64,,75,,60,,129,
+Bigeye tuna Global,Viet Nam,Longlines (nei),0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,2441,
+Pacific bluefin tuna Global,Japan,Gear not known,1814,,2148,,1731,,1285,,1410,,2730,,2198,,2712,,3550,,3149,,2521,
+Pacific bluefin tuna Global,Japan,Longlines (nei),962,,799,,848,,1251,,1858,,1939,,1132,,2095,,1495,,1312,,908,
+Pacific bluefin tuna Global,Japan,Mechanized lines and pole-and-lines,102,,180,,99,,44,,132,,549,,108,,236,,64,,50,,83,
+Pacific bluefin tuna Global,Japan,Purse seines,9418,,5847,,6081,,5651,,4219,,10965,,6657,,5378,,9550,,8186,,4223,
+Pacific bluefin tuna Global,Japan,Trolling lines,5121,,3329,,2427,,1839,,2182,,3406,,1544,,2385,,2074,,1875,,1301,
+Pacific bluefin tuna Global,"Korea, Republic of",Gear not known,0,-,10,,1,,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-
+Pacific bluefin tuna Global,"Korea, Republic of",Longlines (nei),2,,10,,1,,0,-,0,-,0,-,0,-,0,-,0,-,0,-,1,
+Pacific bluefin tuna Global,"Korea, Republic of",Purse seines,2401,,1176,,932,,2601,,773,,1318,,1012,,1281,,1866,,936,,1196,
+Pacific bluefin tuna Global,Mexico,Gear not known,99,,0,-,2,,43,,14,,0,-,0,-,0,-,0,-,0,-,0,-
+Pacific bluefin tuna Global,Mexico,Longlines (nei),38,,0,-,1,,43,,14,,0,-,0,-,0,-,0,-,0,-,0,-
+Pacific bluefin tuna Global,Mexico,Mechanized lines and pole-and-lines,61,,0,-,1,,0,-,0,-,0,-,0,-,0,-,15,,0,-,0,-
+Pacific bluefin tuna Global,Mexico,Purse seines,6036,,1726,,3417,,6422,,17760,,9084,,19856,,8293,,8784,,6038,,15490,
+Pacific bluefin tuna Global,New Zealand,Gear not known,21,,50,,55,,41,,67,,20,,21,,21,,21,,0,-,0,-
+Pacific bluefin tuna Global,Taiwan Province of China,Gear not known,2,,4,,4,,21,,3,,2,,1,,10,,2,,11,,38,
+Pacific bluefin tuna Global,Taiwan Province of China,Longlines (nei),2780,,1839,,1523,,1863,,1714,,1368,,1149,,1401,,979,,877,,373,
+Pacific bluefin tuna Global,United States of America,Gear not known,781,,805,,1318,,815,,122,,171,,199,,31,,197,,361,,243,
+Pacific bluefin tuna Global,United States of America,Longlines (nei),4,,5,,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-
+Pacific bluefin tuna Global,United States of America,Mechanized lines and pole-and-lines,0,-,1,,2,,3,,0,-,0,-,0,-,0,-,0,-,0,-,0,-
+Pacific bluefin tuna Global,United States of America,Purse seines,1385,,584,,100,,44,,0,-,201,,0,-,42,,0,-,410,,0,-
+Skipjack tuna Global,Algeria,Gear not known,89,,77,,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-
+Skipjack tuna Global,Argentina,Gear not known,1,,0,-,0,-,0,-,30,,0,-,0,-,0,-,0,-,0,-,0,-
+Skipjack tuna Global,Australia,Gear not known,1,,1,,0,-,1,,0,-,3,,0,-,0,-,0,-,0,-,0,-
+Skipjack tuna Global,Australia,Longlines (nei),15,,6,,8,,3,,1,,2,,49,,8,,15,,10,,4,
+Skipjack tuna Global,Australia,Mechanized lines and pole-and-lines,3020,,0,-,39,,0,-,11,,0,-,0,-,0,-,0,-,0,-,0,-
+Skipjack tuna Global,Australia,Purse seines,0,-,1038,,1144,,0,-,30,,0,-,446,,90,,892,,855,,0,-
+Skipjack tuna Global,Australia,Trolling lines,2,,4,,2,,3,,0,-,0,-,0,-,0,-,0,-,0,-,0,-
+Skipjack tuna Global,Brazil,Gear not known,0,-,0,-,0,-,0,-,0,-,0,-,17,,1038,,85,,752,,824,
+Skipjack tuna Global,Brazil,Longlines (nei),0,-,0,-,38,,0,-,1,,0,-,2,,0,-,0,-,2,,0,-
+Skipjack tuna Global,Brazil,Mechanized lines and pole-and-lines,24691,,24038,,18185,,20416,,23036,,25269,,23012,,22750,,20547,,22329,,12726,
+Skipjack tuna Global,Brazil,Purse seines,473,,108,,116,,0,-,0,-,1119,,238,,403,,213,,223,,0,-
+Skipjack tuna Global,Cabo Verde,Gear not known,19,,50,,32,,111,,0,-,0,-,0,-,0,-,0,-,171,,82,
+Skipjack tuna Global,Cabo Verde,Mechanized lines and pole-and-lines,770,,444,,0,-,178,,57,,57,,57,,0,-,76,,100,,43,
+Skipjack tuna Global,Cabo Verde,Purse seines,0,-,300,,366,,54,,1039,,7447,,7874,,6026,,5934,,4495,,5907,
+Skipjack tuna Global,China,Longlines (nei),0,-,0,-,0,-,3,,7,,5,,14,,1,,0,-,0,-,0,-
+Skipjack tuna Global,France,Gear not known,200,,190,,382,,101,,109,,122,,96,,66,,63,,38,,44,
+Skipjack tuna Global,France,Mechanized lines and pole-and-lines,1497,,2550,,2305,,1878,,1752,,2240,,1610,,795,,778,,1186,,904,
+Skipjack tuna Global,France,Purse seines,56621,,54138,,68843,,56923,,58099,,55775,,55452,,38265,,37998,,42134,,43477,
+Skipjack tuna Global,France,Trolling lines,49,,75,,240,,350,,471,,436,,440,,440,,440,,440,,440,
+Skipjack tuna Global,India,Gear not known,2150,,2110,,3470,,3715,,4856,,4214,,6848,,6648,,8705,,7609,,9822,
+Skipjack tuna Global,India,Longlines (nei),1,,0,-,0,-,0,-,2,,0,-,1,,1,,0,-,0,-,0,-
+Skipjack tuna Global,India,Mechanized lines and pole-and-lines,6037,,6992,,7659,,6265,,6593,,6921,,7249,,6922,,8522,,7982,,7982,
+Skipjack tuna Global,Indonesia,Gear not known,57834,,53707,,54387,,50064,,36889,,33636,,38876,,44428,,59542,,62144,,62144,
+Skipjack tuna Global,Indonesia,Longlines (nei),0,-,1,,1,,576,,398,,317,,222,,379,,315,,250,,362,
+Skipjack tuna Global,Indonesia,Mechanized lines and pole-and-lines,68037,,53485,,45951,,37830,,41596,,40134,,51916,,52717,,54574,,57115,,57115,
+Skipjack tuna Global,Indonesia,Purse seines,8720,,8795,,7911,,8403,,10239,,9201,,10580,,11722,,14614,,14124,,14124,
+Skipjack tuna Global,Indonesia,Trolling lines,23216,,20691,,16312,,15030,,15681,,11859,,11210,,12420,,15484,,14965,,14965,
+Skipjack tuna Global,Italy,Gear not known,0,-,0,-,4,,12,,15,,7,,0,-,0,-,0,-,0,-,0,-
+Skipjack tuna Global,Italy,Longlines (nei),0,-,0,-,0,-,17,,19,,10,,0,-,0,-,0,-,0,-,0,-
+Skipjack tuna Global,Japan,Gear not known,2082,,1870,,1380,,1569,,1256,,1678,,827,,1250,,864,,876,,876,
+Skipjack tuna Global,Japan,Longlines (nei),43,,159,,140,,160,,173,,142,,104,,99,,177,,195,,165,
+Skipjack tuna Global,Japan,Mechanized lines and pole-and-lines,147786,,103432,,97367,,125142,,108128,,136066,,99957,,89694,,91197,,65709,,82446,
+Skipjack tuna Global,Japan,Purse seines,2332,,1830,,1937,,2443,,1459,,3149,,1982,,4362,,3187,,3434,,1102,
+Skipjack tuna Global,Japan,Trolling lines,14528,,6949,,6376,,9386,,14802,,5971,,3624,,3249,,4178,,3819,,3819,
+Skipjack tuna Global,"Korea, Republic of",Longlines (nei),11,,33,,54,,31,,34,,1,,1,,1,,2,,6,,3,
+Skipjack tuna Global,"Korea, Republic of",Purse seines,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,1,
+Skipjack tuna Global,Madagascar,Trolling lines,1000,,1035,,1030,,1014,,993,,884,,937,,957,,936,,1021,,1021,
+Skipjack tuna Global,Mexico,Longlines (nei),13,,54,,71,,75,,9,,7,,10,,7,,8,,9,,7,
+Skipjack tuna Global,Mexico,Mechanized lines and pole-and-lines,176,,448,,616,,637,,528,,1299,,435,,276,,499,,151,,47,
+Skipjack tuna Global,Mexico,Purse seines,14080,,8169,,6612,,8147,,24429,,32271,,16790,,21542,,21638,,6847,,3010,
+Skipjack tuna Global,Morocco,Gear not known,1019,,169,,155,,114,,98,,618,,734,,251,,206,,427,,429,
+Skipjack tuna Global,Morocco,Longlines (nei),0,-,0,-,0,-,0,-,269,,388,,2762,,1210,,995,,1499,,1022,
+Skipjack tuna Global,Morocco,Purse seines,180,,99,,126,,410,,442,,888,,288,,131,,108,,654,,892,
+Skipjack tuna Global,New Zealand,Gear not known,0,-,39,,20,,7,,14,,19,,7,,11,,5,,0,-,0,-
+Skipjack tuna Global,New Zealand,Longlines (nei),1,,6,,7,,5,,3,,2,,1,,1,,0,-,1,,1,
+Skipjack tuna Global,New Zealand,Mechanized lines and pole-and-lines,11,,0,-,0,-,0,-,3,,61,,0,-,0,-,0,-,0,-,0,-
+Skipjack tuna Global,New Zealand,Trolling lines,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,9,,0,-
+Skipjack tuna Global,Philippines,Gear not known,39481,,37197,,37512,,38940,,39096,,46099,,47445,,50593,,52016,,55116,,53915,
+Skipjack tuna Global,Portugal,Gear not known,9,,4,,11,,5,,18,,1,,1,,0,-,171,,125,,73,
+Skipjack tuna Global,Portugal,Longlines (nei),11,,29,,7,,38,,29,,51,,175,,417,,153,,57,,31,
+Skipjack tuna Global,Portugal,Mechanized lines and pole-and-lines,1286,,2134,,2939,,4275,,8459,,4687,,11001,,8603,,5734,,904,,12858,
+Skipjack tuna Global,Portugal,Purse seines,1,,0,-,0,-,0,-,0,-,0,-,1,,0,-,0,-,3,,14,
+Skipjack tuna Global,Senegal,Gear not known,0,-,0,-,0,-,0,-,10,,0,-,0,-,0,-,0,-,2,,7,
+Skipjack tuna Global,Senegal,Longlines (nei),0,-,0,-,0,-,0,-,0,-,0,-,10,,0,-,0,-,0,-,0,-
+Skipjack tuna Global,Senegal,Mechanized lines and pole-and-lines,1506,,1271,,1053,,733,,1323,,4874,,3534,,2278,,3661,,4513,,2411,
+Skipjack tuna Global,Senegal,Trolling lines,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,58,,29,
+Skipjack tuna Global,South Africa,Gear not known,1,,0,-,0,-,0,-,0,-,1,,0,-,0,-,4,,1,,1,
+Skipjack tuna Global,South Africa,Mechanized lines and pole-and-lines,7,,1,,1,,2,,2,,1,,0,-,0,-,0,-,4,,1,
+Skipjack tuna Global,Spain,Gear not known,0,-,0,-,6,,0,-,25,,9,,12,,23,,7,,0,-,1,
+Skipjack tuna Global,Spain,Longlines (nei),2,,0,-,27,,9,,6,,24,,650,,620,,21,,12,,15,
+Skipjack tuna Global,Spain,Mechanized lines and pole-and-lines,3780,,3156,,3836,,7174,,7207,,10119,,7634,,6378,,8345,,8647,,8405,
+Skipjack tuna Global,Spain,Purse seines,129848,,109707,,123469,,144260,,104045,,121541,,150062,,85195,,96698,,100638,,109481,
+Skipjack tuna Global,Taiwan Province of China,Longlines (nei),4409,,4195,,2821,,3165,,3665,,678,,422,,186,,295,,704,,308,
+Skipjack tuna Global,United Kingdom,Gear not known,0,-,0,-,1,,1,,1,,1,,0,-,0,-,0,-,16,,0,-
+Skipjack tuna Global,United States of America,Gear not known,48,,88,,93,,192,,119,,55,,80,,74,,86,,158,,59,
+Skipjack tuna Global,United States of America,Longlines (nei),107,,280,,260,,416,,358,,233,,284,,254,,287,,288,,258,
+Skipjack tuna Global,United States of America,Mechanized lines and pole-and-lines,320,,447,,304,,588,,281,,353,,294,,272,,293,,214,,0,-
+Skipjack tuna Global,United States of America,Purse seines,7224,,4135,,4582,,5445,,3372,,0,-,0,-,0,-,0,-,0,-,0,-
+Skipjack tuna Global,United States of America,Trolling lines,422,,530,,360,,277,,260,,264,,296,,272,,375,,399,,389,
+Southern bluefin tuna Global,Australia,Longlines (nei),125,,86,,28,,35,,228,,35,,6,,4,,23,,213,,160,
+Southern bluefin tuna Global,Australia,Mechanized lines and pole-and-lines,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,2,,0,-
+Southern bluefin tuna Global,Australia,Purse seines,5132,,4767,,4683,,5792,,4834,,5210,,5629,,4809,,5010,,4893,,4039,
+Southern bluefin tuna Global,Indonesia,Longlines (nei),1203,,1632,,1701,,565,,633,,1726,,598,,1077,,926,,641,,471,
+Southern bluefin tuna Global,Japan,Longlines (nei),6000,,6674,,6192,,5770,,5846,,7855,,4207,,2840,,2952,,2659,,2223,
+Southern bluefin tuna Global,"Korea, Republic of",Longlines (nei),1135,,845,,746,,254,,131,,38,,150,,521,,1134,,1117,,867,
+Southern bluefin tuna Global,New Zealand,Gear not known,0,-,0,-,0,-,0,-,1,,0,-,2,,4,,0,-,0,-,0,-
+Southern bluefin tuna Global,New Zealand,Longlines (nei),379,,358,,450,,389,,391,,261,,236,,377,,319,,412,,501,
+Southern bluefin tuna Global,New Zealand,Trolling lines,1,,0,-,1,,0,-,1,,3,,0,-,1,,0,-,7,,0,-
+Southern bluefin tuna Global,Philippines,Longlines (nei),17,,43,,82,,68,,80,,53,,50,,46,,45,,47,,43,
+Southern bluefin tuna Global,South Africa,Longlines (nei),4,,1,,18,,15,,19,,24,,9,,41,,45,,32,,34,
+Southern bluefin tuna Global,Spain,Longlines (nei),0,-,0,-,0,-,3,,23,,0,-,3,,18,,14,,2,,11,
+Southern bluefin tuna Global,Taiwan Province of China,Longlines (nei),1448,,1580,,1137,,1128,,1298,,941,,846,,841,,913,,921,,1208,
+Yellowfin tuna Global,Argentina,Gear not known,0,-,0,-,0,-,0,-,327,,327,,0,-,0,-,0,-,0,-,0,-
+Yellowfin tuna Global,Australia,Gear not known,3,,5,,6,,8,,12,,1,,5,,2,,0,-,1,,0,-
+Yellowfin tuna Global,Australia,Longlines (nei),2231,,3370,,3886,,3872,,2508,,1535,,1867,,1419,,1651,,1399,,1381,
+Yellowfin tuna Global,Australia,Mechanized lines and pole-and-lines,3,,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-
+Yellowfin tuna Global,Australia,Trolling lines,5,,18,,2,,2,,1,,1,,0,-,0,-,0,-,0,-,0,-
+Yellowfin tuna Global,Brazil,Gear not known,0,-,71,,0,-,272,,2147,,292,,1243,,2563,,608,,1870,,1845,
+Yellowfin tuna Global,Brazil,Longlines (nei),2754,,4883,,3324,,1941,,1967,,4695,,1330,,1552,,1745,,1039,,1145,
+Yellowfin tuna Global,Brazil,Mechanized lines and pole-and-lines,3093,,1276,,2843,,1289,,2839,,2236,,1214,,1353,,397,,403,,628,
+Yellowfin tuna Global,Brazil,Purse seines,297,,8,,6,,0,-,32,,0,-,3,,0,-,0,-,2,,0,-
+Yellowfin tuna Global,Cabo Verde,Gear not known,1388,,1374,,918,,1617,,1501,,1895,,1845,,1240,,686,,855,,1120,
+Yellowfin tuna Global,Cabo Verde,Longlines (nei),0,-,0,-,0,-,2,,0,-,0,-,0,-,0,-,4,,0,-,0,-
+Yellowfin tuna Global,Cabo Verde,Mechanized lines and pole-and-lines,457,,298,,0,-,3,,1379,,0,-,0,-,0,-,2,,0,-,0,-
+Yellowfin tuna Global,Cabo Verde,Purse seines,6,,12,,884,,246,,356,,5259,,6267,,2817,,7721,,2419,,3372,
+Yellowfin tuna Global,Canada,Gear not known,0,-,0,-,1,,0,-,1,,0,-,0,-,0,-,0,-,0,-,0,-
+Yellowfin tuna Global,Canada,Longlines (nei),105,,125,,69,,72,,302,,239,,292,,276,,168,,53,,165,
+Yellowfin tuna Global,China,Longlines (nei),6243,,5688,,5323,,9426,,9931,,8495,,9184,,5753,,6577,,7715,,3095,
+Yellowfin tuna Global,France,Gear not known,568,,565,,509,,278,,395,,355,,305,,195,,211,,170,,143,
+Yellowfin tuna Global,France,Longlines (nei),312,,351,,273,,364,,456,,666,,594,,583,,334,,313,,286,
+Yellowfin tuna Global,France,Mechanized lines and pole-and-lines,416,,684,,1444,,757,,585,,596,,588,,430,,186,,378,,360,
+Yellowfin tuna Global,France,Purse seines,67067,,68724,,69003,,94953,,86885,,79293,,63552,,47424,,58030,,46353,,50635,
+Yellowfin tuna Global,France,Trolling lines,127,,132,,112,,164,,292,,216,,236,,236,,236,,236,,236,
+Yellowfin tuna Global,India,Gear not known,4498,,3483,,6402,,5950,,3663,,5035,,7353,,13207,,11183,,11233,,16588,
+Yellowfin tuna Global,India,Longlines (nei),901,,94,,54,,13,,3477,,4793,,4536,,3136,,1171,,1533,,2631,
+Yellowfin tuna Global,India,Mechanized lines and pole-and-lines,472,,585,,698,,812,,925,,1038,,1151,,1952,,1846,,1996,,1996,
+Yellowfin tuna Global,Indonesia,Gear not known,28038,,26246,,29503,,28284,,18134,,18538,,21465,,22280,,19147,,22082,,21715,
+Yellowfin tuna Global,Indonesia,Longlines (nei),32715,,32728,,31388,,30257,,26447,,25314,,19778,,20581,,18204,,25142,,23914,
+Yellowfin tuna Global,Indonesia,Mechanized lines and pole-and-lines,14390,,11237,,9647,,7872,,8626,,11297,,9165,,9671,,7981,,6491,,6491,
+Yellowfin tuna Global,Indonesia,Purse seines,276,,278,,250,,266,,324,,291,,335,,371,,463,,447,,447,
+Yellowfin tuna Global,Indonesia,Trolling lines,3819,,3403,,2683,,2472,,2579,,1951,,1844,,2043,,2547,,2462,,2462,
+Yellowfin tuna Global,Japan,Gear not known,164,,297,,317,,382,,300,,338,,294,,364,,542,,433,,433,
+Yellowfin tuna Global,Japan,Longlines (nei),62279,,49535,,40361,,45840,,44842,,44497,,43383,,45936,,33836,,27821,,28344,
+Yellowfin tuna Global,Japan,Mechanized lines and pole-and-lines,3852,,3136,,3375,,2868,,3040,,3647,,4340,,3501,,3566,,5054,,4167,
+Yellowfin tuna Global,Japan,Purse seines,953,,603,,445,,651,,327,,894,,306,,963,,1216,,557,,347,
+Yellowfin tuna Global,Japan,Trolling lines,2258,,2840,,2524,,2683,,2294,,2094,,2262,,2297,,2436,,2534,,2534,
+Yellowfin tuna Global,"Korea, Republic of",Longlines (nei),20229,,20563,,19479,,19414,,18212,,18053,,13256,,13332,,9932,,12142,,9381,
+Yellowfin tuna Global,Libya,Longlines (nei),0,-,208,,73,,73,,0,-,0,-,0,-,0,-,0,-,0,-,0,-
+Yellowfin tuna Global,Madagascar,Longlines (nei),0,-,0,-,8,,11,,0,-,218,,33,,26,,15,,15,,44,
+Yellowfin tuna Global,Madagascar,Trolling lines,810,,838,,833,,820,,804,,716,,759,,775,,757,,826,,826,
+Yellowfin tuna Global,Mexico,Gear not known,0,-,0,-,1,,0,-,0,-,0,-,0,-,0,-,0,-,1,,1,
+Yellowfin tuna Global,Mexico,Longlines (nei),1543,,1113,,1137,,1678,,1240,,1050,,943,,904,,966,,1230,,930,
+Yellowfin tuna Global,Mexico,Mechanized lines and pole-and-lines,2418,,3916,,950,,468,,1882,,1822,,686,,894,,812,,709,,460,
+Yellowfin tuna Global,Mexico,Purse seines,101662,,130087,,152864,,172807,,91442,,110898,,69449,,65091,,84462,,99785,,104969,
+Yellowfin tuna Global,Morocco,Gear not known,0,-,0,-,79,,108,,95,,0,-,0,-,0,-,0,-,0,-,0,-
+Yellowfin tuna Global,Morocco,Longlines (nei),0,-,0,-,0,-,0,-,0,-,183,,95,,102,,110,,110,,44,
+Yellowfin tuna Global,New Zealand,Gear not known,0,-,8,,1,,1,,22,,3,,0,-,0,-,2,,0,-,0,-
+Yellowfin tuna Global,New Zealand,Longlines (nei),98,,131,,27,,39,,36,,36,,3,,25,,11,,3,,6,
+Yellowfin tuna Global,Philippines,Gear not known,55926,,51781,,54531,,59579,,60645,,55744,,57629,,60762,,60460,,59614,,61577,
+Yellowfin tuna Global,Philippines,Longlines (nei),953,,783,,920,,2276,,2855,,3607,,2594,,1833,,1503,,960,,873,
+Yellowfin tuna Global,Portugal,Gear not known,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,8,,758,,138,
+Yellowfin tuna Global,Portugal,Longlines (nei),9,,19,,29,,50,,12,,176,,343,,965,,470,,530,,572,
+Yellowfin tuna Global,Portugal,Mechanized lines and pole-and-lines,193,,4,,5,,3,,5,,10,,11,,3,,1,,0,-,25,
+Yellowfin tuna Global,Senegal,Gear not known,0,-,0,-,0,-,0,-,13,,0,-,0,-,0,-,0,-,102,,20,
+Yellowfin tuna Global,Senegal,Longlines (nei),0,-,0,-,0,-,1,,2,,7,,20,,7,,38,,11,,22,
+Yellowfin tuna Global,Senegal,Mechanized lines and pole-and-lines,252,,295,,447,,279,,668,,1301,,1262,,816,,550,,1157,,1168,
+Yellowfin tuna Global,Senegal,Trolling lines,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,9,,2,
+Yellowfin tuna Global,South Africa,Gear not known,51,,29,,14,,167,,244,,616,,566,,688,,212,,24,,24,
+Yellowfin tuna Global,South Africa,Longlines (nei),257,,232,,242,,552,,72,,266,,353,,248,,149,,152,,185,
+Yellowfin tuna Global,South Africa,Mechanized lines and pole-and-lines,129,,230,,77,,256,,139,,339,,444,,264,,108,,213,,159,
+Yellowfin tuna Global,Spain,Longlines (nei),309,,212,,316,,174,,70,,45,,504,,346,,268,,231,,302,
+Yellowfin tuna Global,Spain,Mechanized lines and pole-and-lines,601,,504,,918,,1379,,1292,,798,,928,,769,,1055,,874,,1561,
+Yellowfin tuna Global,Spain,Purse seines,83772,,96570,,100759,,114579,,114519,,100446,,89786,,53160,,72361,,73236,,71868,
+Yellowfin tuna Global,Taiwan Province of China,Longlines (nei),39787,,57972,,67183,,61832,,80416,,93197,,56262,,45068,,34352,,35192,,35468,
+Yellowfin tuna Global,United Kingdom,Gear not known,0,-,0,-,26,,26,,26,,26,,10,,11,,1,,2,,31,
+Yellowfin tuna Global,United Kingdom,Longlines (nei),0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,120,,46,
+Yellowfin tuna Global,United States of America,Gear not known,4677,,4941,,3474,,6159,,4739,,4720,,5639,,3472,,1517,,1941,,1624,
+Yellowfin tuna Global,United States of America,Longlines (nei),4250,,3433,,3635,,3475,,4080,,2977,,3482,,3879,,2596,,2597,,2448,
+Yellowfin tuna Global,United States of America,Mechanized lines and pole-and-lines,1,,2,,2,,34,,17,,68,,3,,23,,23,,17,,0,-
+Yellowfin tuna Global,United States of America,Purse seines,4374,,5670,,7382,,3601,,5645,,0,-,0,-,0,-,0,-,0,-,0,-
+Yellowfin tuna Global,United States of America,Trolling lines,1044,,835,,605,,376,,371,,361,,299,,512,,455,,476,,414,
+Yellowfin tuna Global,Viet Nam,Longlines (nei),0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,0,-,9513,
