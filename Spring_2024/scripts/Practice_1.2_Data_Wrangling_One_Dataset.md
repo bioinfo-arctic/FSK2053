@@ -209,6 +209,32 @@ countries_fishing <- global_summaries %>%
 	arrange(desc(count))
 ```
 ---
+#### Saving your newly created tables
+After manipulating, exploring and generating descriptive statistics about your dataset, you might want to store the new tables.
+One of the most usefull ways to create a file from your data is using the function `write.table()`
+```
+# Writing the best catchers
+write.table(x = best_catchers, 
+            file = "best_catchers.txt", 
+            quote = FALSE, 
+            row.names = FALSE,
+            sep = "\t")
+
+# Writing the number of countries catching each Stocks
+write.table(x = countries_fishing, 
+            file = "number_of_countries_fishing_each_stock.txt", 
+            quote = FALSE, 
+            row.names = FALSE,
+            sep = "\t")
+
+# Writing the global summaries by country
+write.table(x = global_summaries_by_country, 
+            file = "global_catch_summary_sorted_by_country.txt", 
+            quote = FALSE, 
+            row.names = FALSE,
+            sep = "\t")
+```
+---
 ### Additional `dplyr` verbs
 #### The function `count()`
 count() is a quick shortcut for the common combination of group_by() and summarise() used to count the number of rows per group.
