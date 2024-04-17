@@ -167,6 +167,7 @@ tail ls.txt (gives you last 10 lines of a file)
 
 How to read multiple files together? Use cat again. cat is concatenate
 cat test_1.txt test_2.txt 
+
 cat test_1.txt test_2.txt >concatenated_file.txt
 
 ## wild cards
