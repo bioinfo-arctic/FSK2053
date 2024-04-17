@@ -30,7 +30,7 @@ We also need to install filezilla, a file transferring system for mac and window
 #### History of terminal
 
 Probably Daniel might have already dwelled into this section. 
-Terminal is just a tool to connect commands with the machine, just like a keyboard and mouse.  Simple!!! You have already experienced how most of the linux machine look like: there is no graphical user interface (GUI) between you and the server. GUI do exist for personal Linux based machines. We use ‘commands’ to communicate with the server/virtual machine. A 'Command' is synonymous to 'tranfer a file from one folder to another folder in a ordinary computer where you have access to mouse or touchpad.
+Terminal is just a tool to connect commands with the machine, just like a keyboard and mouse.  Simple!!! You have already experienced how most of the linux machine look like: there is no graphical user interface (GUI) between you and the server. GUI do exist for personal Linux based machines. We use ‘commands’ to communicate with the server/virtual machine. A 'Command' is synonymous to 'tranfer a file from one folder to another folder in your own computer where you have access to mouse or touchpad.
 
 ## Basics of Linux command line
 
