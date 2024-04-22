@@ -107,6 +107,8 @@ qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bits
 11. evalue expect value
 12. bitscore bit score
 
+Try this to customise the tabular columns: outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore"
+
 #### Field application of BLAST'ing
 
 1. Identification of species
