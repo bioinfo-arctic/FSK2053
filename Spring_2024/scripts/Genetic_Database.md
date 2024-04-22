@@ -115,7 +115,7 @@ qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bits
    
 COI from mitochondria is used as a genetic marker to barcode the species. Barcode is the same thing you see on a packet or box in the shop. more detail about the barcode projects here: ***https://phe.rockefeller.edu/barcode/index.php***
 
-<img width="565" alt="LAKES_ART_02_Environmental_DNA_Barcoding" src="https://github.com/shri1984/study-images/assets/58723191/3e68c8d1-17cd-4211-8915-0c12cd50e251">
+<img width="565" alt="LAKES_ART_02_Environmental_DNA_Barcoding" src="https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2024/images/LAKES_ART_02_Environmental_DNA_Barcoding.png">
 
 Once you do the barcoding of that species that remains with that species for ever. In future if you sequence COI region from a source DNA, you can always try to identify the compostion of your DNA collection using the barcode database, such as https://boldsystems.org. 
  
@@ -125,7 +125,7 @@ Let’s say you have DNA from an unknown sample (fish or plants or DNA extracted
  the DNA barcode depends on the presence of highly curated sequence database. BOLDSYSTEMS (https://www.boldsystems.org) is one of them. COI is the standard genetic marker used in DNA barcoding technique.
 
  
- ![Some-of-the-foods-most-susceptible-to-food-fraud](https://github.com/shri1984/study-images/assets/58723191/5c14145d-bdfa-46fc-ba99-40076ab70927)
+ ![Some-of-the-foods-most-susceptible-to-food-fraud](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2024/images/Some-of-the-foods-most-susceptible-to-food-fraud.png)
 
 (image courtesy: https://www.researchgate.net/figure/Some-of-the-foods-most-susceptible-to-food-fraud_fig1_349573973)
 
