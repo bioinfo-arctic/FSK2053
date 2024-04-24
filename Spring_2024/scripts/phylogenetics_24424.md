@@ -82,6 +82,7 @@ BiocManager::install("msa")
 BiocManager::install("ggmsa")
 
 ```
+```
 #load packages
 library(msa) 
 library(bios2mds) 
@@ -90,6 +91,8 @@ library(ape)
 library(stats)
 library(ggplot2)
 library(ggmsa)
+
+```
 
 ## Alignment of nucleotide sequences
 
