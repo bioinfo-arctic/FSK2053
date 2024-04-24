@@ -99,7 +99,7 @@ library(ggmsa)
 ### Read sequences in fasta format into msa (Multiple Sequence Alignment) algorithm
 
 ```
-mysequencefile <- readDNAStringSet("phylogenetics_tree.fasta", format = "fasta")
+mysequencefile <- readDNAStringSet("phylogenetics_tree_final_24424.fasta", format = "fasta")
 
 ```
 
