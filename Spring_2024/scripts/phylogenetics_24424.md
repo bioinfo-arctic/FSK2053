@@ -71,7 +71,7 @@ Some of the packages (phangorn, msa, ape, ggplot2 and bios2mds) can be directly
 downloadable from R studio “packages” tab. ggplot2 might have been already there from data science part. However, **msa package** and **ggmsa**
 needs to be downloaded using **Bioconductor**. Type ***“msa r package”*** in
 google and find relevant bioconductor package. Read relevant information
-about how to download msa. First you may need to download package downloader called **bioconductor**
+about how to download msa. First you may need to download package downloader called **bioconductor**. If you have issues with bios2mds package,  then download .tar.gz file from here: https://cran.r-project.org/web/packages/bios2mds/index.html and untar it. Then upload 
 
 ```
 if (!require("BiocManager", quietly = TRUE))
