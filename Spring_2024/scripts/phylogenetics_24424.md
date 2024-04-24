@@ -136,7 +136,7 @@ Once you are done with alignment, next step is making the phylogenetic
 tree from those alignment. This follwing function converts a multiple sequence alignment
 object to formats used in other sequence analysis packages. Benefit of
 this is that you can directly proceed to other packages without reading
-the input again. Here we will convert msa object into DNAbin object reqired by paclakge ***ape**.
+the input again. Here we will convert msa object into DNAbin object reqired by paclakge ***ape***.
 
 ```
 alignment_dnabin <- msaConvert(alignomega, type= "ape::DNAbin")
@@ -167,7 +167,7 @@ D <- dist.dna(alignment_dnabin, model = "TN93")  #just the type of evolutionary 
 length(D) #number of pairwise distances, computed as n(n-1)/2
 
 ```
-Now use object D, which is distance matrix to costruct two distance based phylogenetic trees. There are lot of functions in R to build distance based phylogenetic tree. But we will use few of them here mainly from ***ape** package
+Now use object D, which is distance matrix to costruct two distance based phylogenetic trees. There are lot of functions in R to build distance based phylogenetic tree. But we will use few of them here mainly from ***ape*** package
 
 ```
 treeNJ <- nj(D)
@@ -203,7 +203,7 @@ if you want make rooted NJ treee,
 ```
 treeNJroot <- root(treeNJ, outgroup = "Esox_lucius", resolve.root = TRUE, edgelabel = TRUE)
 
-treeNJroot <- ladderize(treeNJout)
+treeNJroot <- ladderize(treeNJout) #This function reorganizes the internal structure of the tree to get the ladderized effect when plotted
 
 plot(treeNJroot, show.tip=FALSE, edge.width=2, main="Rooted NJ tree")
 
