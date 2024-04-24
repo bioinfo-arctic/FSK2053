@@ -286,7 +286,9 @@ plot(tre.pars.nj, type="unr", show.tip=FALSE, edge.width=2, main = "Maximum-pars
 
 ### Maximum Likelihood-based 
 
-Maximum Likelihood (ML) is a statistical approach used in phylogenetic reconstruction to find the tree topology that maximizes the probability of observing the given sequence data under a specific model of evolution. It evaluates different tree topologies and branch lengths to identify the most likely phylogenetic tree that explains the observed data (Manuel Villalobos)
+Maximum Likelihood (ML) is a statistical approach used in phylogenetic reconstruction to find the tree topology that maximizes the probability of observing the given sequence data under a specific model of evolution. It evaluates different tree topologies and branch lengths to identify the most likely phylogenetic tree that explains the observed data (Manuel Villalobos). A common way of understanding this approach is to use an observed set of coin flips to say whether this outcome is more likely under the model that the coin is fair, or that it is biased.
+P(D|M)
+Where P = probability, D = observed data, and M = model
 
 #### compare different nucleotide substitution models we needed to make MxL-based tree
 
