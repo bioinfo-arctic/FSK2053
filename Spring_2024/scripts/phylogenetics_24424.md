@@ -67,11 +67,11 @@ unpredictable.
 
 ## 1. Install or load R packages
 
-Some of the packages (phangorn, msa, ape, ggplot2 and bios2mds) can be directly
+Some of the packages (phangorn, ape, ggplot2 and bios2mds) can be directly
 downloadable from R studio “packages” tab. ggplot2 might have been already there from data science part. However, **msa package** and **ggmsa**
 needs to be downloaded using **Bioconductor**. Type ***“msa r package”*** in
 google and find relevant bioconductor package. Read relevant information
-about how to download msa. First you may need to download package downloader called **bioconductor**. If you have issues with bios2mds package,  then download .tar.gz file from here: https://cran.r-project.org/web/packages/bios2mds/index.html and untar it. Then upload 
+about how to download msa. First you may need to download package downloader called **bioconductor**. If you have issues with bios2mds package installation, then download .tar.gz file from here: https://cran.r-project.org/web/packages/bios2mds/index.html and untar it. Then upload the file export_fast.R into and run the fucion. Ir will be avilable for use. 
 
 ```
 if (!require("BiocManager", quietly = TRUE))
@@ -103,7 +103,7 @@ mysequencefile <- readDNAStringSet("phylogenetics_tree_final_24424.fasta", forma
 
 ```
 
-### Run multiple alignemnt analysis using `muscle` program in msa
+### Run multiple alignemnt analysis using `ClustalOmega` program in msa
 
 This following step can lot of time, depending on number of sequences
 and length. Here it will go fast.
@@ -277,7 +277,7 @@ How does node support looks? the numbers shown by nodelabels() show how many tim
 Now we will caluclate parsimony score, which is the minimum number of changes ncecessary to describe the data for a given tree type. Parsimony returns the parsimony score of a tree. Parsimony analysis needs a base tree. We will use treeNJ from first part of the analysis as base tree.
 
 ```
-align_phydata <- msaConvert(alignmuscle, type= "phangorn::phyDat")
+align_phydata <- msaConvert(alignomega, type= "phangorn::phyDat")
 
 parsimony(treeNJroot, align_phydata)  
 
@@ -289,64 +289,8 @@ parsimony(tre.pars.nj, align_phydata)
 
 plot(tre.pars.nj, type="unr", show.tip=FALSE, edge.width=2, main = "Maximum-parsimony tree") #it has lower parsimonious score compare to the original tree. try other type 
 
-```
 
-### Maximum Likelihood-based 
-
-Maximum Likelihood (ML) is a statistical approach used in phylogenetic reconstruction to find the tree topology that maximizes the probability of observing the given sequence data under a specific model of evolution. It evaluates different tree topologies and branch lengths to identify the most likely phylogenetic tree that explains the observed data (Manuel Villalobos). A common way of understanding this approach is to use an observed set of coin flips to say whether this outcome is more likely under the model that the coin is fair, or that it is biased.
-P(D|M)
-Where P = probability, D = observed data, and M = model
-
-#### compare different nucleotide substitution models we needed to make MxL-based tree
-
-As a first step, we will try to find the best fitting substition model. For this we use the function `modelTest` to compare different nucleotide or protein models with the AIC, AICc or BIC. Second step is tree search. Here ML-based algorithm explores all possible tree toplogies and branch lengths. In the third step, each tree topology is otimised for branch lengths. Final step is tree evaluation using standard bootstrapping method. 
-
-```
-#distance calculation and Base Tree Construction
-
-tre.ini <- nj(dist.dna(alignment_dnabin ,model="F84"))
-
-### model testing : Conduct a model test to determine the best-fitting evolutionary model based on AIC
-
-mt <- modelTest(align_phydata, control=pml.control(trace=0))
-
-fit <- as.pml(mt, "BIC") #choose best model based on BIC criteria
-
-# Initialize PML Tree
-# Create an initial PML (Phylogenetic Maximum Likelihood) tree using the NJ tree and selected evolutionary model
-
-fit.ini <- pml(tree, align_phydata, k=4 ) #pml() calculates the likelihood of the data given the model, initially just using our neighbor joining tree. This sets up for rate variation but not yet specifying TrN+I+G
-
-# Optimize PML Tree
-# Optimize the PML tree through various parameters and tree rearrangement methods
-
-fitTrN <- optim.pml(fit.ini, model="TrN", optInv=TRUE, optGamma=TRUE, rearrangement =
-"stochastic", control = pml.control(trace = 0))
-
-```
-
-It is important to verify which tree was better and has good evidence? 
-
-```
-anova(fit.ini, fit)
-
-#The AIC is a method for model selection that balances the complexity of the model against how well the model fits the data 
-AIC(fit.ini)
-
-AIC(fit)
-
-```
-Both the ANOVA test (highly significant) and the AIC (lower=better) indicate that the new tree is a better model of the data than the initial one.
-The AIC is a method for model selection that balances the complexity of the model against how well the model fits the data.
-```
-tre4 <- root(fitTrN$tree, outgroup = "Esox_lucius", resolve.root = TRUE, edgelabel = TRUE))
-
-tre4 <- ladderize(tre4)
-
-plot(tre4, show.tip=FALSE, edge.width=2, main = "Maximum-likelihood tree")
-
-```
-Finally write the tree information to a file. 
+if you want to download or write the file in newick or nexus format then use following command.
 
 ```
 write.tree(tre4, file="tre.tree") 
