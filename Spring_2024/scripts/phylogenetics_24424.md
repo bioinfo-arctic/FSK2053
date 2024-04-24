@@ -18,7 +18,7 @@ We will do a fun exercise before we do a real phylogenetic tree construction. Ca
 
 Table below contains charatcters to make our tree. + indicates presence and 0 represents absence. This data taken from Principles of biology by Robert Bear (table from khan academy) with some modifications.
 
-![](https://raw.githubusercontent.com/shri1984/study-images/main/Screen%20Shot%202023-05-03%20at%2012.23.01.png?token=GHSAT0AAAAAACCFFFMDFNA5P5PWHFBIYVHCZCUWUQQ)
+![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2024/images/q2.png)
 
 One important thing we should know from above table is what forms the ancestral trait, and which are derived traits. This is important to make a tree based on characters. An ancestral trait is what we think was
 present in the recent common ancestor of the species of interest. Also, if the trait is present only in the outgroup you can call it ancestral trait. A derived trait is a trait or character that appears somewhere on a
