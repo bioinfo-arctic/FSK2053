@@ -247,13 +247,17 @@ even after leaving out some data.
 
 First we need to write a function. boot.phylo needs FUN because, it uses this function to build the resample phylogenetic tree for bootstrap purpose. 
 
+```
 fun <- function(x) root(nj(dist.dna(x, model = "TN93")),1) ## function calculates distance first and then tree is calculated from alignment. Function fun performs tree building on the input x using the upgma algorithm after calculating the pairwise distance between elements using dist.dna. It construct a neighbor-joining (NJ) phylogenetic tree based on the Tamura-Nei 93 (TN93) distance model, and then root the resulting tree using the first taxon (or sequence) in the dataset as the outgroup
 
+```
 Then need to calculate boot strap values through bootstrap.phyDat function from phangron.
 
+```
 bs_nj <- boot.phylo(treeNJroot, alignment_dnabin, fun) # performs the bootstrap automatically for us
 
 bs_nj
+```
 
 plot the bootstrap values on tree branches like below 
 
