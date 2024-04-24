@@ -162,7 +162,7 @@ Neighbor-joining- taking the two closest nodes of the tree and defines them as n
 First calculate a distance matrix from ***ape** package using dist.dna function.  
 
 ```
-D <- dist.dna(alignmentfish, model = "TN93")  #just the type of evolutionary model we’re using, this particular one allows for different transition rates, heterogenous base frequencies, and variation of substitution rate at the same site
+D <- dist.dna(alignment_dnabin, model = "TN93")  #just the type of evolutionary model we’re using, this particular one allows for different transition rates, heterogenous base frequencies, and variation of substitution rate at the same site
 
 length(D) #number of pairwise distances, computed as n(n-1)/2
 
@@ -240,15 +240,15 @@ the estimator (Ojha et al 2022). Basic idea is building same tree
 leaving out some portion of evidence (some bases from a sequence) and check if same clades appear
 even after leaving out some data.
 
-![](https://github.com/shri1984/study-images/blob/14bd0e4e8f9226b9e749f08e431f617b94a58159/3-s2.0-B9780128096338202598-f20259-01-9780128114148.jpg)
+![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2024/images/boot.jpeg)
 
 First we need to write a function. boot.phylo needs FUN because, it uses this function to build the resample phylogenetic tree for bootstrap purpose. 
 
-fun <- function(x) root(nj(dist.dna(x, model = "TN93")),1) ## function calculates distance first and then tree is calculated from alignment. Function fun performs tree building on the input x using the upgma algorithm after calculating the pairwise distance between elements using dist.ml.
+fun <- function(x) root(nj(dist.dna(x, model = "TN93")),1) ## function calculates distance first and then tree is calculated from alignment. Function fun performs tree building on the input x using the upgma algorithm after calculating the pairwise distance between elements using dist.dna. It construct a neighbor-joining (NJ) phylogenetic tree based on the Tamura-Nei 93 (TN93) distance model, and then root the resulting tree using the first taxon (or sequence) in the dataset as the outgroup
 
 Then need to calculate boot strap values through bootstrap.phyDat function from phangron.
 
-bs_nj <- boot.phylo(treeNJroot, alignmentfish, fun) # performs the bootstrap automatically for us
+bs_nj <- boot.phylo(treeNJroot, alignment_dnabin, fun) # performs the bootstrap automatically for us
 
 bs_nj
 
