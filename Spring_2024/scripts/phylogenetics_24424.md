@@ -201,12 +201,12 @@ plot(treeNJ, type = "phylogram", main="A Simple NJ Tree", show.tip=FALSE)
 add.scale.bar()
 
 ```
-if you want make rooted NJ treee,
+if you want make rooted NJ treee, then you need mention outgroup to which root your tree. This is one of the few ways you can root a tree. Other method is midpoint rooting. 
 
 ```
 treeNJroot <- root(treeNJ, outgroup = "Esox_lucius", resolve.root = TRUE, edgelabel = TRUE)
 
-treeNJroot <- ladderize(treeNJout) #This function reorganizes the internal structure of the tree to get the ladderized effect when plotted
+treeNJroot <- ladderize(treeNJroot) #This function reorganizes the internal structure of the tree to get the ladderized effect when plotted
 
 plot(treeNJroot, show.tip=FALSE, edge.width=2, main="Rooted NJ tree")
 
@@ -217,7 +217,7 @@ As we have lot of options to make a phylogenetics trees, we have to make sure th
 
 ### choosing 'right' algorithm 
 
-We will use correlation analysis between the calculated distance between the taxa and cophenetic distance to choose the the right tree. The  between two observations that have been clustered is defined to be the intergroup dissimilarity at which the two observations are first combined into a single cluster. 
+We will use correlation analysis between the calculated distance between the taxa and ***cophenetic distance*** to choose the the right tree. The two observations that have been clustered is defined to be the intergroup dissimilarity at which the two observations are first combined into a single cluster. 
 
 ```
 x <- as.vector(D) # convert D as vector
