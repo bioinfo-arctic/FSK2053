@@ -67,7 +67,7 @@ unpredictable.
 
 ## 1. Install or load R packages
 
-Some of the packages (phangorn, ape, ggplot2 and bios2mds) can be directly
+Some of the packages (***phangorn***, ***ape***, ***ggplot2*** and ***bios2mds***) can be directly
 downloadable from R studio “packages” tab. ggplot2 might have been already there from data science part. However, **msa package** and **ggmsa**
 needs to be downloaded using **Bioconductor**. Type ***“msa r package”*** in
 google and find relevant bioconductor package. Read relevant information
