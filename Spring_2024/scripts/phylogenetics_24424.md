@@ -110,7 +110,7 @@ alignomega  <- msa(mysequencefile, method = "ClustalOmega")
 
 align <- msaConvert(alignomega, type= "bios2mds::align")
 
-align_phydata <- msaConvert(alignmuscle, type= "phangorn::phyDat")
+align_phydata <- msaConvert(alignomega, type= "phangorn::phyDat")
 
 ```
 
@@ -139,9 +139,9 @@ this is that you can directly proceed to other packages without reading
 the input again. Here we will convert msa object into DNAbin object reqired by paclakge ***ape**.
 
 ```
-alignment_dnabin <- msaConvert(alignmuscle, type= "ape::DNAbin")
+alignment_dnabin <- msaConvert(alignomega, type= "ape::DNAbin")
 
-align_phydata <- msaConvert(alignmuscle, type= "phangorn::phyDat")
+align_phydata <- msaConvert(alignomega, type= "phangorn::phyDat")
 
 ```
 
@@ -201,7 +201,7 @@ add.scale.bar()
 if you want make rooted NJ treee,
 
 ```
-treeNJroot <- root(treeNJ, outgroup = "KM224857_Esox_lucius", resolve.root = TRUE, edgelabel = TRUE)
+treeNJroot <- root(treeNJ, outgroup = "Esox_lucius", resolve.root = TRUE, edgelabel = TRUE)
 
 treeNJroot <- ladderize(treeNJout)
 
