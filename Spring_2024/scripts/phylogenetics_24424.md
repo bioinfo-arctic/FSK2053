@@ -289,13 +289,14 @@ parsimony(tre.pars.nj, align_phydata)
 
 plot(tre.pars.nj, type="unr", show.tip=FALSE, edge.width=2, main = "Maximum-parsimony tree") #it has lower parsimonious score compare to the original tree. try other type 
 
+```
 
 if you want to download or write the file in newick or nexus format then use following command.
 
 ```
 write.tree(tre4, file="tre.tree") 
 
-````
+```
 You can open this tree file using a program called figtree (http://tree.bio.ed.ac.uk/software/figtree/).
 
 
