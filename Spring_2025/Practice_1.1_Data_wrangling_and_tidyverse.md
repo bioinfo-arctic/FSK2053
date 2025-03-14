@@ -129,23 +129,6 @@ download.file(url, "local-GFW-fishing-vessels-v2.csv")
 list.files()
 ```
 
-Two functions that are sometimes useful when downloading data from the internet are `tempdir()` and `tempfile()`. 
-`tempdir()` creates a directory with a name that is very likely to be unique. 
-Similarly, `tempfile()` creates a character string, not a file, that is likely to be a unique filename:
-
-```
-tempfile()  
-```
-
-So you can run commands like these which erases the temporary file once it imports the data:
-
-```
-tmp_filename <- tempfile()
-download.file(url, tmp_filename)
-dat <- read_csv(tmp_filename)
-file.remove(tmp_filename)
-head(dat)
-```
 ---
 ### Nuances
 When reading in spreadsheets many things can go wrong. 
