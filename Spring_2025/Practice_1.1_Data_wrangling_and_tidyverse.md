@@ -53,7 +53,7 @@ list.files()
 ```
 Check if the file is now in your working directory using the `file.exists()` 
 ```
-function:
+# function:
 file.exists(filename)
 ```
 ---
