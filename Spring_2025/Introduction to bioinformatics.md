@@ -2,30 +2,30 @@
 
 #### Learning outcome from this exercise
 
-a. How to connect to remote server/virtual machine
-b. 	Basic linux commands for file and folder operations
+A) How to connect to remote server/virtual machine
+B) Basic Linux commands for file and folder operations
 
 #### How to connect to your virtual machines
 
-I used azure lab (labs.azure.com) to create individual linux virtual machines. You already got an invitation from me to join virtual lab at labs.azure.com as registration link. Once you register, you will see your machine. This portal is to start/switch off your server outside the scheduled hour (1000-1600). However, process of connecting to a server is not automatic and you need to do it yourself when you need to do some work in the server. 
+Shripathi used Azure lab (labs.azure.com) to create individual Linux virtual machines for all students. You already got an invitation from me to join the virtual lab at labs.azure.com with a registration link. Once you register, you will see your machine. This portal is to start/switch off your server outside the scheduled working hours (1000-1600). Connecting to your virtual machine is not automatic, so you need to do it yourself when you need to work in the server.
 
-When you press registration link, it will take you labs.azure.com using uit credentials. Once you are done with registration, you will see a linux virtual machine in your home page (labs.azure.com). You cannot do anything until you set a password. Press “reset password” button (one column of 3 dots) to set a password. It will take ca. two minutes to finish password setting. Then you will see computer icon close to that row of 3 dots. Click start and wait until you get “running” there. Now press that icon to get popup window with ssh command line to connect your virtual machine. Copy that command line. 
+When you press the registration link, it will take you to labs.azure.com using UiT credentials. Once you are done with the registration, you will see a Linux virtual machine in your home page (labs.azure.com). You cannot do anything until you set a password. Press “reset password” button (one column of 3 dots) to set a password. It will take a couple of minutes to finish setting the password. Afterwards, you'll see a computer icon close to the row of 3 dots. Click start and wait until you get “running” there. Now press that icon to get a popup window with ssh command line to connect your virtual machine. Copy that command, and do the following depending on your operating system: 
 
 ###### Following steps will apply for Mac only:
 
-Type terminal in Launchpad and press terminal. Select terminal and paste that command there and Press enter.  Type yes in next command (fingerprint question). Type password you set. You should be in now. 
+Type terminal in Launchpad and press terminal. Select terminal and paste that command there and press enter. Type yes in next command (fingerprint question). Type password you set. You should be in now. 
 
-###### Following steps will apply for windows users only:
+###### Following steps will apply for Windows users only:
 
 Option 1.
-If you have power terminal (PowerShell) in your windows (type PowerShell in search bar), then things are easy. Open the power terminal and paste the command line you copied from labs.azure.com, type password (you won’t see any anything, it is hidden as they are passwords!!!!). You are in. 
+From MobaXterm you can launch the ssh command and get into the server.
 
-Option 2. 
-From MobaXterm also you can launch the ssh command and get into the server. 
+Option 2.
+Alternatively, use PowerShell (type PowerShell in search bar). Open the power terminal and paste the command line you copied from labs.azure.com, followed by the password.
 
 ###### for all 
 
-We also need to install filezilla, a file transferring system for mac and windows and it comes with graphical user interface. Download your copy of that from here: https://filezilla-project.org/download.php?type=client and install. Then we need to prepare filezilla to connect to our server. we will do it together. First open the app and follow the document uploaded (configure filezilla) 
+We also need to install FileZilla - a file transferring system for Mac and Windows that comes with a graphical user interface. Download your copy here and install: https://filezilla-project.org/download.php?type=client. Next, we need to prepare FileZilla to connect to our server. We will do it together. First open the app and follow the document uploaded (configure FileZilla).
 
 #### History of terminal
 
