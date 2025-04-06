@@ -28,49 +28,48 @@ Alternatively, use PowerShell (type PowerShell in search bar). Open the power te
 
 We also need to install FileZilla - a file transferring system for Mac and Windows that comes with a graphical user interface. Download your copy here and install: https://filezilla-project.org/download.php?type=client. Next, we need to prepare FileZilla to connect to our server. We will do it together. First open the app and follow the document uploaded (configure FileZilla).
 
-#### History of terminal
+#### History of the terminal
 
-Probably Daniel might have already dwelled into this section. 
-Terminal is just a tool to connect commands with the machine, just like a keyboard and mouse.  Simple!!! You have already experienced how most of the linux machine look like: there is no graphical user interface (GUI) between you and the server. GUI do exist for personal Linux based machines. We use ‘commands’ to communicate with the server/virtual machine. A 'Command' is synonymous to 'tranfer a file from one folder to another folder in your own computer where you have access to mouse or touchpad.
+We have already dwelled a little bit on this. The terminal is just a tool to connect commands with the machine, just like a keyboard and mouse. Simple! You have already experienced how most of the linux machine look like: there is no graphical user interface (GUI) between you and the server. GUI's do exist for personal Linux based machines. We use ‘commands’ to communicate with the server/virtual machine. A 'command' can be synonymous to 'tranfer a file from one folder to another folder' in your own computer when you have access to a mouse or touchpad.
 
 ## Basics of Linux command line
 
 Once you are connected to the server, first thing you see is a welcome message and this: 
 
 ```
-username@servers-network-name: ~ $       #it is called prompt, that is the way computer telling you that “I am ready to take your instructions”. Bring it on.
+username@servers-network-name: ~ $       #it is called the 'prompt', that is the way the computer is telling you that it is ready to take on your instructions. Bring it on!
 
 ```
 
-Run command now. 
-
-First, we will find out where (which directory/folder) are we right now in our machine. 
+Now we will try to run some commands. 
+First, we will try to find out where (which directory/folder) we are right now in our machine. 
 
 ```
 pwd # Print Working Directory, very intuitive.
 
 ```
 
-you will see this: /home/YOURUSERNAME. 
-
-This is your current working directory (remember from part 1, R?). 
-
+you will see this: /home/YOURUSERNAME.
+This is your current working directory.
 
 ## Listing the content of a folder (or directory)
 
 Use 'ls' to list what is there in your present directory. 'ls' stands for list. 
 
-Type: man ls to read the help. use man for help. 
+Type: man ls to read the help. use man for help.
 
-Mostl likely you will not see anything. Just an empty folder. Lets make some folder inside this. 
+Most likely you will not see anything. Just an empty folder. Lets make some folder inside this.
+
+Try to use some of the parameters (or "flags") for 'ls' that showed up in the help feature, and see how they differ. Return to this at a later stage again, once we have created some more files.
 
 ## create a new folder inside the working directory
 
-We use 'mkdir' command to make directories. Remember about shortcuts. This is useful when you executed certian command and you want to rerun, then use up nd down keys to get that command. Also tab is very useful to complete such as file name and folder you want to read or enter into. press TAB and then write first letter, it will show you lsit of files starting with that letter in that folder.
+We use 'mkdir' command to make directories. Remember about shortcuts. This is useful when you executed a certain command and you want to rerun, then use 'up' and 'down' arrows on your keyboard to get that command. Also tab is very useful to complete file names and folder names you want to read or enter into. Press TAB and then write first letter, it will show you a list of files starting with that letter in that folder.
 
 Try all these commands after reading the manual
 mkdir test_1
-mkdir -p -v test/test1/test2 #asking to make directory inside the directory in one command. otherwise you have to go into the fodler you want to make another directory
+mkdir -p -v test/test1/test2 # asking to make directory inside the directory in one command. Otherwise you have to go inside the folder first, if you want to make folders recursively (inside another folder).
+Check mkdir --help to understand how the "-p" flag works.
 
 Now try this inside folder you made: 
 mkdir NAME_OF_A_FOLDER
@@ -79,18 +78,18 @@ and
 
 mkdir NAME OF A FOLDER
 
-what do you see? 
+what do you see?
 
-Computer will treat space as separate folder you are asking it to make. If you want (**I discourage using space in file or folder name)** 
+The computer will treat the space as if you are asking it to create separate folders. (**NOTE: We discourage using spaces in file or folder names)** 
 
 ## Navigating between the directories
 
-This is a routine thing we everyday do in laptop, moving files from one folder to another. 
-We use a command called 'cd' **(c**hange **d**irectory). 
-cd  specify which directory you want to go 
-Example:  cd .. (Take you one level up toward the direcptry called **root**) or cd /
+This is a routine thing we do everyday in our laptops - moving files from one folder to another. 
+Here we use a command called 'cd' **(c**hange **d**irectory). 
+cd specifies which directory you want to go 
+Example: cd .. (Take you one level up toward the direcptry called **root**) or cd /
 
-note down your current owrking directy and then run this following command.
+Note down your current working directory and then run this following command.
 
 ```
 cd ..
@@ -106,7 +105,7 @@ cd /  #will take you to the “root” directory
 ```
 Yes, it is analogous to **root** from a tree. All the other directories in the server are branching from this directory. 
 
-As I said earlier '..’ along with 'cd' to move towards directories multiple levels of parent directories
+As mentioned, '..' along with 'cd' is used to move "one step up" towards the root.
 
 ```
 cd  ../  #change directory to the parent directory of the current directory
@@ -126,9 +125,9 @@ Try,
 cd /
 cd /etc 
 
-**BONUS:** Other way to reach your home directory is step by step using the ‘tilde’ character (”~”) at the start of your path similarly means “starting from my home directory”.
+**BONUS:** Another way to reach your home directory is step by step using the ‘tilde’ character (”~”) at the start of your path. This similarly means “starting from my home directory”.
 
-Try 
+Try
 ```
 cd ~
 
