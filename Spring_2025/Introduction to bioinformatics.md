@@ -367,6 +367,4 @@ Open nano. Type all small commands such as date, cal, ls in separate lines and s
 There is small script uploaded in the bioinformatics section of the canvas which is related to the taking backup of a folder. 
 
 Variables
-Variables are the essence of programming. Variables allow a programmer to store data, alter and reuse them throughout the script. Check ***welcome.sh*** script and ***backup.sh*** script. 
-
-****References for this exercise: Some part of this exercise comes from linux tutorials published by Linux (ubuntu) people. All resources in their tutorials are open source****
+Variables are the essence of programming. Variables allow a programmer to store data, alter and reuse them throughout the script. Check ***welcome.sh*** script and ***backup.sh*** script.
