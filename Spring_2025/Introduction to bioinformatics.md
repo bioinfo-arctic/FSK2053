@@ -142,13 +142,13 @@ touch test.txt
 cat test.txt
 
 ```
-To add content to empty file you need to open test.txt in 'nano'. text editor for linux command line. To see and modify the content (feasible only with files with few content). 
+To add content to an empty file you need to open test.txt in 'nano'. It's a text editor for Linux command line. To see and modify the content (feasible only with files with little content). 
 
 ```
-nano test.txt #type texts and press control+x. it will be saved. 
+nano test.txt # type texts and press control+x. it will be saved. 
 
 `````
-What we will do now is redirect the output of ls command to a file.
+Now we will redirect the output of our 'ls' command to a file.
 
 ```
 ls > ls.txt
@@ -165,41 +165,41 @@ tail ls.txt (gives you last 10 lines of a file)
 
 ````
 
-How to read multiple files together? Use cat again. cat is concatenate
+How to read multiple files together? Use cat again. The command 'cat' is used to concatenate files.
 cat test_1.txt test_2.txt 
 
-cat test_1.txt test_2.txt >concatenated_file.txt
+cat test_1.txt test_2.txt > concatenated_file.txt
 
 ## wild cards
 
-If there is consistent pattern in file names, you can use wild card such as *. 
+If there is a consistent pattern in your file names, you can use wild card such as '*'.
 Example: 
 
 ```
 cat test_* > combined.txt
-cat t*>combined.txt
+cat t* > combined.txt
 
 ```
-### Tips to make a good fodler name and file name
+### Tips to make a good folder name and file name
 
 1.	Don’t use spaces in the file name
 2.	Don’t use capital letters in the naming: need to switch of caps lock every now and then.
-3.	Use names as sensible as possible so that it gives you lot of information about the conent of the folder.
+3.	Use sensible names so that the name provides meaningful information about the content of the folder.
 4.	Don’t use closely related file names or files names which are not very different from each other. 
 5.	Always use an extension to a file. Example: .txt, .csv, .tsv 
 
 ## Moving and manipulating a file
 
-Let’s move the file from current directory to another directory. One can use 'cp' or 'mv'. 
+Let’s move the file from our current directory to another directory. One can use 'cp' or 'mv'. 
 We use a command called mv, which stands for **move**. 
 
-mv combined.txt newdirectory (here first make your new directory using mkdir command)
+mv combined.txt dir1 (here you'll first need to make your new directory using the 'mkdir' command)
 
-Confirm the result by 'ls dir1'. Or just run ls in the current directory. If it is not present in the current directory, then it is moved to dir1. Mv commnd physically moves file from one location to another.
+Confirm the result by 'ls dir1'. Or just run ls in the current directory. If it is not present in the current directory, then it is moved to dir1. The mv command physically moves file from one location to another.
 
 You can use mv command to move more than one element from a directory. Last parameter in the mv command will be the one which gets the other elements. 
 
-If you want to bring back combined.txt to where it was before moving, then use mv dir1/combined.txt.
+If you want to bring back combined.txt to where it was before moving, then use mv dir1/combined.txt .
 
 Now we will keep a copy of the file before we move that file anywhere else.
 
@@ -207,31 +207,31 @@ Now we will keep a copy of the file before we move that file anywhere else.
 cp combined.txt combined_copy.txt
 
 ```
-mv command can also be used as renaming tool like cp. But cp will keep a copy of the original file in the destination, while mv not.
+The 'mv' command can also be used as renaming tool like 'cp'. But 'cp' will keep a copy of the original file in the destination, while 'mv' will not.
 
 ## Delete a file
  
-Now will try most destructive command of all the linux commands: 'rm' (stands for **remove**).
+Now we'll try the most destructive command of all the linux commands: 'rm' (stands for **remove**).
 
-Now remove a file. 
+We're going to remove a file. 
 
 ```
-rm combined_copy.txt #removes a file
+rm combined_copy.txt # removes a file
 
-rmdir example_folder #removes a folder
+rmdir example_folder # removes a folder
 
 ```
 
 ### Tips  
 
-1.	Think twice before you run the command rm. 
-2.	Be careful with using rm command in wild card setup.
-3.	rm command doesn’t move the files to thrash/recycle bin. It simply deletes file from the system with no way to recover it (it is possible the big servers).
-4.	If you are unsure, try to use -i with rm command to enable interactive mode, so that you have second chance to think before you say YES. 
+1.	Think twice before you run the command 'rm'.
+2.	Be careful with using the 'rm' command in a wild card setup.
+3.	The 'rm' command doesn’t move the files to the trash or recycle bin. It simply deletes the file from the system with no way to recover it (it might be possible if working on servers/clusters with timestamped physical backups).
+4.	If you are unsure, try to use -i with rm command to enable interactive mode, so that you have second chance to think before you say YES.
 
 ## Plumbing work
 
-You want to know how many lines there in text file are. It is easy if you use a graphical interface utility (or a text editor which gives you line number, example nano). But you want to know the line number quickly, you need to use command line to figure that out. 
+Now we would like to know how many lines there are in a text file (e.g. to count the number of sequences you have got). It is easy if you use a graphical interface utility (or a text editor which gives you line number, example nano). But if you want to know the line number quickly, you need to use command line to figure that out. 
 
 How many lines are there in combined.txt?
 Use: 
@@ -242,13 +242,13 @@ wc -l combined.txt
 ```
 wc stands for word count. When you use -l it gives you total number of lines instead of just character count (when you use wc only)
 
-Results will be displayed on screen. We call this results on screen as 'standard output (STDOUT)'.
+Results will be displayed on screen. We call this behaviour, i.e. to output to screen, as 'standard output (STDOUT)'.
 
 ### Piping
 
 How many files are there in a folder? 
 
-Test this using: 'ls | wc -l' Here I piped an output from a command called 'ls' to another command 'wc -l'. Here wc -l takes STDOUT of ls as INPUT (STDIN). 
+Test this using: 'ls | wc -l' Here we piped an output from a command called 'ls' to another command 'wc -l'. Here wc -l takes STDOUT of ls as INPUT (STDIN). 
 
 When you have few lines, then use less. Example ls | less.
 
@@ -256,9 +256,15 @@ If you want to know what a particular command does and how to use it. just type 
 
 man mv 
 man cp
-man wc 
+man wc
 
-### How to do a multiple piping
+Similarly, you can also type 'COMMAND -h' or 'COMMAND --help'
+
+mv --help
+cp -h
+wc --help
+
+### How to do multi-piping
 Example: 
 
 ```
@@ -266,29 +272,29 @@ sort combined.txt | uniq | wc -l
 
 ```
 
-**Tell me what this above command do? Use man to know what sort and uniq.**
+**What does the above command do? Use 'man' or 'help' to find out more information about 'sort' and 'uniq'.**
 
 
-### pick some thing from a file
+### Pick something from a file
 
 When you have a file with multiple columns, and you want to cut a particular column, then use 'cut'. Use man cut.  If you want to find something from a file, then use 'grep'. 
 
-grep ‘somethingyouwantto’ filename.txt
+grep 'somethingyouwantto' filename.txt
 
 Find and replace can be performed using 'sed'.
 sed 's/findword/replaceword/' file.txt
 
-Type “linux cheat sheet” in the google you get 100s of list.  And try those commands. 
+Type “linux cheat sheet” in Google you get 100s of lists. And try those commands.
 
 ### File permissions
 
-In Linux everything is a file. Folders are files, files are files and external devices are files. All the files in linux system have file permissions. It says all about who can read and write and execute a file / program/comman. Each file has different level of access restrictions.
+In Linux everything is a file. Folders are files, files are files and external devices are files. All the files in a Linux system have file permissions. It tells you everything you need to know about who can read, write and execute a file/program/command. Each file has its own level of access restrictions.
 
 If you do 'ls -lh' in a folder 
 
 you see drwxrwxr-x on your screen. They tell you who have permission to use this folder (or directory) and what purpose (reading, modifying/writing, executing a operation). If it is a file , then you wont see d, instead it will be rwxrwxr-x
 
-Here are three types of access restrictions (from linux related webpages): 
+Here are three types of access restrictions (from Linux related webpages): 
 
 | permission  | action | chmod_option|
 | ------------- | ------------- |----------|
@@ -303,17 +309,17 @@ There are also three types of user restrictions:
 |group	|----rwx---|
 |other	|-------rwx|
 
-Directories have directory permissions. The directory permissions restrict different actions : 
+Directories have directory permissions. The directory permissions restrict different actions: 
 
-1.	read restricts or allows viewing the directories contents, i.e. ls command 
-2.	write restricts or allows creating new files or deleting files in the directory. (Caution: write access for a directory allows deleting of files in the directory even if the user does not have write permissions for the file!) 
-3.	execute restricts or allows changing into the directory, i.e. cd command
+1.	read restricts or allows viewing the directories contents, i.e. 'ls' command 
+2.	write restricts or allows creating new files or deleting files in the directory. (Caution: write access for a directory allows deleting of files in the directory even if the user does not have write permissions for the file!)
+3.	execute restricts or allows changing into the directory, i.e. 'cd' command
 
-Look into your folder and say how these permissions are organized? 
+Look at your folder(s) - how are these permissions in your case?
 
-Generally, owner of the file has permission to change the accessibility of file or folder. Thats why if you go and try to do some operations on files and filders inside '/' , it will comoplain tht you dont have permission. Another user who can override even the owner of the file is a **ROOT** user (su, sudo). Briefly, root user is owner of the system. Root user is a super user (su) and executes commands as sudo. sudo is a safety net for super user not to commit any command without second thought. First user of the system is always a root. Root user is also administrator of the system. Root will decide the functinality of the system in terms of users and permisiion. Then root can use discretion to empower other users to root level. Not all the users can become root user. Superuser power comes with super responsibilities. Super User has all the power in a system, even to destroy the system itself. 
+Generally, the owner of the file has permission to change the accessibility of the file or the folder. That's why if you go and try to do some operations on files and folders inside '/' , it is likely to complain about you not having permission. Another user who can override even the owner of the file is a **ROOT** user (su, sudo). A 'root user' is the owner of the system. Root users are super users (su) and can execute commands like 'sudo'. The 'sudo' command is a safety net for super user not to commit any command without second thought. The first user of a system is always a root user, and a root user is also an administrator of the system. Root users will decide on the functionality of the system, at least in terms of users and permissions. Root users can also empower other users to root level. However, not all the users can or should become root users. Remember - super powers come with super responsibilities. Super users have all the power in a system, even to destroy the system itself.
 
-If you are owner of the file or folder, you should use chmod to change the ownership/sharing/or to impart selective permission to other users to your folders or files. 
+If you are the owner of a file or a folder, you should use chmod to change the ownership/sharing/or to impart selective permission to other users to your folders or files.
 
 Type 'chmod' you will get help. 
 
@@ -332,24 +338,21 @@ r 	read
 = 	set permission
 
 Or you can use bit numbers. 
-First number related Owner, second number related group and 3rd number related to other users (not part of the group) 
-  
+First number related Owner, second number related group and 3rd number related to other users (not part of the group)
+
 (from google)
 
-TRY out the commands and their usage: ps, top, htop, zcat, unzip, gzip, history. Find out what they do. These commands will give different information about the system and unzipping a xipped folder and so on. 
+Our goal is to make it here for today, but if we have more time, you can try out the following commands and their usage: 'ps', 'top', 'htop', 'zcat', 'unzip', 'gzip' and 'history'. Find out what they do. These commands will give different information about the system, unzip a zipped folder and so on.
 
+Lastly, we'll look a bit into scripting if we have additional time.
 
 ## Scripting
 
-Now we probably few things about how the Linux and command line work. Now we will go for a next level called 'scripting'. You already know little bit about scripting from data science part. Scripting is writing a set of instructions to computer.  
+Now we know the basics of how Linux and the command line works. Next, we will go for 'scripting'. You already know bits and pieces about scripting from the Data Science part. Scripting is essentially just writing a set of instructions to a computer.
 
-Scripting essentially uses shell, which is a microprocessor which allows for an interactive or non-interactive command execution in combination with nano.
+Scripting uses 'shell', which is a microprocessor which allows for an interactive or non-interactive command execution in combination with nano. Your terminal contains shell (an interface). A shell is a user interface for access to an operating system's services (remember from the last lecture?)
 
-Terminal is input output environment (a way to talk to computer)
-
-Your terminal contains shell (an interface). A shell is a user interface for access to an operating system's services. 
-
-Now we will write a very small script using bash as interpreter (interprets commands to CPU) (which is default in any unix based system, there are also python, perl and so on). An interpreter is a computer program that directly executes instructions written in a programming such as bash.
+Now we will write a very small script using bash as the interpreter (interprets commands to CPU) (which is default in any unix based system, there are also python, perl and so on). An interpreter is a computer program that directly executes instructions written in a programming language such as bash.
 
 run:
 
