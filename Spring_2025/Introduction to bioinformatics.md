@@ -242,11 +242,11 @@ man cp
 man wc
 ```
 
-Similarly, you can also type 'COMMAND -h' or 'COMMAND --help'
+Similarly, you can also type 'COMMAND --help'
 
 ```
 mv --help
-cp -h
+cp --help
 wc --help
 ```
 
