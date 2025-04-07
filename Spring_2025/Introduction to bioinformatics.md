@@ -356,4 +356,4 @@ bash welcome.sh
 ```
 
 ## Variables
-Variables are the essence of programming. Variables allow a programmer to store data, alter and reuse them throughout the script. Check ***welcome.sh*** script again.
+Variables are the essence of programming. Variables allow a programmer to store data, alter and reuse them throughout the script. Check ***welcome.sh*** script again and try to identify the variables used.
