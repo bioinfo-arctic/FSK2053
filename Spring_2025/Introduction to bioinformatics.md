@@ -331,7 +331,7 @@ Lastly, we'll look a bit into scripting if we have additional time.
 
 ## Scripting
 
-Now we know the basics of how Linux and the command line works. Next, we will go for a very short intro to 'scripting'. You already know bits and pieces about scripting from the Data Science part. Scripting is essentially just writing a set of instructions to a computer. We here use 'shell', which is a microprocessor that allows for an interactive or non-interactive command execution in combination with nano. Your terminal contains shell (an interface). A shell is a user interface for access to an operating system's services (remember from the last lecture?)
+Now we know the basics of how Linux and the command line works. Next, we will go for a very short intro to 'scripting'. You already know bits and pieces about scripting from the Data Science part. Scripting is essentially just writing a set of instructions to a computer. Your terminal contains shell (an interface). A shell is a user interface for access to an operating system's services (remember from the last lecture?)
 
 Now we will write a very small script using bash as the interpreter (interprets commands to CPU) (which is default in any Unix based system, there are also Python, Perl and so on). An interpreter is a computer program that directly executes instructions written in a programming language such as bash.
 
