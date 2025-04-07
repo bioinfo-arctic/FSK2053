@@ -266,8 +266,8 @@ When you have a file with multiple columns, and you want to cut a particular col
 
 grep 'somethingyouwantto' filename.txt
 
-Find and replace can be performed using 'sed'.
-sed 's/findword/replaceword/' file.txt
+Find and replace (substitute) can be performed using 'sed'.
+sed 's/findword/replaceword/g' file.txt
 
 Type “linux cheat sheet” in Google you get 100s of lists. And try those commands.
 
