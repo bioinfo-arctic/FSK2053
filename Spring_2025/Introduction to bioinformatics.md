@@ -325,19 +325,15 @@ r 	read
 Or you can use bit numbers. 
 First number related Owner, second number related group and 3rd number related to other users (not part of the group)
 
-(from google)
-
 Our goal is to make it here for today, but if we have more time, you can try out the following commands and their usage: 'ps', 'top', 'htop', 'zcat', 'unzip', 'gzip' and 'history'. Find out what they do. These commands will give different information about the system, unzip a zipped folder and so on.
 
 Lastly, we'll look a bit into scripting if we have additional time.
 
 ## Scripting
 
-Now we know the basics of how Linux and the command line works. Next, we will go for 'scripting'. You already know bits and pieces about scripting from the Data Science part. Scripting is essentially just writing a set of instructions to a computer.
+Now we know the basics of how Linux and the command line works. Next, we will go for a very short intro to 'scripting'. You already know bits and pieces about scripting from the Data Science part. Scripting is essentially just writing a set of instructions to a computer. We here use 'shell', which is a microprocessor that allows for an interactive or non-interactive command execution in combination with nano. Your terminal contains shell (an interface). A shell is a user interface for access to an operating system's services (remember from the last lecture?)
 
-Scripting uses 'shell', which is a microprocessor which allows for an interactive or non-interactive command execution in combination with nano. Your terminal contains shell (an interface). A shell is a user interface for access to an operating system's services (remember from the last lecture?)
-
-Now we will write a very small script using bash as the interpreter (interprets commands to CPU) (which is default in any unix based system, there are also python, perl and so on). An interpreter is a computer program that directly executes instructions written in a programming language such as bash.
+Now we will write a very small script using bash as the interpreter (interprets commands to CPU) (which is default in any Unix based system, there are also Python, Perl and so on). An interpreter is a computer program that directly executes instructions written in a programming language such as bash.
 
 run:
 
@@ -351,11 +347,13 @@ You can also try:
 echo $HOME
 ```
 
-Write a small script: 
+Execute a small script: 
 
-Open nano. Type all small commands such as date, cal, ls in separate lines and save it as test.sh. I am using .sh because I am using bash as interpreter of my commands.  
+There is small script uploaded in the bioinformatics section of the canvas, which performs a motivational greeting for you on Monday mornings. We are using ".sh" because bash is our command interpreter. You can place this script in your folder, and try to run it:
 
-There is small script uploaded in the bioinformatics section of the canvas which is related to the taking backup of a folder. 
+```
+bash welcome.sh
+```
 
-Variables
-Variables are the essence of programming. Variables allow a programmer to store data, alter and reuse them throughout the script. Check ***welcome.sh*** script and ***backup.sh*** script.
+## Variables
+Variables are the essence of programming. Variables allow a programmer to store data, alter and reuse them throughout the script. Check ***welcome.sh*** script again.
