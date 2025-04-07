@@ -37,7 +37,7 @@ We have already dwelled a little bit on this. The terminal is just a tool to con
 Once you are connected to the server, first thing you see is a welcome message and this: 
 
 ```
-username@servers-network-name: ~ $       #it is called the 'prompt', that is the way the computer is telling you that it is ready to take on your instructions. Bring it on!
+username@servers-network-name: ~ $       # it is called the 'prompt'. This is the way the computer is telling you that it is ready to take on your instructions. Bring it on!
 ```
 
 Now we will try to run some commands. 
@@ -96,14 +96,14 @@ What did you see?
 Now type 
 
 ```
-cd /  #will take you to the “root” directory
+cd /  # will take you to the “root” directory
 ```
 Yes, it is analogous to **root** from a tree. All the other directories in the server are branching from this directory. 
 
 As mentioned, '..' along with 'cd' is used to move "one step up" towards the root.
 
 ```
-cd  ../  #change directory to the parent directory of the current directory
+cd  ../  # change directory to the parent directory of the current directory
 pwd
 ```
 
