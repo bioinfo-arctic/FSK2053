@@ -59,7 +59,7 @@ Most likely you will not see anything. Just an empty folder. Lets make some fold
 
 Try to use some of the parameters (or "flags") for 'ls' that showed up in the help feature, and see how they differ. Return to this at a later stage again, once we have created some more files.
 
-## create a new folder inside the working directory
+## Create a new folder inside the working directory
 
 We use 'mkdir' command to make directories. Remember about shortcuts. This is useful when you executed a certain command and you want to rerun, then use 'up' and 'down' arrows on your keyboard to get that command. Also tab is very useful to complete file names and folder names you want to read or enter into. Press TAB and then write first letter, it will show you a list of files starting with that letter in that folder.
 
@@ -156,7 +156,7 @@ cat test_1.txt test_2.txt
 
 cat test_1.txt test_2.txt > concatenated_file.txt
 
-## wild cards
+## Wild cards
 
 If there is a consistent pattern in your file names, you can use wild card such as '*'.
 Example: 
