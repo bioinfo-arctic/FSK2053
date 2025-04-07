@@ -137,7 +137,7 @@ cat test.txt
 To add content to an empty file you need to open test.txt in 'nano'. It's a text editor for Linux command line. To see and modify the content (feasible only with files with little content). 
 
 ```
-nano test.txt # type texts and press control+x. it will be saved. 
+nano test.txt # Type text and, when done, press control+x. It will be saved. 
 ```
 Now we will redirect the output of our 'ls' command to a file.
 
