@@ -44,7 +44,6 @@ Now we will try to run some commands.
 First, we will try to find out where (which directory/folder) we are right now in our machine. 
 ```
 pwd # Print Working Directory, very intuitive.
-
 ```
 
 you will see this: /home/YOURUSERNAME.
@@ -98,7 +97,6 @@ Now type
 
 ```
 cd /  #will take you to the “root” directory
-
 ```
 Yes, it is analogous to **root** from a tree. All the other directories in the server are branching from this directory. 
 
@@ -106,7 +104,6 @@ As mentioned, '..' along with 'cd' is used to move "one step up" towards the roo
 
 ```
 cd  ../  #change directory to the parent directory of the current directory
-
 pwd
 ```
 
@@ -127,7 +124,6 @@ cd /etc
 Try
 ```
 cd ~
-
 ```
 
 ## Creating a file and adding contents to a file
@@ -137,30 +133,23 @@ Stay in the folder you are in right now. You can use 'touch' to create a new fil
 ```
 touch test.txt
 cat test.txt
-
 ```
 To add content to an empty file you need to open test.txt in 'nano'. It's a text editor for Linux command line. To see and modify the content (feasible only with files with little content). 
 
 ```
 nano test.txt # type texts and press control+x. it will be saved. 
-
-`````
+```
 Now we will redirect the output of our 'ls' command to a file.
 
 ```
 ls > ls.txt
-
 echo "This is a test" > test_1.txt
 echo "This is a second test" > test_2.txt
-
 nano ls.txt
 nano test_1.txt
-
 head ls.txt (gives you first 10 lines of a file)
-
 tail ls.txt (gives you last 10 lines of a file)
-
-````
+```
 
 How to read multiple files together? Use cat again. The command 'cat' is used to concatenate files.
 cat test_1.txt test_2.txt 
@@ -175,8 +164,8 @@ Example:
 ```
 cat test_* > combined.txt
 cat t* > combined.txt
-
 ```
+
 ### Tips to make a good folder name and file name
 
 1.	Don’t use spaces in the file name
@@ -202,7 +191,6 @@ Now we will keep a copy of the file before we move that file anywhere else.
 
 ```
 cp combined.txt combined_copy.txt
-
 ```
 The 'mv' command can also be used as renaming tool like 'cp'. But 'cp' will keep a copy of the original file in the destination, while 'mv' will not.
 
@@ -214,9 +202,7 @@ We're going to remove a file.
 
 ```
 rm combined_copy.txt # removes a file
-
 rmdir example_folder # removes a folder
-
 ```
 
 ### Tips  
@@ -235,10 +221,9 @@ Use:
 
 ```
 wc -l combined.txt
-
 ```
-wc stands for word count. When you use -l it gives you total number of lines instead of just character count (when you use wc only)
 
+wc stands for word count. When you use -l it gives you total number of lines instead of just character count (when you use wc only).
 Results will be displayed on screen. We call this behaviour, i.e. to output to screen, as 'standard output (STDOUT)'.
 
 ### Piping
@@ -251,22 +236,25 @@ When you have few lines, then use less. Example ls | less.
 
 If you want to know what a particular command does and how to use it. just type man COMMAND
 
+```
 man mv 
 man cp
 man wc
+```
 
 Similarly, you can also type 'COMMAND -h' or 'COMMAND --help'
 
+```
 mv --help
 cp -h
 wc --help
+```
 
 ### How to do multi-piping
 Example: 
 
 ```
 sort combined.txt | uniq | wc -l
-
 ```
 
 **What does the above command do? Use 'man' or 'help' to find out more information about 'sort' and 'uniq'.**
@@ -355,7 +343,6 @@ run:
 
 ```
 echo $SHELL
-
 ```
 Write a small script: 
 
