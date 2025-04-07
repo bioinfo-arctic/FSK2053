@@ -1,6 +1,6 @@
 # Introduction to Linux and command lines: A recap
 
-#### Learning outcome from this exercise
+#### Learning outcomes from this exercise
 
 A) How to connect to remote server/virtual machine
 
