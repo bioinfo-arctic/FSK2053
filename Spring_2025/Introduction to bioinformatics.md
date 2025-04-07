@@ -147,8 +147,8 @@ echo "This is a test" > test_1.txt
 echo "This is a second test" > test_2.txt
 nano ls.txt
 nano test_1.txt
-head ls.txt (gives you first 10 lines of a file)
-tail ls.txt (gives you last 10 lines of a file)
+head ls.txt # gives you first 10 lines of a file
+tail ls.txt # gives you last 10 lines of a file
 ```
 
 How to read multiple files together? Use cat again. The command 'cat' is used to concatenate files.
