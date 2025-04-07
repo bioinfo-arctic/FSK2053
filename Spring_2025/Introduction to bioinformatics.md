@@ -38,12 +38,10 @@ Once you are connected to the server, first thing you see is a welcome message a
 
 ```
 username@servers-network-name: ~ $       #it is called the 'prompt', that is the way the computer is telling you that it is ready to take on your instructions. Bring it on!
-
 ```
 
 Now we will try to run some commands. 
 First, we will try to find out where (which directory/folder) we are right now in our machine. 
-
 ```
 pwd # Print Working Directory, very intuitive.
 
@@ -93,7 +91,6 @@ Note down your current working directory and then run this following command.
 
 ```
 cd ..
-
 ```
 What did you see? 
 
