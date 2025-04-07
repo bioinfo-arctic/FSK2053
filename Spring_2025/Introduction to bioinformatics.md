@@ -349,7 +349,7 @@ echo $HOME
 
 Execute a small script: 
 
-There is small script uploaded in the bioinformatics section of the canvas, which performs a motivational greeting for you on Monday mornings. We are using ".sh" because bash is our command interpreter. You can place this script in your folder, and try to run it:
+There is small script uploaded in canvas ("welcome.sh"), which performs a motivational greeting for you on Monday mornings. We are using ".sh" because bash is our command interpreter. You can place this script in your folder, and try to run it:
 
 ```
 bash welcome.sh
