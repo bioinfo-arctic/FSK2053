@@ -344,6 +344,13 @@ run:
 ```
 echo $SHELL
 ```
+
+You can also try:
+
+```
+echo $HOME
+```
+
 Write a small script: 
 
 Open nano. Type all small commands such as date, cal, ls in separate lines and save it as test.sh. I am using .sh because I am using bash as interpreter of my commands.  
