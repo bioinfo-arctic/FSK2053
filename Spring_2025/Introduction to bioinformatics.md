@@ -325,7 +325,7 @@ r 	read
 Or you can use bit numbers. 
 First number related Owner, second number related group and 3rd number related to other users (not part of the group)
 
-Our goal is to make it here for today, but if we have more time, you can try out the following commands and their usage: 'ps', 'top', 'htop', 'zcat', 'unzip', 'gzip' and 'history'. Find out what they do. These commands will give different information about the system, unzip a zipped folder and so on.
+Our goal is to make it here for today, but if we have more time, you can try out the following commands and their usage: 'top', 'htop', 'zcat', 'unzip', 'gzip' and 'history'. Find out what they do. These commands will give different information about the system, unzip a zipped folder and so on.
 
 Lastly, we'll look a bit into scripting if we have additional time.
 
