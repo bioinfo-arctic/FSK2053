@@ -15,11 +15,11 @@ We will explore an alternative approach to addressing this issue by applying gen
 
 ## Part I: Exploring Genetic database
 
-# Step1. Navigating NCBI website
+### Step1. Navigating NCBI website
 
 First go to the website: https://www.ncbi.nlm.nih.gov. Look at the home page. Home page has much information, very comprehensive and self-explanatory: various databases, browsing windows, sequence (nucleotide, protein etc) submitting and downloading different databases etc…), different applications, literature information. We will spend some to explore the structure of NCBI database.
 
-# Step2.  Retrieving sequence data and associated information from NCBI
+### Step2.  Retrieving sequence data and associated information from NCBI
 The NCBI is very user-friendly database and genetic data search platform. All the basic operations are meant for traditional biologists, who are not very savvy with advanced computation skills or search skills. So, anyone with minimum biology knowledge can go in there and retrieve information. The only condition is that as a user you need to know what you want, which is dependent on the question. We will download few sequences from NCBI for demonstration purpose. Just download COI (cytochrome c oxidase subunit I) sequences related to family Scombridae (mainly contains mackerel related group). This is an important step in series of steps to solve the problem. 
 
 >COI from mitochondria is used as a genetic marker to barcode the species. Barcode is the same thing you see on a packet or box in the shop. More detail about the barcode projects here: https://phe.rockefeller.edu/barcode/index.php.
@@ -36,68 +36,74 @@ The previous exercise it is important to develop a sequence database to store th
 Now we will try to find out whether sushi restaurants used the species they are claiming. 
 We will use BLAST (Basic Local Alignment Search Tool) 'a find and match' (google for sequence data) application from NCBI to compare DNA sequences against known sequences to find matches from databases. BLAST in NCBI is like using Google’s image search, but instead of pictures, you input a DNA or protein sequence. In this course we will use both online and offline (standalone) version of this tool. 
 
-Using online version of BLAST 
+### Using online version of BLAST 
 First locate the tab in NCBI webpage where the blast application is shown. Please explore various blast modules which takes different inputs sequences (nucleotide or protein) and search them against different type of databases (nucleotide or protein sequences).  
 This is how whole thing works:  Just feed a “unknown” nucleotide or protein sequence to the blast search box and do blast’ing (important: choose right blast module, based on search molecule type and your expectation). It finds the similarities between sequences you provided (which is 'query'), and sequences stored in the database (which is 'subject'). Blast also calculates the statistical significance of that comparison (E-value, which is like p-value, tells how random the query matches with the subject, lesser the E-value, more confidence in the hit is). 
-Going back to our sushi problem. Before you use blast, you need to do some lab work. Remember your lab work for genetics (GEN…). 
- 
 
+You may just wonder how did you get sequences in these kind of experiments. For that you need to do some lab work. Remember your lab work for genetics (genetics class). 
 
+![Alt Text](https://raw.githubusercontent.com/shri1984/study-images/refs/heads/main/foods-12-02420-ag.webp?token=GHSAT0AAAAAAC5BYHQAFTMJDKWRN472RTWWZ7VP2MA)
 
+> ## Tips to blast sequences
+> 1. Choose right blast module based on the type of sequence input type and importantly, your objective
+> 2. Try to set the parameters if needed. Generally, default settings work better in most of the situations. So, leave them alone if you don’t have any compelling reason to change them or know what you are doing. 
 
+Now let’s say we got our sequences back for different sushi samples and now it is time to find out what they are made of. Is declared species name matched with the identified species name? 
 
-
-
-Now let’s say we got our sequences back for different sushi samples and now it is time to find out what they are. Is declared species name matched with the identified species name? 
 Let’s find out in online BLAST. 
+
 One disadvantage of using online BLAST is the potential waiting time. The longer and more numerous your input sequences, and the larger the database you are searching against, the longer the search operation may take. Additionally, during peak usage times, the NCBI servers may experience higher traffic, leading to further delays. The time required for a BLAST search generally increases with the size of the input sequences, the number of sequences, and the size of the database. It is also influenced by the specific BLAST program and parameters used. If you need to process many sequences efficiently, a practical solution is to use local BLAST. Installing BLAST locally allows you to bypass server queues, tailor the search parameters to your specific needs, and generate customized output formats. This makes local BLAST especially useful for large-scale or repetitive analyses.
-Using standalone version of BLAST
-Standalone blast works same way as online version. It also needs 3 things, NCBI module, sequence to be identified and database to search against.  
+
+### Using standalone version of BLAST
+Standalone blast works same way as online version. It needs 3 things, NCBI module, sequence to be identified and database to search against and laptop or server or VMs. 
+
 This time around you no need to install the NCBI module and generate database in linux virtual machine. I have done installation part for you. 
-EXTRA: Here is tip to install BLAST modules in a Linux based machine. 
-## install NCBI BLAST+ ##
-sudo apt-get ncbi-blast+ or conda install # It will download the precompiled latest version of blast+ tools to your system. 
-Or go to page : https://www.ncbi.nlm.nih.gov/books/NBK52640/ and download BLAST+
-## prepare database ##
-Our database is nucleotide sequences associated with group ‘teleost’.  If you need full nucleotide database (arouns 200 GB) go here: Our database is nucleotide sequences associated with group ‘teleost’.  If you need full nucleotide database (around 200 GB) go here:
+> ### EXTRA: Here is tip to install BLAST modules in a Linux based machine. 
+
+>## install NCBI BLAST+ ##
+> sudo apt-get ncbi-blast+ or conda install # It will download the precompiled latest version of blast+ tools to your system. 
+> Or go to page : https://www.ncbi.nlm.nih.gov/books/NBK52640/ and download BLAST+
+> ## prepare database ##
+> Our database is nucleotide sequences associated with group ‘teleost’.  If you need full nucleotide database (arouns 200 GB) go here: Our database is nucleotide sequences associated with group ‘teleost’.  If you need full nucleotide database (around 200 GB) go here:
 or 
-download nucleotide or protein (nr) database in fasta format to your system and build database locally using this command:  “makeblastdb” to make your own database in future.
-Connect to the VMs.  We are ready to explore the standalone BLAST. 
-We will run blast analysis in background of VMs, so that you can use terminal for some other tasks, while you are waiting. We use a inbuilt application called ‘screen’
+>download nucleotide or protein (nr) database in fasta format to your system and build database locally using this command:  “makeblastdb” to make your own database in future.
+
+Connect to the VMs. We are ready to explore the standalone BLAST.
+We will run blast analysis in background of VMs, so that you can use terminal for some other tasks, while you are waiting to finish. We use a inbuilt application called ‘screen’. 
 To check if BLAST is installed by running: blastn -h
-If it is all good, then you should see help message with parameters (arguments to change the behaviour of a command). 
-We will write the blastn script together (NB! there are spaces between the different parameters)
+If it is good, then you should see help message with parameters (arguments to change the behaviour of a command). 
+We will write the blastn script together (NB! there are spaces between the different parameters) as below:
 
 ```
 blastn -query name_of_the_query_file -db  path_to_database  -max_target_seqs 1 -outfmt 6 -out results2.txt -num_threads 1 -evalue 0.000001 -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore" 
 ```
 Generally, it will take 5-10 minutes to finish. 
 
+> EXTRA Default column names (-outfmt 6) (look into online help or terminal help)
 
+> -outfmt "6 qseqid qlen qaccver sseqid slen saccver sacc stitle salltitles length pident nident mismatch gapopen qstart qend sstart send evalue bitscore qcovs qcovhsp"
 
+>BLASTn tabular output format 6
 
-EXTRA Default column names (-outfmt 6) (look into online help or terminal help)
-
--outfmt "6 qseqid qlen qaccver sseqid slen saccver sacc stitle salltitles length pident nident mismatch gapopen qstart qend sstart send evalue bitscore qcovs qcovhsp"
-
-BLASTn tabular output format 6
-Column headers:
+> Column headers:
 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore
-1. qseqid query or source (e.g., gene) sequence id
-2. sseqid subject or target (e.g., reference genome) sequence id
-3. pident percentage of identical matches
-4. length alignment length (sequence overlap)
-5. mismatch number of mismatches
-6. gapopen number of gap openings
-7. qstart start of alignment in query
-8. qend end of alignment in query
-9. sstart start of alignment in subject
-10. send end of alignment in subject
-11. evalue expect value
-12. bitscore bit score
+> 1. qseqid query or source (e.g., gene) sequence id
+> 2. sseqid subject or target (e.g., reference genome) sequence id
+> 3. pident percentage of identical matches
+> 4. length alignment length (sequence overlap)
+> 5. mismatch number of mismatches
+> 6. gapopen number of gap openings
+> 7. qstart start of alignment in query
+> 8. qend end of alignment in query
+> 9. sstart start of alignment in subject
+> 10. send end of alignment in subject
+> 11. evalue expect value
+> 12. bitscore bit score
 
-Now you run the command and wait for it finish. Mean time you prepare a table in MS excel with what species you found in online blast version. 
+Now you run the command and wait for it finish. Mean time you prepare a table in MS excel (metadata) with what species you found in online blast version. 
+
 Now we have output and let’s interpret the table output of BLAST. 
+
 Add species names identified through standalone blast to the excel sheet. Compare it with the declared species name. How many (or in percentage) of the species match with the declared species name? At the same please visit: https://www.iucnredlist.org to find out the conservation status of the species you identified. Add that information to the table. Now we have all the necessary information to make a meaningful conclusion about the problem and possible solutions. 
 
 Part III: Discussion 
