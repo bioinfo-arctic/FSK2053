@@ -1,10 +1,10 @@
 # Genetic data and databases
 
 By the end of this session, students will be able to:
-1.	Access NCBI like database and explore the general features of such databases
-2.	Know how to search and download nucleotide/protein sequence data and other sequence associated information from NCBI database
-3.	How to use sequence similarity search tools like BLAST in online and standalone mode
-4.	How to use these learnings in solving a real-life problem
+1.	Navigate and explore the NCBI database to understand its structure and access genetic information.
+2.	Search for and download nucleotide and protein sequence data (e.g., COI sequences) and related metadata from NCBI
+3.	Use BLAST tools (online and standalone) to perform sequence similarity searches and interpret the results
+4.	Apply sequence analysis techniques to investigate real-life cases, such as identifying mislabeled seafood using DNA data
 
 Files: unknown.fasta and metadata we use for this practical are uploaded in the canvas. 
 
@@ -81,7 +81,7 @@ blastn -query name_of_the_query_file -db  path_to_database  -max_target_seqs 5 -
 ```
 Generally, it will take 5-10 minutes to finish. 
 
-> EXTRA Default column names (-outfmt 6) (look into online help or terminal help)
+> EXTRA: Default column names (-outfmt 6) (look into online help or terminal help)
 
 > try this: -outfmt "6 qseqid qlen qaccver sseqid slen saccver sacc stitle salltitles length pident nident mismatch gapopen qstart qend sstart send evalue bitscore qcovs qcovhsp"
 
@@ -108,8 +108,9 @@ Now we have output and let’s interpret the table output of BLAST.
 
 Add species names identified through standalone blast to the excel sheet. Compare it with the declared species name. How many (or in percentage) of the species match with the declared species name? At the same please visit: https://www.iucnredlist.org to find out the conservation status of the species you identified. Add that information to the table. Now we have all the necessary information to make a meaningful conclusion about the problem and possible solutions. 
 
-Part III: Discussion 
- Questions to discuss: 
-- How confident are you in your species identification based on the BLAST results? What factors determine the quality of identification?
-- What challenges did you face in retrieving or analysing data? 
-- How can these tools be used in research, conservation, and industry? Where else do you think this technique be used?
+## Part III: Discussion 
+- Did any of your samples come from endangered or overfished species? How did that affect your interpretation of the restaurant’s claims?
+- What factors make you confident in your species identification based on BLAST results?
+- What are some real-world applications of these tools beyond seafood fraud?
+- What are some shortcomings of BLAST or barcoding techniques?
+- How could these tools be integrated into food regulation or restaurant inspections?
