@@ -6,6 +6,8 @@ By the end of this session, students will be able to:
 3.	How to use sequence similarity search tools like BLAST in online and standalone mode
 4.	How to use these learnings in solving a real-life problem
 
+Files: unknown.fasta and metadata we use for this practical are uploaded in the canvas. 
+
 ## Introduction
 Imagine you are a researcher investigating seafood fraud at sushi restaurants. Many sushi restaurants substitute cheaper, overfished, or endangered species for more desirable ones, misleading consumers. These fish are often sold under incorrect names, and some belong to species listed on the IUCN Red List of Threatened Species. This mislabeling deceives customers and complicates efforts to manage marine populations effectively. Accurate species identification is essential for proper conservation and fishery management, as mislabeling undermines stock assessments and can lead to the continued overexploitation of vulnerable species.
 
@@ -75,17 +77,17 @@ If it is good, then you should see help message with parameters (arguments to ch
 We will write the blastn script together (NB! there are spaces between the different parameters) as below:
 
 ```
-blastn -query name_of_the_query_file -db  path_to_database  -max_target_seqs 5 -outfmt 6 -out results2.txt -num_threads 1 -evalue 0.000001 -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore" 
+blastn -query name_of_the_query_file -db  path_to_database  -max_target_seqs 5 -out results2.txt -num_threads 1 -evalue 0.000001 -outfmt 6  
 ```
 Generally, it will take 5-10 minutes to finish. 
 
 > EXTRA Default column names (-outfmt 6) (look into online help or terminal help)
 
-> -outfmt "6 qseqid qlen qaccver sseqid slen saccver sacc stitle salltitles length pident nident mismatch gapopen qstart qend sstart send evalue bitscore qcovs qcovhsp"
+> try this: -outfmt "6 qseqid qlen qaccver sseqid slen saccver sacc stitle salltitles length pident nident mismatch gapopen qstart qend sstart send evalue bitscore qcovs qcovhsp"
 
 >BLASTn tabular output format 6
 
-> Column headers:
+> Column headers (default):
 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore
 > 1. qseqid query or source (e.g., gene) sequence id
 > 2. sseqid subject or target (e.g., reference genome) sequence id
@@ -100,7 +102,7 @@ qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bits
 > 11. evalue expect value
 > 12. bitscore bit score
 
-Now you run the command and wait for it finish. Mean time you prepare a table in MS excel (metadata) with what species you found in online blast version. 
+Now you run the command and wait for it to finish. In the mean time you prepare a table in MS excel (metadata) with what species you found in online blast version. 
 
 Now we have output and let’s interpret the table output of BLAST. 
 
