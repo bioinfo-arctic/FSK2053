@@ -75,7 +75,7 @@ If it is good, then you should see help message with parameters (arguments to ch
 We will write the blastn script together (NB! there are spaces between the different parameters) as below:
 
 ```
-blastn -query name_of_the_query_file -db  path_to_database  -max_target_seqs 1 -outfmt 6 -out results2.txt -num_threads 1 -evalue 0.000001 -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore" 
+blastn -query name_of_the_query_file -db  path_to_database  -max_target_seqs 5 -outfmt 6 -out results2.txt -num_threads 1 -evalue 0.000001 -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore" 
 ```
 Generally, it will take 5-10 minutes to finish. 
 
