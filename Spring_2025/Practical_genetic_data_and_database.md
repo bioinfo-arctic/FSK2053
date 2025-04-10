@@ -25,7 +25,7 @@ First go to the website: https://www.ncbi.nlm.nih.gov. Look at the home page. Ho
 ### Step 2.  Retrieving sequence data and associated information from NCBI
 The NCBI is very user-friendly database and genetic data search platform. All the basic operations are meant for traditional biologists, who are not very savvy with advanced computation skills or search skills. So, anyone with minimum biology knowledge can go in there and retrieve information. The only condition is that as a user you need to know what you want, which is dependent on the question. We will download few sequences from NCBI for demonstration purpose. Just download COI (cytochrome c oxidase subunit I) sequences related to family Scombridae (mainly contains mackerels related group). This is an important step in series of steps to solve the problem. 
 
->COI from mitochondria is used as a genetic marker to barcode the species. Barcode is the same thing you see on a packet or box in the shop. More detail about the barcode projects here: https://phe.rockefeller.edu/barcode/index.php.
+>COI from mitochondria (around 652 bp) is used as a genetic marker to barcode the species. Barcode is the same thing you see on a packet or box in the shop. More detail about the barcode projects here: https://phe.rockefeller.edu/barcode/index.php.
 >Once you do the barcoding of a species that remains with that species forever and becomes part of the database.
 >
 ![Alt Text](https://raw.githubusercontent.com/shri1984/study-images/main/DNA_Barcoding.png)
