@@ -90,7 +90,7 @@ Generally, it will take 5-10 minutes to finish.
 
 > EXTRA: Default column names (-outfmt 6) (look into online help or terminal help)
 
-> try this: -outfmt "6 qseqid qlen qaccver sseqid slen saccver sacc stitle salltitles length pident nident mismatch gapopen qstart qend sstart send evalue bitscore qcovs qcovhsp"
+> try this: -outfmt "6 qseqid qlen qaccver sseqid slen saccver sacc stitle salltitles length pident nident mismatch gapopen qstart qend sstart send evalue bitscore qcovs"
 
 >blastn tabular output format 6
 
