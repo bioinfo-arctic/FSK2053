@@ -78,7 +78,9 @@ or
 
 Connect to the VMs. We are ready to explore the standalone BLAST.
 We will run blast analysis in background of VMs, so that you can use terminal for some other tasks, while you are waiting to finish. We use a inbuilt application called ‘screen’. 
+
 To check if BLAST is installed by running: blastn -h
+
 If it is good, then you should see help message with parameters (arguments to change the behaviour of a command). 
 
 We will write the blastn script together (NB! there are spaces between the different parameters) as below:
