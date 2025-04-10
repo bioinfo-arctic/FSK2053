@@ -27,7 +27,7 @@ The NCBI is very user-friendly database and genetic data search platform. All th
 
 >COI from mitochondria is used as a genetic marker to barcode the species. Barcode is the same thing you see on a packet or box in the shop. More detail about the barcode projects here: https://phe.rockefeller.edu/barcode/index.php.
 >Once you do the barcoding of a species that remains with that species forever and becomes part of the database.
-![Alt Text](https://raw.githubusercontent.com/shri1984/study-images/refs/heads/main/testedna.jpg?token=GHSAT0AAAAAAC5BYHQBF2XNJYV4XJWKR4LIZ7VI4YQ)
+![Alt Text](https://raw.githubusercontent.com/shri1984/study-images/main/DNA_Barcoding.png)
 
 As we are working with large number of possible fish species (means database could be big) in this question (sushi), we may need to download lot of sequences (close to 500 GB nucleotide data). I downloaded that data for you (see below). However we still explore how to search and download data. 
 
@@ -47,7 +47,7 @@ This is how whole thing works:  Just feed a “unknown” nucleotide or protein 
 
 >You may just wonder how did you get sequences in these kind of experiments. For that you need to do some lab work. Remember your lab work for genetics (genetics class). 
 
-![Alt Text](https://raw.githubusercontent.com/shri1984/study-images/refs/heads/main/foods-12-02420-ag.webp?token=GHSAT0AAAAAAC5BYHQAFTMJDKWRN472RTWWZ7VP2MA)
+![Alt Text](https://raw.githubusercontent.com/shri1984/study-images/refs/heads/main/foods-12-02420-ag.webp)
 
 > ## Tips to blast sequences
 > 1. Choose right blast module based on the type of sequence input type and importantly, your objective
