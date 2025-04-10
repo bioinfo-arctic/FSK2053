@@ -7,7 +7,7 @@ By the end of this session, students will be able to:
 4.	Apply sequence analysis techniques to investigate real-life cases, such as identifying mislabeled seafood using DNA data
 
 #### Files you need
-sushisamples.fasta and sushisamples_metadata.xls we use for this practical are uploaded in the canvas. 
+sushisamples.fasta and sushisamples_metadata.xls are the files we will be using and they are uploaded to the canvas. 
 
 ## Introduction
 Imagine you are a researcher investigating seafood fraud at sushi restaurants. Many sushi restaurants substitute cheaper, overfished, or endangered species for more desirable ones, misleading consumers. These fish are often sold under incorrect names, and some belong to species listed on the IUCN Red List of Threatened Species. This mislabeling deceives customers and complicates efforts to manage marine populations effectively. Accurate species identification is essential for proper conservation and fishery management, as mislabeling undermines stock assessments and can lead to the continued overexploitation of vulnerable species.
@@ -18,11 +18,11 @@ We will explore an alternative approach to addressing this issue by applying gen
 
 ## Part I: Exploring Genetic database
 
-### Step1. Navigating NCBI website
+### Step 1. Navigating NCBI website
 
 First go to the website: https://www.ncbi.nlm.nih.gov. Look at the home page. Home page has much information, very comprehensive and self-explanatory: various databases, browsing windows, sequence (nucleotide, protein etc) submitting and downloading different databases etc…), different applications, literature information. We will spend some to explore the structure of NCBI database.
 
-### Step2.  Retrieving sequence data and associated information from NCBI
+### Step 2.  Retrieving sequence data and associated information from NCBI
 The NCBI is very user-friendly database and genetic data search platform. All the basic operations are meant for traditional biologists, who are not very savvy with advanced computation skills or search skills. So, anyone with minimum biology knowledge can go in there and retrieve information. The only condition is that as a user you need to know what you want, which is dependent on the question. We will download few sequences from NCBI for demonstration purpose. Just download COI (cytochrome c oxidase subunit I) sequences related to family Scombridae (mainly contains mackerels related group). This is an important step in series of steps to solve the problem. 
 
 >COI from mitochondria is used as a genetic marker to barcode the species. Barcode is the same thing you see on a packet or box in the shop. More detail about the barcode projects here: https://phe.rockefeller.edu/barcode/index.php.
@@ -92,7 +92,7 @@ Generally, it will take 5-10 minutes to finish.
 
 > try this: -outfmt "6 qseqid qlen qaccver sseqid slen saccver sacc stitle salltitles length pident nident mismatch gapopen qstart qend sstart send evalue bitscore qcovs qcovhsp"
 
->BLASTn tabular output format 6
+>blastn tabular output format 6
 
 > Column headers (default):
 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore
