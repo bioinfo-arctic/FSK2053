@@ -27,6 +27,7 @@ The NCBI is very user-friendly database and genetic data search platform. All th
 
 >COI from mitochondria is used as a genetic marker to barcode the species. Barcode is the same thing you see on a packet or box in the shop. More detail about the barcode projects here: https://phe.rockefeller.edu/barcode/index.php.
 >Once you do the barcoding of a species that remains with that species forever and becomes part of the database.
+>
 ![Alt Text](https://raw.githubusercontent.com/shri1984/study-images/main/DNA_Barcoding.png)
 
 As we are working with large number of possible fish species (means database could be big) in this question (sushi), we may need to download lot of sequences (close to 500 GB nucleotide data). I downloaded that data for you (see below). However we still explore how to search and download data. 
