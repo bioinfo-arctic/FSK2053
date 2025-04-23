@@ -20,7 +20,7 @@ The table below contains the characters we need to make our tree. A "+" indicate
 
 ![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2024/images/q2.png)
 
-A key feature to learn here is what forms the "ancestral trait", and which reflect "derived traits". These concepts are important when making a tree based on morphological characters. An ancestral trait is what we believe was present in the recent common ancestor of the species of interest. Also, if the trait is present only in the outgroup you can call it ancestral trait. A derived trait is a trait or character that appears somewhere on a lineage descended from recent common ancestor.
+A key feature to learn here is what forms the "ancestral trait", and which reflect "derived traits". These concepts are important when making a tree based on morphological characters. An ancestral trait is what we believe was present in the common ancestor of the species of interest. Also, if the trait is present only in the outgroup you can call it an ancestral trait. A derived trait is a trait or character that appears somewhere on a lineage descended from a recent common ancestor.
 
 We will start building a tree now. Lampery lacks all the traits listed
 in the table. Hence we can assume that ancestors for these group of
