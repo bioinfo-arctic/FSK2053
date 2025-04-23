@@ -4,7 +4,7 @@
 
 **1)** To learn the principles of phylogenetic tree construction
 
-**2)** To try to build a basic phylogenetic tree from morphological characters
+**2)** To build a basic phylogenetic tree from morphological characters
 
 **3)** To build phylogenetic trees using representative DNA sequences in R
 
@@ -14,15 +14,13 @@ We will do a fun group exercise before we construct a real phylogenetic tree (20
 
 ![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2024/images/q1.jpeg)
 
-## Building a phylogenetic tree using some anatomical characters
+## Building a phylogenetic tree using a set of morphological characters
 
-Table below contains characters to make our tree. + indicates presence and 0 represents absence. This data taken from Principles of biology by Robert Bear (table from khan academy) with some modifications.
+The table below contains the characters we need to make our tree. A "+" indicates presence of a character, whereas "0" represents absence. This data does not necessarily reflect the true evolutionary history of these organisms, but is simply a subset of characters used to build a tree.
 
 ![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2024/images/q2.png)
 
-One important thing we should know from above table is what forms the ancestral trait, and which are derived traits. This is important to make a tree based on characters. An ancestral trait is what we think was
-present in the recent common ancestor of the species of interest. Also, if the trait is present only in the outgroup you can call it ancestral trait. A derived trait is a trait or character that appears somewhere on a
-lineage descended from recent common ancestor.
+A key feature to learn here is what forms the "ancestral trait", and which reflect "derived traits". These concepts are important when making a tree based on morphological characters. An ancestral trait is what we believe was present in the recent common ancestor of the species of interest. Also, if the trait is present only in the outgroup you can call it ancestral trait. A derived trait is a trait or character that appears somewhere on a lineage descended from recent common ancestor.
 
 We will start building a tree now. Lampery lacks all the traits listed
 in the table. Hence we can assume that ancestors for these group of
