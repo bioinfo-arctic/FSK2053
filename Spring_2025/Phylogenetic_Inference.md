@@ -2,21 +2,21 @@
 
 **Aim of the practical**
 
-**1)** To learn the principle of phylogenetic tree construction
+**1)** To learn the principles of phylogenetic tree construction
 
-**2)** Steps in building a basic phylogenetic tree
+**2)** To try to build a basic phylogenetic tree from morphological characters
 
-**3)** Constructing a phylogenetic tree in R
+**3)** To build phylogenetic trees using representative DNA sequences in R
 
 # Principle of tree construction
 
-We will do a fun exercise before we do a real phylogenetic tree construction. Can you place these new organisms in order? And give your rationale for your placement of that organism in this tree.
+We will do a fun group exercise before we construct a real phylogenetic tree (20 minutes in groups). How would you place these organisms in a phylogenetic tree? Give your rationale for why you would design your tree that way.
 
 ![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2024/images/q1.jpeg)
 
 ## Building a phylogenetic tree using some anatomical characters
 
-Table below contains charatcters to make our tree. + indicates presence and 0 represents absence. This data taken from Principles of biology by Robert Bear (table from khan academy) with some modifications.
+Table below contains characters to make our tree. + indicates presence and 0 represents absence. This data taken from Principles of biology by Robert Bear (table from khan academy) with some modifications.
 
 ![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2024/images/q2.png)
 
