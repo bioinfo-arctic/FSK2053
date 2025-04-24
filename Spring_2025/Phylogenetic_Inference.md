@@ -38,7 +38,7 @@ Phylogenetics in R can be performed with various packages such as `msa` (Bodenho
 
 ## 1. Install or load R packages
 
-Some of the packages (***phangorn***, ***ape***, ***ggplot2*** and ***bios2mds***) can be directly downloaded from R studio as packages. ggplot2 is likely already installed from the data science part. However, the **msa** and **ggmsa** packages need to be downloaded using **Bioconductor**. Type ***“msa r package”*** in google and find relevant the bioconductor package. Read relevant information about how to download msa. First you may need to download the package downloader called **bioconductor**. If you have issues with ***bios2mds*** package installation, then download the .tar.gz file from here: https://cran.r-project.org/web/packages/bios2mds/index.html and untar it. Then upload the file export_fast.R into and run the function. It will be avilable for use.
+Some of the packages (***phangorn***, ***ape***, ***ggplot2*** and ***bios2mds***) can be directly downloaded from R studio as packages (remember ***install.packages()***?). ggplot2 is likely already installed from the Data Science part of the course. However, the **msa** and **ggmsa** packages need to be downloaded using **Bioconductor**. If you have issues, type ***“msa r package”*** in Google and find the relevant bioconductor package. Read through the relevant information about how to download msa. First you may need to download the package downloader called **bioconductor**. If you have issues with ***bios2mds*** package installation, then download the .tar.gz file from here: https://cran.r-project.org/web/packages/bios2mds/index.html and find the ***export_fasta.R*** function. Then you can load it into R and run the function that way.
 
 ```
 if (!require("BiocManager", quietly = TRUE))
@@ -50,9 +50,9 @@ BiocManager::install("ggmsa")
 ```
 ```
 #load packages
-library(msa) 
-library(bios2mds) 
-library(phangorn) 
+library(msa)
+library(bios2mds)
+library(phangorn)
 library(ape)
 library(stats)
 library(ggplot2)
@@ -64,34 +64,28 @@ library(ggmsa)
 ### Read sequences in fasta format into msa (Multiple Sequence Alignment) algorithm
 
 ```
-mysequencefile <- readDNAStringSet("phylogenetics_tree_final_24424.fasta", format = "fasta")
-
+mysequencefile <- readDNAStringSet("phylogenetic_tree_data_FSK2053.fasta", format = "fasta")
 ```
 
-### Run multiple alignemnt analysis using `ClustalOmega` program in msa
+### Run the multiple alignment analysis using `ClustalOmega` program with msa
 
-This following step can lot of time, depending on number of sequences
-and length. Here it will go fast.
+The following step can take lot of time, depending on the number of sequences being analysed and their lengths. Here it will go fast.
 
 ```
 alignomega  <- msa(mysequencefile, method = "ClustalOmega")
-
 align <- msaConvert(alignomega, type= "bios2mds::align")
-
 align_phydata <- msaConvert(alignomega, type= "phangorn::phyDat")
-
 ```
 
-you can write alignment data to a file instead of keeping it in an R object, use
+You can write the alignment data to a file instead of keeping it in an R object, use:
 
 ```
 export.fasta(align, outfile = "myAlignment.fasta", ncol = 60, open = "w")
-
 ```
 
-Now open the file myAlignment.fasta in bbedit and see the content. You see there is string of NAs at the end of each fasta sequence. It is a bug from the package.I cant figureout what is happening. We will remove them manually. 
+Now open the file myAlignment.fasta in bbedit, notepad++, or notepad, and check the contents. You see there is string of NAs at the end of each sequence. This is a bug from the package, which we can't figure out why is happening. Instead, we will remove the NA's manually and save the file.
 
-If ypu want to visualise and annotation of multiple sequence alignment such as myAlignment.fasta in, use function ggmsa from ggmsa package. 
+If you want to visualise and see annotation of multiple sequence alignment such as myAlignment.fasta in, use function ggmsa from ggmsa package. 
 
 ```
 ggmsafile<- "/Users/sbh001/Library/CloudStorage/OneDrive-UiTOffice365/course-FSK2053/lecture3_phylogenetics/myAlignment.fasta"
