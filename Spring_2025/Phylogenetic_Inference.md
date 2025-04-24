@@ -49,7 +49,7 @@ BiocManager::install("msa")
 BiocManager::install("ggmsa")
 ```
 ```
-#load packages
+# Load packages
 library(msa)
 library(bios2mds)
 library(phangorn)
@@ -89,7 +89,6 @@ If you want to visualise and see annotation of multiple sequence alignment such 
 
 ```
 ggmsafile<- "C:/Users/marei5443/OneDrive - UiT Office 365/Dokumenter/Scientist, UiT/Teaching/FSK-2053_Data_Science_and_Bioinformatics/2025/myAlignment.fasta"
-
 ggmsa(ggmsafile, 300, 350, color = "Chemistry_NT", font = "TimesNewRoman", char_width = 0.5, seq_name = TRUE) +
     geom_seqlogo() +
     geom_msaBar()  # see alignment in colurful format.
@@ -161,7 +160,7 @@ We will use correlation analysis between the calculated distance between the tax
 
 ```
 x <- as.vector(D) # convert D as vector
-y <- as.vector(as.dist(cophenetic(tre2))) # caluclate cophentic distance from tre2 and convert it to vector. Cophenetic function computes distances between the tips of the trees
+y <- as.vector(as.dist(cophenetic(treeNJ))) # caluclate cophentic distance from treeNJ and convert it to vector. Cophenetic function computes distances between the tips of the trees
 plot(x, y, xlab="original pairwise distances", ylab="pairwise distances on the tree", main="Is UPGMA appropriate?", pch=20, col="red", cex=3)
 abline(lm(y~x), col="red")
 cor(x,y)^2
@@ -176,7 +175,7 @@ Choose right tree and proceed to bootstrapping.
 
 ### Run bootstrapping
 
-Bootstrapping is a test or metric that uses random sampling withreplacement and falls under the broader class of resampling methods. It
+Bootstrapping is a test or metric that uses random sampling with replacement and falls under the broader class of resampling methods. It
 uses sampling with replacement to estimate the sampling distribution for
 the estimator (Ojha et al 2022). Basic idea is building same tree
 leaving out some portion of evidence (some bases from a sequence) and check if same clades appear
@@ -212,8 +211,8 @@ Now we will caluclate parsimony score, which is the minimum number of changes nc
 
 ```
 align_phydata <- msaConvert(alignomega, type= "phangorn::phyDat")
-parsimony(treeNJroot, align_phydata)  
-tre.pars.nj <- optim.parsimony(treNJ, align_phydata) # it used whole sequences to make a tree, unlike distance based trees such as nj or upgma. 
+parsimony(treeNJroot, align_phydata)
+tre.pars.nj <- optim.parsimony(treeNJ, align_phydata) # it used whole sequences to make a tree, unlike distance based trees such as nj or upgma. 
 tre.pars.nj
 parsimony(tre.pars.nj, align_phydata)
 plot(tre.pars.nj, type="unr", show.tip=FALSE, edge.width=2, main = "Maximum-parsimony tree") #it has lower parsimonious score compare to the original tree. try other type 
@@ -222,7 +221,7 @@ plot(tre.pars.nj, type="unr", show.tip=FALSE, edge.width=2, main = "Maximum-pars
 if you want to download or write the file in newick or nexus format then use following command.
 
 ```
-write.tree(tre4, file="tre.tree") 
+write.tree(tre.pars.nj, file="tre.tree")
 ```
 You can open this tree file using a program called figtree (http://tree.bio.ed.ac.uk/software/figtree/).
 
