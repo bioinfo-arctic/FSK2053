@@ -91,14 +91,10 @@ If you want to visualise and see annotation of multiple sequence alignment such 
 ggmsafile<- "C:/Users/marei5443/OneDrive - UiT Office 365/Dokumenter/Scientist, UiT/Teaching/FSK-2053_Data_Science_and_Bioinformatics/2025/myAlignment.fasta"
 ggmsa(ggmsafile, 300, 350, color = "Chemistry_NT", font = "TimesNewRoman", char_width = 0.5, seq_name = TRUE) +
     geom_seqlogo() +
-    geom_msaBar()  # see alignment in colurful format.
+    geom_msaBar()  # see alignment in a neat, colorful format.
 ```
 
-Once you are done with alignment, next step is making the phylogenetic
-tree from those alignment. This follwing function converts a multiple sequence alignment
-object to formats used in other sequence analysis packages. Benefit of
-this is that you can directly proceed to other packages without reading
-the input again. Here we will convert msa object into DNAbin object reqired by paclakge ***ape***.
+Once you are done preparing the alignment, the next step is to make the phylogenetic tree from the alignment. The following function converts a multiple sequence alignment object to formats used in other sequence analysis packages. The benefit of this is that you can directly proceed to other packages without reading the input again. Here, we will convert an msa object into a DNAbin object required by the ***ape*** package.
 
 ```
 alignment_dnabin <- msaConvert(alignomega, type= "ape::DNAbin")
