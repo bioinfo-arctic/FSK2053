@@ -221,7 +221,7 @@ You can open this tree file using a program called figtree (http://tree.bio.ed.a
 Extra information: ’Beauti’fication of phylogenetic trees can be done using `ggplot`and its associated package called `ggtree` can be used to make trees more beautiful.
 If you are interested, you can play around with and make colourful trees using different functions and packages at home. For example using the package "ggtree", which has a lot of really cool features. You can see more here: https://yulab-smu.top/treedata-book/.
 
-######## References:
+### References:
 
     Bodenhofer U, Bonatesta E, Horejs-Kainrath C, Hochreiter S (2015). “msa: an R package for multiple sequence alignment.” Bioinformatics, 31(24), 3997–3999. doi:10.1093/bioinformatics/btv494.
 
