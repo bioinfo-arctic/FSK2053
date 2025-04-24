@@ -85,7 +85,7 @@ export.fasta(align, outfile = "myAlignment.fasta", ncol = 60, open = "w")
 
 Now open the file myAlignment.fasta in bbedit, notepad++, or notepad, and check the contents. You see there is string of NAs at the end of each sequence. This is a bug from the package, which we can't figure out why is happening. Instead, we will remove the NA's manually and save the file.
 
-If you want to visualise and see annotation of multiple sequence alignment such as myAlignment.fasta in, use function ggmsa from ggmsa package. 
+If you want to visualise and see the annotation of multiple sequence alignments such as myAlignment.fasta in, you can use the function ggmsa from the ggmsa package. 
 
 ```
 ggmsafile<- "C:/Users/marei5443/OneDrive - UiT Office 365/Dokumenter/Scientist, UiT/Teaching/FSK-2053_Data_Science_and_Bioinformatics/2025/myAlignment.fasta"
@@ -94,70 +94,70 @@ ggmsa(ggmsafile, 300, 350, color = "Chemistry_NT", font = "TimesNewRoman", char_
     geom_msaBar()  # see alignment in a neat, colorful format.
 ```
 
-Once you are done preparing the alignment, the next step is to make the phylogenetic tree from the alignment. The following function converts a multiple sequence alignment object to formats used in other sequence analysis packages. The benefit of this is that you can directly proceed to other packages without reading the input again. Here, we will convert an msa object into a DNAbin object required by the ***ape*** package.
+Once you are done preparing the alignment, the next step is to make the phylogenetic tree from the alignment. The following function converts a multiple sequence alignment object to formats used in other sequence analysis packages. The benefit of this is that you can directly proceed to other packages without reading the input again. Here, we will convert an msa object into a DNAbin object as required by the ***ape*** package.
 
 ```
 alignment_dnabin <- msaConvert(alignomega, type= "ape::DNAbin")
 align_phydata <- msaConvert(alignomega, type= "phangorn::phyDat")
 ```
 
-Now we will try to do some phylogenetic trees based on different
-methods.
+Now we will try to do some phylogenetic trees based on different methods.
 
 ## Phylogenetic tree construction
 
-Distance-based trees are produced by calculating the genetic distances between pairs of taxa/species/measurements, followed by hierarchical clustering that creates the actual “tree” look. Two popular clustering methods that are used most frequenctly for distance based clustering method are UPGMA and NJ algorithms.
+Distance-based trees are produced by calculating the genetic distances between pairs of taxa/species/measurements, followed by hierarchical clustering that creates the actual “tree” topography. Two popular clustering methods that are frequently used for distance based clustering are UPGMA ("unweighted pair group method with arithmetic mean") and NJ ("Neighbour-joining") algorithms.
 
-UPGMA- this is the simplest method for constructing trees, assumes the same evolutionary speed for all lineages (which can be a disadvantage); all leaves have the same distance from the root (creates ultrametric tree). Ultrametric tree is the one where distance from root to every type tip are equal. This tree is  often used to represent hierarchical clustering of sequences and species, showcasing the evolutionary time from the last common ancestor. UPGMA is one such type of tree.
+UPGMA: This is the simplest method for constructing trees. It assumes the same evolutionary rate or speed for all lineages (which is good for simplicity, but likely doesn't reflect reality). All terminal nodes/tips/leaves have the same distance from the root (also called an ***ultrametric tree***). Ultrametric trees have the same distance from the root to every single tip/leaf in the tree. This tree is  often used to represent hierarchical clustering of sequences and species, showcasing the evolutionary time from the last common ancestor. UPGMA is one such type of tree.
 
-Neighbor-joining- taking the two closest nodes of the tree and defines them as neighbors; you keep doing this until all of the nodes have been paired together. This forms the example for addtive type of tree, also known as metric trees. In this type branch lengths accurately represent the genetic distance or evolutionary change between species or sequences. 
-
+Neighbor-joining: Takes the two closest nodes of the tree and defines them as being neighbors. We essentially keep doing this until all of the nodes have been paired together. This forms the example for an additive type of tree, also known as ***metric trees***. In this type of trees, branch lengths represent the genetic distance or evolutionary change between species or sequences.
 
 ### Distance based phylogenetic tree construction
 
-First calculate a distance matrix from ***ape** package using dist.dna function.  
+First, we calculate a distance matrix using the dist.dna function from the ***ape*** package.
 
 ```
-D <- dist.dna(alignment_dnabin, model = "TN93")  #just the type of evolutionary model we’re using, this particular one allows for different transition rates, heterogenous base frequencies, and variation of substitution rate at the same site
-length(D) #number of pairwise distances, computed as n(n-1)/2
+D <- dist.dna(alignment_dnabin, model = "TN93")  # TN93 is an evolutionary model, allowing for different transition rates, heterogenous base frequencies, and variation of substitution rate at the same site
+length(D) # Corresponds to the number of pairwise distances, computed as n(n-1)/2
 ```
-Now use object D, which is distance matrix to costruct two distance based phylogenetic trees. There are lot of functions in R to build distance based phylogenetic tree. But we will use few of them here mainly from ***ape*** package
+Now we use the object D, which is distance matrix, to costruct two distance based phylogenetic trees. There are lots of functions in R to build distance based phylogenetic trees. Here, we will focus only on a few of them from the ***ape*** package.
+
+Here we make NJ and UPGMA trees.
 
 ```
 treeNJ <- nj(D)
-class(treeNJ) #all trees created using ape package will be of class phylo
+class(treeNJ) # all trees created using the ape package functions will be of the class "phylo"
 treeNJ # tells us what the tree will look like but doesn't show the actual construction
-treeUPGMA <- upgma(D, "centroid") #This tree is called an ultrametric tree, 
+treeUPGMA <- upgma(D, "centroid") # this tree is called an ultrametric tree
 treeUPGMA
 ```
-Plot trees using generic function. But you can play around and make colourful trees using different functions and packages. 
+Next, we plot the trees using the generic plot function.
 
 ```
-treeUPGMA <- ladderize(treeUPGMA) #This function reorganizes the internal structure of the tree to get the ladderized effect when plotted
-plot(treeUPGMA, main="A Simple UPGMA Tree")
+treeUPGMA <- ladderize(treeUPGMA) # this function reorganizes the internal structure of the tree to get the ladderized effect when plotted
+plot(treeUPGMA, main = "A simple UPGMA tree")
 add.scale.bar()
-treeNJ <- ladderize(treeNJ) #This function reorganizes the internal structure of the tree to get the ladderized effect when plotted
-plot(treeNJ, type = "phylogram", main="A Simple NJ Tree", show.tip=FALSE)
+treeNJ <- ladderize(treeNJ) # same ladderize effect as above
+plot(treeNJ, type = "phylogram", main="A simple NJ tree", show.tip=FALSE)
 add.scale.bar()
 ```
-if you want make rooted NJ treee, then you need mention outgroup to which root your tree. This is one of the few ways you can root a tree. Other method is midpoint rooting. 
+If you want to make a rooted NJ tree, then you need to define what is your outgroup. This is one of the few ways you can root a tree. Another method is midpoint rooting, which we will not do here. 
 
 ```
 treeNJroot <- root(treeNJ, outgroup = "Esox_lucius", resolve.root = TRUE, edgelabel = TRUE)
-treeNJroot <- ladderize(treeNJroot) #This function reorganizes the internal structure of the tree to get the ladderized effect when plotted
+treeNJroot <- ladderize(treeNJroot) # same ladderize effect as above
 plot(treeNJroot, show.tip=FALSE, edge.width=2, main="Rooted NJ tree")
 add.scale.bar()
 ```
-As we have lot of options to make a phylogenetics trees, we have to make sure that the alogrithm we chose to make tree is the right one to explain the sequence data. We need to test what type of algorithm explains the data well (NJ or UPGMA?)
+We have a lot of options when making phylogenetic trees, but we should make sure that the algorithm we choose to make the tree is in fact the right one to explain the sequence data. We therefore need to test what type of algorithm explains the data best (NJ or UPGMA?)
 
-### choosing 'right' algorithm 
+### Choosing the 'right' algorithm 
 
-We will use correlation analysis between the calculated distance between the taxa and ***cophenetic distance*** to choose the the right tree. The two observations that have been clustered is defined to be the intergroup dissimilarity at which the two observations are first combined into a single cluster. 
+We will use correlation analysis between the calculated distance between the taxa and the ***cophenetic distance*** to choose the right tree. The two observations that have been clustered are defined to be the intergroup dissimilarity at which the two observations are first combined into a single cluster. 
 
 ```
-x <- as.vector(D) # convert D as vector
-y <- as.vector(as.dist(cophenetic(treeNJ))) # caluclate cophentic distance from treeNJ and convert it to vector. Cophenetic function computes distances between the tips of the trees
-plot(x, y, xlab="original pairwise distances", ylab="pairwise distances on the tree", main="Is UPGMA appropriate?", pch=20, col="red", cex=3)
+x <- as.vector(D) # convert D as vector.
+y <- as.vector(as.dist(cophenetic(treeNJ))) # calculate cophenetic distance from treeNJ and convert it to a vector. The cophenetic function computes distances between the tips of the trees.
+plot(x, y, xlab="original pairwise distances", ylab="pairwise distances on the tree", main="Is NJ appropriate?", pch=20, col="red", cex=3)
 abline(lm(y~x), col="red")
 cor(x,y)^2
 
@@ -167,15 +167,12 @@ plot(x, y, xlab="original pairwise distances", ylab="pairwise distances on the t
 abline(lm(y~x), col="red")
 cor(x,y)^2
 ```
-Choose right tree and proceed to bootstrapping.
+
+Which tree was the most appropriate? Choose the right tree and proceed to bootstrapping.
 
 ### Run bootstrapping
 
-Bootstrapping is a test or metric that uses random sampling with replacement and falls under the broader class of resampling methods. It
-uses sampling with replacement to estimate the sampling distribution for
-the estimator (Ojha et al 2022). Basic idea is building same tree
-leaving out some portion of evidence (some bases from a sequence) and check if same clades appear
-even after leaving out some data.
+Bootstrapping is a test or metric that uses random sampling with replacement and falls under the broader class of resampling methods. It uses sampling with replacement to estimate the sampling distribution for the estimator (Ojha et al., 2022). Basic idea is building same tree leaving out some portion of evidence (some bases from a sequence) and check if same clades appear even after leaving out some data.
 
 ![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2024/images/boot.jpeg)
 
@@ -211,7 +208,7 @@ parsimony(treeNJroot, align_phydata)
 tre.pars.nj <- optim.parsimony(treeNJ, align_phydata) # it used whole sequences to make a tree, unlike distance based trees such as nj or upgma. 
 tre.pars.nj
 parsimony(tre.pars.nj, align_phydata)
-plot(tre.pars.nj, type="unr", show.tip=FALSE, edge.width=2, main = "Maximum-parsimony tree") #it has lower parsimonious score compare to the original tree. try other type 
+plot(tre.pars.nj, type="unr", show.tip=FALSE, edge.width=2, main = "Maximum-parsimony tree") # it has lower parsimonious score compare to the original tree. try other type 
 ```
 
 if you want to download or write the file in newick or nexus format then use following command.
@@ -221,15 +218,15 @@ write.tree(tre.pars.nj, file="tree_example.tree")
 ```
 You can open this tree file using a program called figtree (http://tree.bio.ed.ac.uk/software/figtree/).
 
+Extra information: ’Beauti’fication of phylogenetic trees can be done using `ggplot`and its associated package called `ggtree` can be used to make trees more beautiful.
+If you are interested, you can play around with and make colourful trees using different functions and packages at home. For example using the package "ggtree", which has a lot of really cool features. You can see more here: https://yulab-smu.top/treedata-book/.
 
-Extra information: ’Beauti’fication of phylogenetic trees can be done
-using `ggplot`and its associated package called `ggtree` can be used to
-make trees more beautiful.
-
-######## Reference: some scripts are taken from tutorial: estimating phylogenetic trees with phangorn
+######## References:
 
     Bodenhofer U, Bonatesta E, Horejs-Kainrath C, Hochreiter S (2015). “msa: an R package for multiple sequence alignment.” Bioinformatics, 31(24), 3997–3999. doi:10.1093/bioinformatics/btv494.
 
     Pelé J, Bécu JM, Abdi H, Chabbert M. Bios2mds: an R package for comparing orthologous protein families by metric multidimensional scaling. BMC Bioinformatics. 2012 Jun 15;13:133. doi: 10.1186/1471-2105-13-133. PMID: 22702410; PMCID: PMC3403911.
 
     Klaus Peter Schliep, phangorn: phylogenetic analysis in R, Bioinformatics, Volume 27, Issue 4, February 2011, Pages 592–593, https://doi.org/10.1093/bioinformatics/btq706
+
+Furthermore, inspiration for this practical was found from the tutorial called: "estimating phylogenetic trees with phangorn": https://cran.r-project.org/web/packages/phangorn/vignettes/Trees.html
