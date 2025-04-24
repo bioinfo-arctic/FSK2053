@@ -1,4 +1,4 @@
-# Phylogentic inferences
+# Phylogenetic inferences
 
 **Aim of the practical**
 
