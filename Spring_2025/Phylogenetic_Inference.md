@@ -73,8 +73,8 @@ The following step can take lot of time, depending on the number of sequences be
 
 ```
 alignomega  <- msa(mysequencefile, method = "ClustalOmega")
-align <- msaConvert(alignomega, type= "bios2mds::align")
-align_phydata <- msaConvert(alignomega, type= "phangorn::phyDat")
+align <- msaConvert(alignomega, type = "bios2mds::align")
+align_phydata <- msaConvert(alignomega, type = "phangorn::phyDat")
 ```
 
 You can write the alignment data to a file instead of keeping it in an R object, use:
@@ -88,10 +88,11 @@ Now open the file myAlignment.fasta in bbedit, notepad++, or notepad, and check 
 If you want to visualise and see annotation of multiple sequence alignment such as myAlignment.fasta in, use function ggmsa from ggmsa package. 
 
 ```
-ggmsafile<- "/Users/sbh001/Library/CloudStorage/OneDrive-UiTOffice365/course-FSK2053/lecture3_phylogenetics/myAlignment.fasta"
+ggmsafile<- "C:/Users/marei5443/OneDrive - UiT Office 365/Dokumenter/Scientist, UiT/Teaching/FSK-2053_Data_Science_and_Bioinformatics/2025/myAlignment.fasta"
 
-ggmsa(ggmsafile, 300, 350, color = "Chemistry_NT", font = "TimesNewRoman", char_width = 0.5, seq_name = TRUE ) + geom_seqlogo() + geom_msaBar()  # see alignment in colurful format.
-
+ggmsa(ggmsafile, 300, 350, color = "Chemistry_NT", font = "TimesNewRoman", char_width = 0.5, seq_name = TRUE) +
+    geom_seqlogo() +
+    geom_msaBar()  # see alignment in colurful format.
 ```
 
 Once you are done with alignment, next step is making the phylogenetic
@@ -102,9 +103,7 @@ the input again. Here we will convert msa object into DNAbin object reqired by p
 
 ```
 alignment_dnabin <- msaConvert(alignomega, type= "ape::DNAbin")
-
 align_phydata <- msaConvert(alignomega, type= "phangorn::phyDat")
-
 ```
 
 Now we will try to do some phylogenetic trees based on different
@@ -125,52 +124,34 @@ First calculate a distance matrix from ***ape** package using dist.dna function.
 
 ```
 D <- dist.dna(alignment_dnabin, model = "TN93")  #just the type of evolutionary model we’re using, this particular one allows for different transition rates, heterogenous base frequencies, and variation of substitution rate at the same site
-
 length(D) #number of pairwise distances, computed as n(n-1)/2
-
 ```
 Now use object D, which is distance matrix to costruct two distance based phylogenetic trees. There are lot of functions in R to build distance based phylogenetic tree. But we will use few of them here mainly from ***ape*** package
 
 ```
 treeNJ <- nj(D)
-
 class(treeNJ) #all trees created using ape package will be of class phylo
-
 treeNJ # tells us what the tree will look like but doesn't show the actual construction
-
 treeUPGMA <- upgma(D, "centroid") #This tree is called an ultrametric tree, 
-
 treeUPGMA
-
-
 ```
 Plot trees using generic function. But you can play around and make colourful trees using different functions and packages. 
 
 ```
 treeUPGMA <- ladderize(treeUPGMA) #This function reorganizes the internal structure of the tree to get the ladderized effect when plotted
-
 plot(treeUPGMA, main="A Simple UPGMA Tree")
-
 add.scale.bar()
-
 treeNJ <- ladderize(treeNJ) #This function reorganizes the internal structure of the tree to get the ladderized effect when plotted
-
 plot(treeNJ, type = "phylogram", main="A Simple NJ Tree", show.tip=FALSE)
-
 add.scale.bar()
-
 ```
 if you want make rooted NJ treee, then you need mention outgroup to which root your tree. This is one of the few ways you can root a tree. Other method is midpoint rooting. 
 
 ```
 treeNJroot <- root(treeNJ, outgroup = "Esox_lucius", resolve.root = TRUE, edgelabel = TRUE)
-
 treeNJroot <- ladderize(treeNJroot) #This function reorganizes the internal structure of the tree to get the ladderized effect when plotted
-
 plot(treeNJroot, show.tip=FALSE, edge.width=2, main="Rooted NJ tree")
-
 add.scale.bar()
-
 ```
 As we have lot of options to make a phylogenetics trees, we have to make sure that the alogrithm we chose to make tree is the right one to explain the sequence data. We need to test what type of algorithm explains the data well (NJ or UPGMA?)
 
@@ -190,9 +171,8 @@ y <- as.vector(as.dist(cophenetic(treeUPGMA)))
 plot(x, y, xlab="original pairwise distances", ylab="pairwise distances on the tree", main="Is UPGMA appropriate?", pch=20, col="red", cex=3)
 abline(lm(y~x), col="red")
 cor(x,y)^2
-
 ```
-choose right tree and proceed to bootstrapping.
+Choose right tree and proceed to bootstrapping.
 
 ### Run bootstrapping
 
@@ -208,13 +188,11 @@ First we need to write a function. boot.phylo needs FUN because, it uses this fu
 
 ```
 fun <- function(x) root(nj(dist.dna(x, model = "TN93")),1) ## function calculates distance first and then tree is calculated from alignment. Function fun performs tree building on the input x using the upgma algorithm after calculating the pairwise distance between elements using dist.dna. It construct a neighbor-joining (NJ) phylogenetic tree based on the Tamura-Nei 93 (TN93) distance model, and then root the resulting tree using the first taxon (or sequence) in the dataset as the outgroup
-
 ```
 Then need to calculate boot strap values through bootstrap.phyDat function from phangron.
 
 ```
 bs_nj <- boot.phylo(treeNJroot, alignment_dnabin, fun) # performs the bootstrap automatically for us
-
 bs_nj
 ```
 
@@ -222,11 +200,8 @@ plot the bootstrap values on tree branches like below
 
 ```
 plot(treeNJroot, show.tip=FALSE, edge.width=2, main = "NJ tree + bootstrap values") #plot bootstrap values
-
 add.scale.bar()
-
 nodelabels(bs_nj, cex=.6) # adds labels to or near the nodes
-
 ```
 How does node support looks? the numbers shown by nodelabels() show how many times each node appreared in the bootstrapped trees. If the numbers by each node are pretty low, meaning there’s not a huge overlap between the nodes in our original tree and the nodes in the bootstrapped tree. Tt means that some of the nodes aren’t supported.
 
@@ -237,24 +212,17 @@ Now we will caluclate parsimony score, which is the minimum number of changes nc
 
 ```
 align_phydata <- msaConvert(alignomega, type= "phangorn::phyDat")
-
 parsimony(treeNJroot, align_phydata)  
-
 tre.pars.nj <- optim.parsimony(treNJ, align_phydata) # it used whole sequences to make a tree, unlike distance based trees such as nj or upgma. 
-
 tre.pars.nj
-
 parsimony(tre.pars.nj, align_phydata)
-
 plot(tre.pars.nj, type="unr", show.tip=FALSE, edge.width=2, main = "Maximum-parsimony tree") #it has lower parsimonious score compare to the original tree. try other type 
-
 ```
 
 if you want to download or write the file in newick or nexus format then use following command.
 
 ```
 write.tree(tre4, file="tre.tree") 
-
 ```
 You can open this tree file using a program called figtree (http://tree.bio.ed.ac.uk/software/figtree/).
 
