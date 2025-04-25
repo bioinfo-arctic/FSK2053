@@ -145,7 +145,7 @@ If you want to make a rooted NJ tree, then you need to define what is your outgr
 ```
 treeNJroot <- root(treeNJ, outgroup = "Esox_lucius", resolve.root = TRUE, edgelabel = TRUE)
 treeNJroot <- ladderize(treeNJroot) # same ladderize effect as above
-plot(treeNJroot, show.tip=FALSE, edge.width=2, main="Rooted NJ tree")
+plot(treeNJroot, show.tip=TRUE, edge.width=2, main="Rooted NJ tree")
 add.scale.bar()
 ```
 We have a lot of options when making phylogenetic trees, but we should make sure that the algorithm we choose to make the tree is in fact the right one to explain the sequence data. We therefore need to test what type of algorithm explains the data best (NJ or UPGMA?)
@@ -191,7 +191,7 @@ bs_nj
 plot the bootstrap values on tree branches like below 
 
 ```
-plot(treeNJroot, show.tip=FALSE, edge.width=2, main = "NJ tree + bootstrap values") #plot bootstrap values
+plot(treeNJroot, show.tip=TRUE, edge.width=2, main = "NJ tree + bootstrap values") #plot bootstrap values
 add.scale.bar()
 nodelabels(bs_nj, cex=.6) # adds labels to or near the nodes
 ```
