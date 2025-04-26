@@ -119,7 +119,7 @@ First, we calculate a distance matrix using the dist.dna function from the ***ap
 D <- dist.dna(alignment_dnabin, model = "TN93")  # TN93 is an evolutionary model, allowing for different transition rates, heterogenous base frequencies, and variation of substitution rate at the same site
 length(D) # Corresponds to the number of pairwise distances, computed as n(n-1)/2
 ```
-Now we use the object D, which is distance matrix, to costruct two distance based phylogenetic trees. There are lots of functions in R to build distance based phylogenetic trees. Here, we will focus only on a few of them from the ***ape*** package.
+Now we use the object D, which is distance matrix, to construct two distance based phylogenetic trees. There are lots of functions in R to build distance based phylogenetic trees. Here, we will focus only on a few of them from the ***ape*** package.
 
 Here we make NJ and UPGMA trees.
 
