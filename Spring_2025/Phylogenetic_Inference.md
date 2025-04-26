@@ -181,7 +181,7 @@ First, we will need to write a function. boot.phylo needs this function to resam
 ```
 fun <- function(x) root(nj(dist.dna(x, model = "TN93")),1) ## the function calculates the distance first, and then the tree is calculated from the alignment. The function performs tree building on the input x using the upgma algorithm after calculating the pairwise distance between elements using dist.dna. It constructs a neighbor-joining (NJ) phylogenetic tree based on the Tamura-Nei 93 (TN93) distance model, and then roots the resulting tree using the first taxon (or sequence) in the dataset as the outgroup.
 ```
-Then we need to calculate bootstrap values through the bootstrap.phyDat function from phangorn.
+Then we need to calculate bootstrap values through the boot.phylo function from phangorn.
 
 ```
 bs_nj <- boot.phylo(treeNJroot, alignment_dnabin, fun) # performs the bootstrap automatically for us
