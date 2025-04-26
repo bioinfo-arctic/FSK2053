@@ -217,10 +217,10 @@ write.tree(tre.pars.nj, file="tree_example.tree")
 ```
 You can open this tree file using a program called FigTree (http://tree.bio.ed.ac.uk/software/figtree/). Using third-party softwares like FigTree is how people have been making pretty phylogenetic trees for years. However, now we have R-packages that can get us there with using code instead. Beautiful, customizable phylogenetic trees can be made using `ggplot`, and the associated package called `ggtree` can be used to make trees more beautiful. If you are interested, you can play around with and make colourful trees using different functions and packages at home. For example using the `ggtree` package, which has a lot of really cool features. You can see more here: https://yulab-smu.top/treedata-book/.
 
-### Inpsiration for this practical:
+## Inspiration for this practical:
 "Estimating phylogenetic trees with phangorn": https://cran.r-project.org/web/packages/phangorn/vignettes/Trees.html.
 
-### References:
+## References:
 Bodenhofer, U., Bonatesta, E., Horejs-Kainrath, C., Hochreiter, S. (2015). msa: an R package for multiple sequence alignment. Bioinformatics 31(24), 3997–3999. https://doi.org/10.1093/bioinformatics/btv494.
 
 Pelé, J., Bécu, J. M., Abdi, H., Chabbert, M. (2012). Bios2mds: an R package for comparing orthologous protein families by metric multidimensional scaling. BMC Bioinformatics 13(133). https://doi.org/10.1186/1471-2105-13-133.
