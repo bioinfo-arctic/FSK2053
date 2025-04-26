@@ -172,16 +172,16 @@ Which tree was the most appropriate? Choose the right tree and proceed to bootst
 
 ### Run bootstrapping
 
-Bootstrapping is a test or metric that uses random sampling with replacement and falls under the broader class of resampling methods. It uses sampling with replacement to estimate the sampling distribution for the estimator (Ojha et al., 2022). Basic idea is building same tree leaving out some portion of evidence (some bases from a sequence) and check if same clades appear even after leaving out some data.
+Bootstrapping is an approach that uses random sampling with replacement and falls under the broader class of resampling methods. It uses sampling with replacement to estimate confidence for the different branches in the estimated tree topology. The basic idea is to build the tree iteratively, each time leaving out some portion of evidence (i.e. some bases from a sequence), and to check if the same clades consistently appear even when leaving out some of the data.
 
 ![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2024/images/boot.jpeg)
 
-First we need to write a function. boot.phylo needs FUN because, it uses this function to build the resample phylogenetic tree for bootstrap purpose. 
+First, we will need to write a function. boot.phylo needs this function to resample and rebuild the phylogenetic tree to obtain the bootstrap values.
 
 ```
-fun <- function(x) root(nj(dist.dna(x, model = "TN93")),1) ## function calculates distance first and then tree is calculated from alignment. Function fun performs tree building on the input x using the upgma algorithm after calculating the pairwise distance between elements using dist.dna. It construct a neighbor-joining (NJ) phylogenetic tree based on the Tamura-Nei 93 (TN93) distance model, and then root the resulting tree using the first taxon (or sequence) in the dataset as the outgroup
+fun <- function(x) root(nj(dist.dna(x, model = "TN93")),1) ## the function calculates the distance first, and then the tree is calculated from the alignment. The function performs tree building on the input x using the upgma algorithm after calculating the pairwise distance between elements using dist.dna. It constructs a neighbor-joining (NJ) phylogenetic tree based on the Tamura-Nei 93 (TN93) distance model, and then roots the resulting tree using the first taxon (or sequence) in the dataset as the outgroup.
 ```
-Then need to calculate boot strap values through bootstrap.phyDat function from phangron.
+Then we need to calculate bootstrap values through the bootstrap.phyDat function from phangorn.
 
 ```
 bs_nj <- boot.phylo(treeNJroot, alignment_dnabin, fun) # performs the bootstrap automatically for us
