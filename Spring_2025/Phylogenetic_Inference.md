@@ -181,7 +181,7 @@ First, we will need to write a function. boot.phylo needs this function to resam
 ```
 fun <- function(x) root(nj(dist.dna(x, model = "TN93")),1) ## the function calculates the distance first, and then the tree is calculated from the alignment. The function performs tree building on the input x using the upgma algorithm after calculating the pairwise distance between elements using dist.dna. It constructs a neighbor-joining (NJ) phylogenetic tree based on the Tamura-Nei 93 (TN93) distance model, and then roots the resulting tree using the first taxon (or sequence) in the dataset as the outgroup.
 ```
-Then we need to calculate bootstrap values through the boot.phylo function from phangorn.
+Then we need to calculate bootstrap values through the boot.phylo function from ape.
 
 ```
 bs_nj <- boot.phylo(treeNJroot, alignment_dnabin, fun) # performs the bootstrap automatically for us
@@ -191,24 +191,23 @@ bs_nj
 plot the bootstrap values on tree branches like below 
 
 ```
-plot(treeNJroot, show.tip=TRUE, edge.width=2, main = "NJ tree + bootstrap values") #plot bootstrap values
+plot(treeNJroot, show.tip=TRUE, edge.width=2, main = "NJ tree + bootstrap values") # plot bootstrap values
 add.scale.bar()
 nodelabels(bs_nj, cex=.6) # adds labels to or near the nodes
 ```
-How does node support looks? the numbers shown by nodelabels() show how many times each node appreared in the bootstrapped trees. If the numbers by each node are pretty low, meaning there’s not a huge overlap between the nodes in our original tree and the nodes in the bootstrapped tree. Tt means that some of the nodes aren’t supported.
-
+How does the node support look? The numbers shown by nodelabels() show how many times each node appeared in the bootstrapped trees. If the numbers by each node are pretty low, it means there’s not a huge overlap between the nodes in our original tree and the nodes in the bootstrapped tree. It essentially means that we have low support for some of the nodes.
 
 ### Parsimony based trees
 
-Now we will caluclate parsimony score, which is the minimum number of changes ncecessary to describe the data for a given tree type. Parsimony returns the parsimony score of a tree. Parsimony analysis needs a base tree. We will use treeNJ from first part of the analysis as base tree.
+Now we will caluclate parsimony score, which is the minimum number of changes necessary to describe the data for a given tree type. Parsimony returns the parsimony score of a tree. Parsimony analysis needs a base tree. We will use treeNJ from first part of the analysis as our base tree.
 
 ```
 align_phydata <- msaConvert(alignomega, type= "phangorn::phyDat")
 parsimony(treeNJroot, align_phydata)
-tre.pars.nj <- optim.parsimony(treeNJ, align_phydata) # it used whole sequences to make a tree, unlike distance based trees such as nj or upgma. 
+tre.pars.nj <- optim.parsimony(treeNJ, align_phydata) # it used the complete sequences to make the tree, unlike distance based trees such as nj or upgma.
 tre.pars.nj
 parsimony(tre.pars.nj, align_phydata)
-plot(tre.pars.nj, type="unr", show.tip=FALSE, edge.width=2, main = "Maximum-parsimony tree") # it has lower parsimonious score compare to the original tree. try other type 
+plot(tre.pars.nj, type="unr", show.tip=FALSE, edge.width=2, main = "Maximum-parsimony tree") # it has lower parsimonious score compared to the original tree. Try other type 
 ```
 
 if you want to download or write the file in newick or nexus format then use following command.
@@ -216,17 +215,17 @@ if you want to download or write the file in newick or nexus format then use fol
 ```
 write.tree(tre.pars.nj, file="tree_example.tree")
 ```
-You can open this tree file using a program called figtree (http://tree.bio.ed.ac.uk/software/figtree/).
+You can open this tree file using a program called FigTree (http://tree.bio.ed.ac.uk/software/figtree/). Using third-party softwares like FigTree is how people have been making pretty phylogenetic trees for years. However, now we have R-packages that can get us there with using code instead. Beautiful, customizable phylogenetic trees can be made using `ggplot`, and the associated package called `ggtree` can be used to make trees more beautiful. If you are interested, you can play around with and make colourful trees using different functions and packages at home. For example using the `ggtree` package, which has a lot of really cool features. You can see more here: https://yulab-smu.top/treedata-book/.
 
-Extra information: ’Beauti’fication of phylogenetic trees can be done using `ggplot`and its associated package called `ggtree` can be used to make trees more beautiful.
-If you are interested, you can play around with and make colourful trees using different functions and packages at home. For example using the package "ggtree", which has a lot of really cool features. You can see more here: https://yulab-smu.top/treedata-book/.
+### Inpsiration for this practical:
+    "Estimating phylogenetic trees with phangorn": https://cran.r-project.org/web/packages/phangorn/vignettes/Trees.html.
 
 ### References:
 
-    Bodenhofer U, Bonatesta E, Horejs-Kainrath C, Hochreiter S (2015). “msa: an R package for multiple sequence alignment.” Bioinformatics, 31(24), 3997–3999. doi:10.1093/bioinformatics/btv494.
+    Bodenhofer, U., Bonatesta, E., Horejs-Kainrath, C., Hochreiter, S. (2015). msa: an R package for multiple sequence alignment. Bioinformatics 31(24), 3997–3999. https://doi.org/10.1093/bioinformatics/btv494.
 
-    Pelé J, Bécu JM, Abdi H, Chabbert M. Bios2mds: an R package for comparing orthologous protein families by metric multidimensional scaling. BMC Bioinformatics. 2012 Jun 15;13:133. doi: 10.1186/1471-2105-13-133. PMID: 22702410; PMCID: PMC3403911.
+    Pelé, J., Bécu, J. M., Abdi, H., Chabbert, M. (2012). Bios2mds: an R package for comparing orthologous protein families by metric multidimensional scaling. BMC Bioinformatics 13(133). https://doi.org/10.1186/1471-2105-13-133.
 
-    Klaus Peter Schliep, phangorn: phylogenetic analysis in R, Bioinformatics, Volume 27, Issue 4, February 2011, Pages 592–593, https://doi.org/10.1093/bioinformatics/btq706
+    Schliep, K. P. (2011). phangorn: phylogenetic analysis in R. Bioinformatics 27(4), 592–593. https://doi.org/10.1093/bioinformatics/btq706.
 
 Furthermore, inspiration for this practical was found from the tutorial called: "estimating phylogenetic trees with phangorn": https://cran.r-project.org/web/packages/phangorn/vignettes/Trees.html
