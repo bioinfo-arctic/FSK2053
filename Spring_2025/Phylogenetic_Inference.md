@@ -57,6 +57,7 @@ library(ape)
 library(stats)
 library(ggplot2)
 library(ggmsa)
+library(Biostrings)
 ```
 
 ## Alignment of nucleotide sequences
