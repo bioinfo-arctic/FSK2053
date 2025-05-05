@@ -210,7 +210,7 @@ parsimony(tre.pars.nj, align_phydata)
 plot(tre.pars.nj, type="unr", show.tip=FALSE, edge.width=2, main = "Maximum-parsimony tree") # it has lower parsimonious score compared to the original tree. Try other type 
 ```
 
-if you want to download or write the file in newick or nexus format then use following command.
+Two common file types for phylogenetic trees are "Newick" and "Nexus". If you want to download or write the file in Newick format then use following command (alternatively use the write.nexus() function).
 
 ```
 write.tree(tre.pars.nj, file="tree_example.tree")
