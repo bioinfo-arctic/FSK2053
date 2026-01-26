@@ -1,4 +1,7 @@
 ## Crabs example of building a reference database
+
+## Technical consideration: We need to get a crabs installation up and running on the Azure server.
+
 ## Imagine Norway has a total of e.g. 50 fish species present in territorial waters. 
 
 ### Pre-curation
