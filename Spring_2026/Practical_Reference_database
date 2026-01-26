@@ -1,1 +1,19 @@
 ## Crabs example of building a reference database
+## Imagine Norway has a total of e.g. 50 fish species present in territorial waters. 
+
+### Pre-curation
+## Our authoritative taxonomy is Catalog of Fishes 
+## Include examples of synonymy (which should be fixed during pre-curation)
+## Include examples of misidentified specimens (which should be excluded/blacklisted during pre-curation)
+## Include examples of species missing barcodes (which we cannot fix bioinformatically)
+## Include examples of barcode overlap (general problem with the marker chosen)
+## Include examples of perfect taxonomic resolution (sometimes it works really well)
+
+## Hybrids
+## Subspecies?
+## Ambiguous basepairs?
+## Reinstating barcodes that do not pass criteria
+
+### Post-curation checks
+## Fill in a premade sheet of species characteristics in terms of the database (exercise for students)
+## Follow up questions with some information about primer mismatches and likelihoods of detection?
