@@ -11,6 +11,12 @@ cd
 conda activate crabs
 # MADS TEST THIS WORKS
 
+# Path to Shripathi's Azure database
+
+/home/adminfsk2053/database_new_2025
+
+# Path to Shripathi's Azure database
+
 The goal of this exercise is to make you aware of the many factors that must be considered when creating and relying on reference databases. I encourage you to apply your best critical thinking skills throughout this exercise.
 
 This exercise is split into two components; the pre-curation and the post-curation.
