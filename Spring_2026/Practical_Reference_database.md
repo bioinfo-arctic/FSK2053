@@ -212,7 +212,7 @@ crabs --export --input References_filtered_Rajidae.txt --output BLAST_Rajidae/BL
 
 <mark>**Mads write table explanation**</mark>:
 
-#### Table of ..
+#### Table of 178 species
 
 | Class          | Order              | Family               | Subfamily         | Species                           | Common name                   | Known synonyms                                            |
 |----------------|--------------------|----------------------|-------------------|-----------------------------------|-------------------------------|-----------------------------------------------------------|
