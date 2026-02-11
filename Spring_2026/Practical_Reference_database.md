@@ -5,7 +5,9 @@
 
 # MADS TEST THIS WORKS
 cd
+
 /home/adminfsk2053/miniconda3/bin/conda init bash
+
 conda activate crabs
 # MADS TEST THIS WORKS
 
