@@ -1,47 +1,137 @@
 ## Crabs example of building a reference database
-
-#####################################
-### Instructions and introduction ###
-#####################################
-
 ## Technical consideration: We need to get a crabs installation up and running on the Azure server.
 
-## Imagine Norway has a total of e.g. 50 fish species present in territorial waters. 
+### Introduction
 
-### Pre-curation
-## Our authoritative taxonomy is Catalog of Fishes 
-## Include examples of synonymy (which should be fixed during pre-curation)
-## Include examples of misidentified specimens (which should be excluded/blacklisted during pre-curation)
-## Include examples of species missing barcodes (which we cannot fix bioinformatically)
-## Include examples of barcode overlap (general problem with the marker chosen)
-## Include examples of perfect taxonomic resolution (sometimes it works really well)
+This exercise is split into two components; the pre-curation and the post-curation
+Go through file format of CRABS.txt files. Note that there are many different formats, I just like personally the CRABS software.
+Imagine Norway has a total of e.g. 50 fish species present in territorial waters.
+We only work with 12S barcodes. This is classicly the best short genetic marker for genetic identification of fishes.
 
-## Hybrids
-## Subspecies?
-## Ambiguous basepairs?
-## Reinstating barcodes that do not pass criteria
+### Exercise instructions
+
+In this exercise, each group (2-4 working together) will choose one of the following fish groups as their target for database scrutiny.
+
+1) Rajidae (skates)
+2) Holocephali (chimaeras)
+3) Oneirodidae (dreamers)
+4) Zoarcidae (eelpouts)
+5) Liparidae (snailfishes)
+6) Psychrolutidae ("blobfishes" - marine sculpins)
+7) Myctophidae (lanternfishes)
+8) Gadidae (codfishes)
+9) Salmonidae (salmonids - *warning: this one is the most difficult*)
+
+Once you have chosen your group, you can filter the reference database to include only your target. All the below examples are done with Rajidae, so if you chose another group, you will have to change the name accordingly throughout the guide:
+Here we make a new file that includes only references from Rajidae.
+
+```
+cat References_unfiltered.txt | grep 'Rajidae' > References_unfiltered_Rajidae.txt
+```
+
+## Pre-database curation
+
+Your new file "References_unfiltered_Rajidae.txt" will be the starting point for this exercise. Let's have a look and see what it contains.
+
+**NOTE**: The less command below is good for visualizing without printing to the screen. You can use "cat" instead of "less -S" if you would rather print to screen. To exit the less command, simply click the "Q" button.
+
+```
+less -S References_unfiltered_Rajidae.txt
+```
+
+Some of you may have more data entries that others, so we could maybe think about summarizing the content in a more ordered manner.
+You may recall from the structure of the CRABS-file format that we can find the species information of each record in the 10th column. You could also try to summarize across other taxonomic levels.
+
+**NOTE**: As we here use "sort -n", we sort the species entries numerically (alphabetically), and then we use "uniq -c" to only have unique entries while counting the amount of times each of them are encountered in your file.
+```
+cut -f10 References_unfiltered_Rajidae.txt | sort -n | uniq -c | less -S
+```
+
+<mark>**Question 1**</mark>: Do you see any potential issues here? Do the species names make sense to you?
+
+<mark>**Question 2**</mark>: Are some species overrepresented compared to others?
+
+### Synonyms
+
+In the bottom of this document, I've included a table of all the fishes (from your nine groups) that exist in Nordic countries. You can search (CTRL + F or COMMAND + F) for your group to see what species would be relevant for your chosen group. 
+
+A common problem that we face when creating databases is related to synonyms. Synonyms occur when different terms or identifiers are used to refer to the same entity or concept. In bioinformatics, this can lead to inconsistencies and errors when integrating or querying data from multiple sources. For example, a single species might be referred to by multiple names across or even within different databases. If these synonyms are not properly accounted for, it can result in incorrect inferences, ultimately compromising the reliability and accuracy of the database. Addressing this issue requires careful curation, standardization, and the use of controlled vocabularies to ensure consistency. For fishes, we rely on [Escmeyer's Catalog of Fishes](https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) (Fricke et al., 2025) for taxonomic authority.
+
+Compare the species names present in your file with the table below. Do you find any synonyms that we would need to deal with for species occurring in Nordic waters?
+
+**NOTE**: We run the same command again to enable comparison
+```
+cut -f10 References_unfiltered_Rajidae.txt | sort -n | uniq -c | less -S
+```
+<mark>**Question 3**</mark>: Did you encounter any problematic synonyms in your file?
+
+### Misidentifications vs. taxonomic resolution
+
+The next common problem encountered in these databases is that those people who deposit reference sequences may not have identified their specimens correctly. This problem can take many shapes and forms, such as accidental mislabeling of tubes in the lab, confusion between morphologically similar organisms, and it can even arise from dealing with organism groups in need of taxonomic revision. As a result, incorrect reference sequences can propagate through analyses, leading to misidentifications, flawed phylogenetic trees, or inaccurate biodiversity assessments. This issue is particularly problematic when it comes to DNA barcoding or metabarcoding, where the accuracy of the reference database is critical. To mitigate this, rigorous validation of specimen identification, cross-referencing with multiple data sources, and expert curation are essential to maintain the integrity of reference databases. We will unfortunately not have the time during this exercise to go in great detail with the integrity of the sequences, but it is important to understand this from a conceptual standpoint. Take a look at the example below.
+
+[INSERT EXAMPLE FROM GENIOUS]
+
+<mark>**Question 4**</mark>: What do you think happened here? Do you suspect any of these were misidentified?
+
+Sometimes we have enough "circumstantial evidence" to choose to disregard ("blacklist") specific sequences. However, in other instances, we might not have enough material available to fully decide on the best approach forward. In such instances, it is best to remain conservative until more reference data becomes available (which is why this work is always "ongoing"). See the example below.
+
+[INSERT EXAMPLE OF TOO FEW SPECIMENS TO DECIDE]
+
+<mark>**Question 5**</mark>: Would you claim that any of these appear to be misidentified? If so, would you blacklist any of the data entries?
+
+To make matters worse, for some species, there simply isn't enough taxonomic resolution in a short genetic marker to differentiate between the species. This is often referred to as "barcode overlap" or lack of a "barcode gap". In the example below, you'll see that it is problematic to differentiate between the three species of wolffish which occur in Nordic waters. Had we chosen to work with another genetic marker, this would potentially have been more feasible.
+
+[INSERT WOLFFISH EXAMPLE]
+
+<mark>**Question 6**</mark>: Based on what you see above, can we discriminate between these species with this genetic marker?
+
+### Hybrids and subspecies
+
+Another problematic scenario is the case of hybrids. For the most part, we are looking at short mitochondrial DNA fragments. You may remember that mitochondrial DNA is maternally inherited (you get you mother's mitochondrial DNA, not your father's). Here, it quickly becomes complex and our possible inferences will naturally be dependent on whether the offspring is viable and can reproduce, as well as whether the hybridization occurs naturally or is human induced etc. Regardless, it means that species that are able to hybridize can share mitochondrial DNA and limit our inferences. When depositing reference sequences from known hybrid specimens, people often describe the species as "Species A x Species B". However, it is not always obvious whether you're dealing with a hybrid specimen, and as a result, these can also be deposited under a single species' name. 
+
+Similarly, some people deposit sequences under "subspecies" names (e.g. *Salmo trutta trutta* (sea trout) and *Salmo trutta fario* (brown trout) are both *Salmo trutta*). In [NCBI's nt database](https://www.ncbi.nlm.nih.gov/nucleotide/) (one of the most common databases for storing your reference sequences), each unique taxon is given a unique "TaxID", so you can refer back to what taxonomic entity was from the original data entry. This number is found in the third column of your files, and if you want extra knowledge, you can look up these numbers in [NCBI's taxonomy database](https://www.ncbi.nlm.nih.gov/taxonomy/). In the CRABS format you've been given, I've already manipulated the files to not include hybrid sequences. However, there might still be cases where multiple TaxIDs may exist for a single species. Let's first select the columns of interest (TaxID + Species), sort them and include only unique instances, and then move on to count
+
+**Note**: 
+```
+cut -f3,10 References_unfiltered_Salmonidae.txt | sort | uniq | cut -f2 | sort -n | uniq -c | sort -n | less -S
+```
+<mark>**Question 7**</mark>: Did you find any species with multiple TaxIDs present in your group? If you have the enough time, you can try to write your own code to isolate the TaxIDs of a species with multiple TaxIDs and look them up in the [NCBI's taxonomy database](https://www.ncbi.nlm.nih.gov/taxonomy/).
+
+### Ambiguous basepairs in reference sequences
+<mark>**Write description**</mark>:
+
+**NOTE**: We run this on the original, complete reference file, as there aren't that many records with ambiguous basepairs.
+awk -F '\t' '{ if ($11 ~ /[RYSWKMBDHVN]/) print NR, $0 }' References_unfiltered.txt | less -S
+
+<mark>**Question 8**</mark>: How would you deal with ambiguous basepairs in your reference sequences? Should those records be deleted, or can they still be informative?
+
+
+
+
+#### Include count of unique sequences per species?
+#### Include examples of perfect taxonomic resolution (sometimes it works really well)
+
+#### Build the database!
 
 ### Post-curation checks
-## Fill in a premade sheet of species characteristics in terms of the database (exercise for students)
-## Follow up questions with some information about primer mismatches and likelihoods of detection?
-## Provide some sequence data and ask what species are present in the eDNA samples (ask students to discuss our limitations here after the exercise)
+#### Include examples of species missing barcodes (which we cannot fix bioinformatically)
+#### Fill in a premade sheet of species characteristics in terms of the database (exercise for students)
+#### Follow up questions with some information about primer mismatches and likelihoods of detection?
+#### Provide some sequence data and ask what species are present in the eDNA samples (ask students to discuss our limitations here after the exercise)
+#### Some people go the extra mile during their taxonomic assignment. Imagine you get a hit to species A (living in Norway) and an equally good hit to species B (only known from Greenland). Is it fair to assume your hit comes from the Norwegian species? 
+#### Similarly, if we get hits to three wolffish species (*Anarhichas lupus* - more coastal, *Anarhichas minor* and *Anarhichas denticulatus* both known to live further offshore). Is it fair to decide which of the species we found using the barcode, assuming our sample was from the coastal zone?
 
+### Further reflection and critical thinking
 
-############################
-### Exercise walkthrough ###
-############################
+<mark>**Question x**</mark>: What should we do about data entries that aren't known to occur in Nordic waters?
 
+<mark>**Question x**</mark>: How should we deal with data entries where specimens aren't identified to specices level?
 
+<mark>**Question x**</mark>: How should we deal with data entries where specimens aren't identified to specices level?
 
+<mark>**Question x**</mark>: Did knowing what species exist in Nordic countries change your perception of how good the database was for your target group?
 
-
-
-
-
-
-
-
-
+<mark>**Question x**</mark>: What would be your criteria for blacklisting (removing) certain entries? When do we "know enough" to throw out a sequence from the reference database?
 
 ## Examples of groups of fishes present in Nordic countries
 #### Table of ..
