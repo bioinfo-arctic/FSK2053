@@ -2,6 +2,13 @@
 ## Technical consideration: We need to get a crabs installation up and running on the Azure server.
 
 ## Introduction
+
+# MADS TEST THIS WORKS
+cd
+/home/adminfsk2053/miniconda3/bin/conda init bash
+conda activate crabs
+# MADS TEST THIS WORKS
+
 The goal of this exercise is to make you aware of the many factors that must be considered when creating and relying on reference databases. I encourage you to apply your best critical thinking skills throughout this exercise.
 
 This exercise is split into two components; the pre-curation and the post-curation.
