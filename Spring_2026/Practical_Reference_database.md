@@ -182,8 +182,6 @@ Here you see a list of IUPAC codes and how to interpret them.
 | V                | A or C or G |
 | N                | Any base    |
 
-<mark>**Insert IUPAC code snippet**</mark>:
-
 We will now inspect whether any of the sequences found in our original, complete reference file contained ambiguous basepairs. We use the original file here, as there aren't that many records with ambiguous basepairs (I have prefiltered your file a little bit).
 
 **NOTE**: This code snippet using awk may be a bit difficult to interpret. All it does is to look for any of the ambiguous IUPAC codes occurring in any of the sequences. It prints the whole line in instances where it finds a line that matches the condition.
