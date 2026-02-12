@@ -164,9 +164,23 @@ Ambiguous base pairs can arise during the sequencing of reference samples due to
 
 Here you see a list of IUPAC codes and how to interpret them.
 
-<mark>**Insert IUPAC code snippet**</mark>:
-
-![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2024/images/IUPAC.png)
+| IUPAC nucl. code | Base        |
+|------------------|-------------|
+| A                | Adenine     |
+| C                | Cytosine    |
+| G                | Guanine     |
+| T                | Thymine     |
+| R                | A or G      |
+| Y                | C or T      |
+| S                | G or C      |
+| W                | A or T      |
+| K                | G or T      |
+| M                | A or C      |
+| B                | C or G or T |
+| D                | A or G or T |
+| H                | A or C or T |
+| V                | A or C or G |
+| N                | Any base    |
 
 <mark>**Insert IUPAC code snippet**</mark>:
 
