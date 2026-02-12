@@ -24,6 +24,8 @@ Once the above command has completed, it should now state "(base)" at the beginn
 
 <mark>**MADS INSERT PHOTO**</mark>:
 
+![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2026/images/CondaBase.png)
+
 If this worked, you should now be able to activate your conda environment by typing:
 
 ```
@@ -33,6 +35,8 @@ conda activate crabs
 It should now state "(crabs") at the beginning of your prompt. If this worked, you are ready for the exercise.
 
 <mark>**MADS INSERT PHOTO**</mark>:
+
+![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2026/images/CondaCrabs.png)
 
 **Note**: This conda environment needs to be loaded for every new session you start, where you plan on using the crabs commands from this exercise - *i.e.*, if you plan on testing it out further at home, you will need to write only the last command (it should state "(base)" everytime you log in to a new session now).
 
