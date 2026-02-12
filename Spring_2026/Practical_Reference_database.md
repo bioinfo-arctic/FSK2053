@@ -1,21 +1,42 @@
-## Crabs example of building a reference database
-## Technical consideration: We need to get a crabs installation up and running on the Azure server.
+## Building a reference database
+
+## Before the session
+Before we start the class, I would like you all to ensure that you are able to log in to your individual virtual machines. In this session, we will be using something called a "conda environment". Conda is a powerful way to manage software and dependencies. It allows you to easily install, update, and organize bioinformatics tools and libraries without worrying about compatibility issues. Conda also lets you create isolated environments, so you can work on different projects with specific software versions without conflicts. This exercise begins with normal Linux commands, but towards the end relies on the [crabs software](https://github.com/gjeunen/reference_database_creator) for filtering and building your own reference database. We've preinstalled a conda environment for you, but you should check that this works on your virtual machines before we start the class.
+
+Log in to your own virtual machine, and write the following commands.
+
+<mark>**MADS INSERT PATH**</mark>:
+
+First, we ensure that you are in the right directory, and then copy the reference file you will need for the exercise to your current directory.
+
+```
+cd
+cp PATH_TO_REFERENCE_FILE .
+```
+
+Next, we need to check that you can initialize the preinstalled conda environment:
+
+```
+/home/adminfsk2053/miniconda3/bin/conda init bash
+```
+
+Once the above command has completed, it should now state "(base)" at the beginning of your prompt.
+
+<mark>**MADS INSERT PHOTO**</mark>:
+
+If this worked, you should now be able to activate your conda environment by typing:
+
+```
+conda activate crabs
+```
+
+It should now state "(crabs") at the beginning of your prompt. If this worked, you are ready for the exercise.
+
+<mark>**MADS INSERT PHOTO**</mark>:
+
+**Note**: This conda environment needs to be loaded for every new session you start, where you plan on using the crabs commands from this exercise - *i.e.*, if you plan on testing it out further at home, you will need to write only the last command (it should state "(base)" everytime you log in to a new session now).
 
 ## Introduction
-
-# MADS TEST THIS WORKS
-cd
-
-/home/adminfsk2053/miniconda3/bin/conda init bash
-
-conda activate crabs
-# MADS TEST THIS WORKS
-
-# Path to Shripathi's Azure database
-
-/home/adminfsk2053/database_new_2025
-
-# Path to Shripathi's Azure database
 
 The goal of this exercise is to make you aware of the many factors that must be considered when creating and relying on reference databases. I encourage you to apply your best critical thinking skills throughout this exercise.
 
@@ -28,6 +49,12 @@ Imagine Norway has a total of e.g. 50 fish species present in territorial waters
 We only work with 12S barcodes. This is classicly the best short genetic marker for genetic identification of fishes.
 
 In this exercise, think of the starting point as a fish sample of unknown origin that you are trying to identify, or think of having obtained a fish sequence from a water sample, but not knowing what species it was. We need to use a reference database to answer these questions.
+
+## Paths that might come in handy during the exercise
+
+Shripathi's reference database
+
+  `/home/adminfsk2053/database_new_2025/`
 
 ## Exercise instructions
 
@@ -216,8 +243,6 @@ crabs --export --input References_filtered_Rajidae.txt --output BLAST_Rajidae/BL
 ### Further reflection and critical thinking
 
 <mark>**Question x**</mark>: What should we do about data entries that aren't known to occur in Nordic waters?
-
-<mark>**Question x**</mark>: How should we deal with data entries where specimens aren't identified to specices level?
 
 <mark>**Question x**</mark>: How should we deal with data entries where specimens aren't identified to specices level?
 
