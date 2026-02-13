@@ -1,7 +1,7 @@
 ## Building a reference database
 
 ## Before the session
-Before we start the class, I would like you all to ensure that you are able to log in to your individual virtual machines. In this session, we will be using something called a "conda environment". Conda is a powerful way to manage software and dependencies. It allows you to easily install, update, and organize bioinformatics tools and libraries without worrying about compatibility issues. Conda also lets you create isolated environments, so you can work on different projects with specific software versions without conflicts. This exercise begins with normal Linux commands, but towards the end relies on the [crabs software](https://github.com/gjeunen/reference_database_creator) for filtering and building your own reference database. We've made a conda environment for you that has the crabs software installed, but you should check that this works on your virtual machines before we start the class.
+Before we start the class, I would like you all to ensure that you are able to log in to your individual virtual machines. In this session, we will be using something called a "conda environment". Conda is a powerful way to manage software and dependencies. It allows you to easily install, update, and organize bioinformatics tools and libraries without worrying about compatibility issues. Conda also lets you create isolated environments, so you can work on different projects with specific software versions without conflicts. This exercise begins with normal Linux commands, but towards the end relies on the [crabs software](https://github.com/gjeunen/reference_database_creator) for filtering and building your own reference database. The CRABS format constitutes a single tab-delimited line per sequence containing all information, including (i) sequence accession number, (ii) taxonomic name parsed from the initial download, (iii) NCBI taxon ID number, (iv) taxonomic lineage according to NCBI taxonomy, and (v) the sequence itself. We've made a conda environment for you that has the crabs software installed, but you should check that this works on your virtual machines before we start the class.
 
 Log in to your own virtual machine, and write the following commands.
 
@@ -36,25 +36,25 @@ It should now state "(crabs") at the beginning of your prompt. If this worked, y
 
 **Note**: This conda environment needs to be loaded for every new session you start, where you plan on using the crabs commands from this exercise - *i.e.*, if you plan on testing it out further at home, you will need to write only the last command (it should state "(base)" everytime you log in to a new session now).
 
-## Introduction
+You can check the help command for crabs. We will only be using "crabs --subset" and "crabs --export" in this exercise, but there are a lot more functions and parameters available in the software.
 
-<mark>**Mads write intro**</mark>:
+```
+crabs -h
+```
 
-20 questions overall, critical thinking!
+## Introduction and objectives
 
-The goal of this exercise is to make you aware of the many factors that must be considered when creating and relying on reference databases. I encourage you to apply your best critical thinking skills throughout this exercise.
+This exercise is designed to enhance your understanding of the many factors involved in creating and relying on genetic reference databases. Throughout the session, you will be challenged to apply critical thinking skills to evaluate and curate data effectively.
 
-This exercise is split into two components; the pre-curation and the post-curation.
+The exercise is divided into two components: pre-curation and post-curation reflections. While the examples here focus on fish species, the principles can be applied to any organism group.
 
-Go through file format of CRABS.txt files. Note that there are many different formats, I just like personally the CRABS software.
+We will work exclusively with short 12S barcodes, widely regarded as the best short genetic marker for identifying fish species from environmental samples. 
 
-Imagine Norway has a total of e.g. 50 fish species present in territorial waters.
+I want you to imagine starting with a fish sample of unknown origin or a sequence obtained from a water sample, with no prior knowledge of its origin. Your task will be to build a reference database to solve this mystery.
 
-We only work with 12S barcodes. This is classically  the best short genetic marker for genetic identification of fishes.
+There are 20 questions dispersed throughout the exercise, which are natural stopping points for reflecting critically about your next move.
 
-In this exercise, think of the starting point as a fish sample of unknown origin that you are trying to identify, or think of having obtained a fish sequence from a water sample, but not knowing what species it was. We need to use a reference database to answer these questions.
-
-<mark>**Mads write intro**</mark>:
+By the end of this exercise, I hope you will have a deeper appreciation for the complexities of reference databases and the critical thinking required to ensure their reliability and accuracy.
 
 ## Paths that might come in handy during the exercise
 
