@@ -108,7 +108,7 @@ cut -f10 References_unfiltered_Rajidae.txt | sort -n | uniq -c | less -S
 
 ### Synonyms
 
-In the bottom of this document, I've included a [table](https://github.com/MadsRJ/FSK2053/blob/main/Spring_2026/Practical_Reference_database.md#table-of-all-the-178-species-belonging-to-the-nine-taxonomically-limited-groups-that-you-are-working-with-in-this-session-all-of-these-are-known-to-occur-in-waters-of-nordic-countries)
+In the bottom of this document, I've included a [table](https://github.com/MadsRJ/FSK2053/edit/main/Spring_2026/Practical_Building_a_reference_database.md#all-fishes-present-in-nordic-countries-from-your-nine-taxonomically-limited-groups)
  of all the fishes (from your nine groups) that exist in Nordic countries. You can search (CTRL + F or COMMAND + F) for your group to see what species would be relevant for your chosen group. 
 
 A common problem that we face when creating databases is related to synonyms. Synonyms occur when different terms or identifiers are used to refer to the same entity or concept. In bioinformatics, this can lead to inconsistencies and errors when integrating or querying data from multiple sources. For example, a single species might be referred to by multiple names across or even within databases. If these synonyms are not properly accounted for, it can result in incorrect inferences, ultimately compromising the reliability and accuracy of the database. Addressing this issue requires careful curation, standardization, and the use of controlled vocabularies to ensure consistency. For fishes, we rely on [Eschmeyer's Catalog of Fishes](https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) (Fricke et al., 2025) for taxonomic authority.
