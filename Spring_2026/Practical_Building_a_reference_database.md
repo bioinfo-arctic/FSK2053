@@ -1,9 +1,11 @@
 ## Building a reference database
 
 ## Before the session
-Before we start the class, I would like you all to ensure that you are able to log in to your individual virtual machines. In this session, we will be using something called a "conda environment". Conda is a powerful way to manage software and dependencies. It allows you to easily install, update, and organize bioinformatics tools and libraries without worrying about compatibility issues. Conda also lets you create isolated environments, so you can work on different projects with specific software versions without conflicts. This exercise begins with normal Linux commands, but towards the end relies on the [crabs software](https://github.com/gjeunen/reference_database_creator) for filtering and building your own reference database. The CRABS format constitutes a single tab-delimited line per sequence containing all information, including (i) sequence accession number, (ii) taxonomic name parsed from the initial download, (iii) NCBI taxon ID number, (iv) taxonomic lineage according to NCBI taxonomy, and (v) the sequence itself. We've made a conda environment for you that has the crabs software installed, but you should check that this works on your virtual machines before we start the class.
+Before we start the class, I would like you all to ensure that you are able to log in to your individual virtual machines. In this session, we will be using something called a "conda environment". Conda is a powerful way to manage software and dependencies. It allows you to easily install, update, and organize bioinformatics tools and libraries without worrying about compatibility issues. Conda also lets you create isolated environments, so you can work on different projects with specific software versions without conflicts. This exercise begins with normal Linux commands, but towards the end relies on the [crabs software](https://github.com/gjeunen/reference_database_creator) for filtering and building your own reference database. 
 
-Log in to your own virtual machine, and write the following commands.
+The CRABS file format that you will work with in this exercise constitutes a single tab-delimited line per sequence containing all information, including (i) sequence accession number, (ii) taxonomic name parsed from the initial download, (iii) NCBI taxon ID number, (iv) taxonomic lineage according to NCBI taxonomy, and (v) the sequence itself. 
+
+We've made a conda environment for you that has the crabs software installed, but you should check that this works on your virtual machines before we start the class. Log in to your own virtual machine, and write the following commands.
 
 <mark>**MADS INSERT PATH**</mark>:
 
