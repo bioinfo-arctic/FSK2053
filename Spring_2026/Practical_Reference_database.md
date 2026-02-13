@@ -22,8 +22,6 @@ Next, we need to check that you can initialize the preinstalled conda environmen
 
 Once the above command has completed, it should now state "(base)" at the beginning of your prompt.
 
-<mark>**MADS INSERT PHOTO**</mark>:
-
 ![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2026/images/CondaBase.png)
 
 If this worked, you should now be able to activate your conda environment by typing:
@@ -33,8 +31,6 @@ conda activate crabs
 ```
 
 It should now state "(crabs") at the beginning of your prompt. If this worked, you are ready for the exercise.
-
-<mark>**MADS INSERT PHOTO**</mark>:
 
 ![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2026/images/CondaCrabs.png)
 
@@ -122,21 +118,25 @@ cut -f10 References_unfiltered_Rajidae.txt | sort -n | uniq -c | less -S
 
 The next common problem encountered in these databases is that those people who deposit reference sequences may not have identified their specimens correctly. This problem can take many shapes and forms, such as accidental mislabeling of tubes in the lab, confusion between morphologically similar organisms, or it could even arise from dealing with organism groups in need of taxonomic revision. As a result, incorrect reference sequences can propagate through analyses, leading to misidentifications, flawed phylogenetic trees, or inaccurate biodiversity assessments. This issue is particularly problematic when it comes to DNA barcoding or metabarcoding, where the accuracy of the reference database is critical. To mitigate this, rigorous validation of specimen identification, cross-referencing with multiple data sources, and expert curation are essential to maintain the integrity of reference databases. We will unfortunately not have the time during this exercise to go in great detail with the integrity of the sequences, but it is important to understand this from a conceptual standpoint. Take a look at the example below.
 
-[INSERT EXAMPLE FROM GENIOUS]
+![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2026/images/MisID1_yes.png)
 
 <mark>**Question 4**</mark>: What do you think happened here? Do you suspect any of these were misidentified?
 
 Sometimes we have enough "circumstantial evidence" to choose to disregard ("blacklist") specific sequences. However, in other instances, we might not have enough material available to fully decide on the best approach forward. In such instances, it is best to remain conservative until more reference data becomes available (which is why this work is always "ongoing"). See the example below.
 
-[INSERT EXAMPLE OF TOO FEW SPECIMENS TO DECIDE]
+![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2026/images/MisID2_maybe.png)
 
 <mark>**Question 5**</mark>: Would you claim that any of these appear to be misidentified? If so, would you blacklist any of the data entries?
 
 To make matters worse, for some closely related species, there simply isn't enough taxonomic resolution in a short genetic marker to differentiate between the species in question. This is often referred to as "barcode overlap" or lack of a "barcode gap". In the example below, you'll see that it is problematic to differentiate between the three species of wolffish which occur in Nordic waters. Had we chosen to work with another genetic marker, this would potentially have been more feasible.
 
-[INSERT WOLFFISH EXAMPLE]
+![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2026/images/MisID3_resolution.png)
 
 <mark>**Question 6**</mark>: Based on what you see above, can we discriminate between these species with this genetic marker?
+
+**Note**: If we had a longer reference sequence to inspect, the wolffish species would actually be possible to distinguish.
+
+![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2026/images/MisID4_higherresolution.png)
 
 ### Hybrids and subspecies
 
