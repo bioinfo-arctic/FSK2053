@@ -210,7 +210,7 @@ cut -f10,11 References_unfiltered_Rajidae.txt | sort -n | uniq -c | less -S
 
 <mark>**Question 11**</mark>: Do you think that species with a disproportionately high amount of specimens sequenced might be biasing your reference database in any way?
 
-### Filtration of data entries: Subset your database to include/exclude taxa that are relevant to you.
+### Filtration of data entries: Subset your database to include/exclude taxa that are relevant to you
 Here you have the option to include or exclude specific taxa. Many people chose to limit their reference databases to only include species that are known to occur in the local region of interest. You could find some examples of exotic species (*i.e.*, not in the Nordic species list) that you'd like to remove, or you could include only the species that exist in Nordic countries. Below are two examples with "--exclude" and "--include". More species can be added by using the semicolon (;).
 
 ```
@@ -268,7 +268,7 @@ crabs --export --input References_filtered_Rajidae.txt --output BLAST_Rajidae/BL
 
 <mark>**Mads write table explanation**</mark>:
 
-#### Table of 178 species
+#### Table of all the 178 species belonging to the nine taxonomically limited groups that you are working with in this session. All of these are known to occur in waters of Nordic countries.
 
 | Class          | Order              | Family               | Subfamily         | Species                           | Common name                   | Known synonyms                                            |
 |----------------|--------------------|----------------------|-------------------|-----------------------------------|-------------------------------|-----------------------------------------------------------|
