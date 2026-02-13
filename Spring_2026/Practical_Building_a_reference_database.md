@@ -135,7 +135,7 @@ Sometimes we have enough "circumstantial evidence" to choose to disregard ("blac
 
 ![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2026/images/MisID2_maybe.png)
 
-<mark>**Question 5**</mark>: Would you claim that any of these appear to be misidentified? If so, would you blacklist any of the data entries?
+<mark>**Question 5**</mark>: Would you claim that either *Lycodes rossi*/*Lycodes reticulatus* appear to be misidentified? If so, would you blacklist any of the data entries?
 
 To make matters worse, for some closely related species, there simply isn't enough taxonomic resolution in a short genetic marker to differentiate between the species in question. This is often referred to as "barcode overlap" or lack of a "barcode gap". In the example below, you'll see that it is problematic to differentiate between the three species of wolffish which occur in Nordic waters. Had we chosen to work with another genetic marker, this would potentially have been more feasible.
 
