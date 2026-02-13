@@ -38,7 +38,7 @@ It should now state "(crabs") at the beginning of your prompt. If this worked, y
 
 **Note**: This conda environment needs to be loaded for every new session you start, where you plan on using the crabs commands from this exercise - *i.e.*, if you plan on testing it out further at home, you will need to write only the last command (it should state "(base)" everytime you log in to a new session now).
 
-You can check the help command for crabs. We will only be using "crabs --subset" and "crabs --export" in this exercise, but there are a lot more functions and parameters available in the software.
+You can also check out the help command for crabs. We will only be using "crabs --subset" and "crabs --export" in this exercise, but there are a lot more functions and parameters available in the software.
 
 ```
 crabs -h
