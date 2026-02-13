@@ -56,7 +56,7 @@ I want you to imagine starting with a fish sample of unknown origin or a sequenc
 
 There are 20 questions dispersed throughout the exercise, which are natural stopping points for reflecting critically about your next move.
 
-By the end of this exercise, I hope you will have a deeper appreciation for the complexities of reference databases and the critical thinking required to ensure their reliability and accuracy.
+By the end of this exercise, I hope you will have a deeper appreciation for the complexities of reference databases and be able to critically evaluate reference database reliability and accuracy.
 
 ## Paths that might come in handy during the exercise
 
