@@ -7,13 +7,11 @@ The CRABS file format that you will work with in this exercise constitutes a sin
 
 We've made a conda environment for you that has the crabs software installed, but you should check that this works on your virtual machines before we start the class. Log in to your own virtual machine, and write the following commands.
 
-<mark>**MADS INSERT PATH**</mark>:
-
 First, we ensure that you are in the right directory, and then copy the reference file you will need for the exercise to your current directory.
 
 ```
 cd
-cp PATH_TO_REFERENCE_FILE .
+cp /home/adminfsk2053/References_unfiltered.txt .
 ```
 
 Next, we need to check that you can initialize the preinstalled conda environment:
@@ -60,9 +58,14 @@ By the end of this exercise, I hope you will have a deeper appreciation for the 
 
 ## Paths that might come in handy during the exercise
 
-Shripathi's reference database
+Shripathi's reference databases (from previous session):
 
-  `/home/adminfsk2053/database_new_2025/`
+`/home/adminfsk2053/database_old_2020/nt_teleost_16112020`
+`/home/adminfsk2053/database_new_2025/teleostei`
+
+The reference file used for this class:
+
+`/home/adminfsk2053/References_unfiltered.txt`
 
 ## Exercise instructions
 
