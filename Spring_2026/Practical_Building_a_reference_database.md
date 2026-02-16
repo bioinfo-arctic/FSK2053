@@ -61,6 +61,7 @@ By the end of this exercise, I hope you will have a deeper appreciation for the 
 Shripathi's reference databases (from previous session):
 
 `/home/adminfsk2053/database_old_2020/nt_teleost_16112020`
+
 `/home/adminfsk2053/database_new_2025/teleostei`
 
 The reference file used for this class:
