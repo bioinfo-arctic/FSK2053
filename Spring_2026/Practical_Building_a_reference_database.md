@@ -20,7 +20,7 @@ Next, we need to check that you can initialize the preinstalled conda environmen
 /home/adminfsk2053/miniconda3/bin/conda init bash
 ```
 
-Once the above command has completed, it should now state "(base)" at the beginning of your prompt.
+Once the above command has completed, it should now state "(base)" at the beginning of your prompt. You will likely need to log out and log in again, for this to appear.
 
 ![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2026/images/CondaBase.png)
 
