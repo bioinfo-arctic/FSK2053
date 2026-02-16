@@ -247,7 +247,7 @@ cat References_unfiltered_Rajidae.txt | grep -v 'EF100184' > References_AccNofil
 ### Building the database
 Now you've had a chance to clean the data, and to have a glimpse into what actually goes into your reference database. All that's left is to build the database itself.
 
-**NOTE**: We make a new folder called BLAST_Rajidae, and we make create the database inside this folder.
+**NOTE**: We make a new folder called BLAST_Rajidae, and we create the database inside this folder.
 
 ```
 mkdir -p BLAST_Rajidae
