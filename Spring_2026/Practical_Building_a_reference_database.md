@@ -219,7 +219,7 @@ cut -f10,11 References_unfiltered_Rajidae.txt | sort -n | uniq -c | less -S
 
 <mark>**Question 9**</mark>: Do you have any species with multiple unique sequences present?
 
-<mark>**Question 10**</mark>: Is it enough to sequence one specimen per species, or do we need more?
+<mark>**Question 10**</mark>: Is it enough to sequence one specimen per species for our reference databases, or do we need more?
 
 <mark>**Question 11**</mark>: Do you think that species with a disproportionately high amount of specimens sequenced might be biasing your reference database in any way?
 
