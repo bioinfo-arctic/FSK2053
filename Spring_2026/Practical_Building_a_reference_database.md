@@ -1,19 +1,17 @@
 ## Building a reference database
 
 ## Before the session
-Before we start the class, I would like you all to ensure that you are able to log in to your individual virtual machines. In this session, we will be using something called a "conda environment". Conda is a powerful way to manage software and dependencies. It allows you to easily install, update, and organize bioinformatics tools and libraries without worrying about compatibility issues. Conda also lets you create isolated environments, so you can work on different projects with specific software versions without conflicts. This exercise begins with normal Linux commands, but towards the end relies on the [crabs software](https://github.com/gjeunen/reference_database_creator) for filtering and building your own reference database. 
+Before we start the class, I would like you all to ensure that you are able to [log in to your individual virtual machines](https://labs.azure.com/virtualmachines?feature_vnext=true). In this session, we will be using something called a "conda environment". Conda is a powerful way to manage software and dependencies. It allows you to easily install, update, and organize bioinformatic tools and libraries without worrying about compatibility issues. Conda also lets you create isolated environments, so you can work on different projects with specific software versions without conflicts. This exercise begins with normal Linux commands, but towards the end relies on the [crabs software](https://github.com/gjeunen/reference_database_creator) for filtering and building your own reference database. 
 
 The CRABS file format that you will work with in this exercise constitutes a single tab-delimited line per sequence containing all information, including (i) sequence accession number, (ii) taxonomic name parsed from the initial download, (iii) NCBI taxon ID number, (iv) taxonomic lineage according to NCBI taxonomy, and (v) the sequence itself. 
 
 We've made a conda environment for you that has the crabs software installed, but you should check that this works on your virtual machines before we start the class. Log in to your own virtual machine, and write the following commands.
 
-<mark>**MADS INSERT PATH**</mark>:
-
 First, we ensure that you are in the right directory, and then copy the reference file you will need for the exercise to your current directory.
 
 ```
 cd
-cp PATH_TO_REFERENCE_FILE .
+cp /home/adminfsk2053/References_unfiltered.txt .
 ```
 
 Next, we need to check that you can initialize the preinstalled conda environment:
@@ -22,7 +20,7 @@ Next, we need to check that you can initialize the preinstalled conda environmen
 /home/adminfsk2053/miniconda3/bin/conda init bash
 ```
 
-Once the above command has completed, it should now state "(base)" at the beginning of your prompt.
+Once the above command has completed, it should now state "(base)" at the beginning of your prompt. You will likely need to log out and log in again, for this to appear.
 
 ![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2026/images/CondaBase.png)
 
@@ -60,9 +58,15 @@ By the end of this exercise, I hope you will have a deeper appreciation for the 
 
 ## Paths that might come in handy during the exercise
 
-Shripathi's reference database
+Shripathi's reference databases (from previous session):
 
-  `/home/adminfsk2053/database_new_2025/`
+`/home/adminfsk2053/database_old_2020/nt_teleost_16112020`
+
+`/home/adminfsk2053/database_new_2025/teleostei`
+
+The reference file used for this class:
+
+`/home/adminfsk2053/References_unfiltered.txt`
 
 ## Exercise instructions
 
@@ -135,7 +139,7 @@ Sometimes we have enough "circumstantial evidence" to choose to disregard ("blac
 
 ![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2026/images/MisID2_maybe.png)
 
-<mark>**Question 5**</mark>: Would you claim that any of these appear to be misidentified? If so, would you blacklist any of the data entries?
+<mark>**Question 5**</mark>: Would you claim that either *Lycodes rossi* or *Lycodes reticulatus* appear to be misidentified? If so, would you blacklist any of the data entries?
 
 To make matters worse, for some closely related species, there simply isn't enough taxonomic resolution in a short genetic marker to differentiate between the species in question. This is often referred to as "barcode overlap" or lack of a "barcode gap". In the example below, you'll see that it is problematic to differentiate between the three species of wolffish which occur in Nordic waters. Had we chosen to work with another genetic marker, this would potentially have been more feasible.
 
@@ -173,7 +177,7 @@ cut -f3,10 References_unfiltered_Rajidae.txt | sort | uniq | cut -f2 | sort -n |
 
 ### Ambiguous basepairs in reference sequences
 
-Ambiguous base pairs can arise during the sequencing of reference samples due to various factors, such as sequencing errors or sample impurity. During the sequencing process, the machine may misread a base, leading to uncertainty. For instance, instead of confidently identifying a base as "A" or "G," the sequencer may assign an ambiguous code like "R" (A or G). If the reference sample contains DNA from multiple closely related organisms (e.g., due to contamination), the sequencer may detect multiple bases at the same position. For example, a position might show both "C" and "T," resulting in the ambiguous code "Y" (C or T). For many Sanger sequencing products (an "older" technology), which form the basis of many sequences in your files, individual researchers have evaluated chromatograms by eye to determine their confidence in assigning a single base pair. When uncertain, they often choose to report sequences with ambiguities rather than making definitive but potentially incorrect assignments. However, there has never been a consistent system in place for when to assign ambiguous basepairs, and it has thus been up to the individual researcher to scrutinize their individual data. These ambiguities are commonly represented using IUPAC codes in the sequence data, which can complicate downstream analyses if not properly accounted for.
+Ambiguous basepairs can arise during the sequencing of reference samples due to various factors, such as sequencing errors or sample impurity. During the sequencing process, the machine may misread a base, leading to uncertainty. For instance, instead of confidently identifying a base as "A" or "G," the sequencer may assign an ambiguous code like "R" (A or G). If the reference sample contains DNA from multiple closely related organisms (e.g., due to contamination), the sequencer may detect multiple bases at the same position. For example, a position might show both "C" and "T," resulting in the ambiguous code "Y" (C or T). For many Sanger sequencing products (an "older" technology), which form the basis of many sequences in your files, individual researchers have evaluated chromatograms by eye to determine their confidence in assigning a single basepair. When uncertain, they often choose to report sequences with ambiguities rather than making definitive but potentially incorrect assignments. However, there has never been a consistent system in place for when to assign ambiguous basepairs, and it has thus been up to the individual researcher to scrutinize their individual data. These ambiguities are commonly represented using IUPAC codes in the sequence data, which can complicate downstream analyses if not properly accounted for.
 
 Here you see a list of IUPAC codes and how to interpret them.
 
@@ -215,7 +219,7 @@ cut -f10,11 References_unfiltered_Rajidae.txt | sort -n | uniq -c | less -S
 
 <mark>**Question 9**</mark>: Do you have any species with multiple unique sequences present?
 
-<mark>**Question 10**</mark>: Is it enough to sequence one specimen per species, or do we need more?
+<mark>**Question 10**</mark>: Is it enough to sequence one specimen per species for our reference databases, or do we need more?
 
 <mark>**Question 11**</mark>: Do you think that species with a disproportionately high amount of specimens sequenced might be biasing your reference database in any way?
 
@@ -243,7 +247,7 @@ cat References_unfiltered_Rajidae.txt | grep -v 'EF100184' > References_AccNofil
 ### Building the database
 Now you've had a chance to clean the data, and to have a glimpse into what actually goes into your reference database. All that's left is to build the database itself.
 
-**NOTE**: We make a new folder called BLAST_Rajidae, and we make create the database inside this folder.
+**NOTE**: We make a new folder called BLAST_Rajidae, and we create the database inside this folder.
 
 ```
 mkdir -p BLAST_Rajidae
@@ -254,7 +258,7 @@ The database has now been created, and it is possible to use this database in th
 
 ### Post-curation checks (in plenum)
 
-The post-curation check is all about thinking critically about the reference database once it has been built. Now that you know what species went into your reference database, and you known what species of fishes occur in Nordic waters, you can begin to evaluate how good your database actually is. Knowing the limits and biases of your reference database is equally important to the efforts going into building it. When working with organisms where we have a good understanding of what *should* exist in Nordic waters, we can compare the species going into the database with the species we know could exist here, as we have done in this exercise. However, sometimes we do not know the origin of e.g. a fish product, or we have limited knowledge of what species could exist in a given environment from which a sample was taken. And with climate change, ballast waters, and all the other human-induced impacts, non-native or invasive species are more likely to establish in new areas. It is therefore important to consider what it is you want to use your database for, when choosing how to design it. Here you have some questions to reflect on during class if we have time, otherwise to think about at home.
+The post-curation check is all about thinking critically about the reference database once it has been built. Now that you know what species went into your reference database, and you known what species of fishes occur in Nordic waters, you can begin to evaluate how good your database actually is. Knowing the limits and biases of your reference database is equally important to the efforts going into building it. When working with organisms where we have a good understanding of what *should* exist in Nordic waters, we can compare the species going into the database with the species we know could exist here, as we have done in this exercise. However, sometimes we do not know the origin of e.g. a fish product, or we have limited knowledge of what species could exist in a given environment from which a sample was taken. And with climate change, ballast waters, and all the other human-induced impacts, non-native or invasive species are more likely to establish in new areas. It is therefore **important to consider what it is you want to use your database for, when choosing how to design it**. Here you have some questions to reflect on during class if we have time, otherwise to think about at home.
 
 <mark>**Question 13**</mark>: What should we do about data entries that aren't known to occur in Nordic waters? How do these affect our inference if included?
 
