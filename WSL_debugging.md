@@ -15,7 +15,10 @@ You will likely need to enter an email here. Use your preferred email.
 ### Additional debugging notes that may be helpful
 
 #### In the powershell, run (could be "ubuntu2004..." something instead of ubuntu, depending on your installation)
+
+```
 ubuntu config --default-user <preferred_username>
+```
 
 Follow this up with a restart of the PC
 
