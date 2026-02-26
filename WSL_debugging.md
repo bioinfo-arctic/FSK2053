@@ -32,3 +32,7 @@ adduser <preferred_username>
 Sessions --> New session --> WSL --> Distribution --> Select "Ubuntu" --> OK
 
 You should now have a MobaXterm user session saved (see left-hand side) to enable easy login next time named WSL-Ubuntu. Just double-click this user session to login.
+
+### If everything fails, this link provide some extra help
+
+https://learn.microsoft.com/en-us/windows/wsl/install
