@@ -7,6 +7,7 @@ One of the initial strugles in R is how to allow R to access your data, so you c
 It is the same idea as opening a file in a program like *Word* or *Excel*. The difference here is that in R you need a command for opening or loading your data.
 
 ```
+# if you don't have this library, use install.packages("tidyverse")
 library(tidyverse)
 ```
 
