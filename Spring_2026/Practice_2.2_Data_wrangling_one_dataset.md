@@ -76,11 +76,9 @@ data_tuna <- dat %>% select(!starts_with("S_20")) %>%
 data_tuna
 ```
 ---
-
----
 #### Small challenge!
-Write a code and tell what is the country with the most catches.
-Create a barplot with the total catches per country, sorted by catch.
+* Write code and tell what is the country with the most catches.  
+* Create a barplot with the total catches per country, sorted by catch.
 ---
 
 #### The function `mutate()`
