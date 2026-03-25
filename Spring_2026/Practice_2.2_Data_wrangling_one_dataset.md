@@ -77,8 +77,23 @@ data_tuna
 ```
 ---
 #### Small challenge!
-* Write code and tell what is the country with the most catches.  
+* Write code and tell what is the country with the most catches.
+```
+# Solution
+data_tuna %>% group_by(Country) %>% 
+  summarise(Total_catches = sum(Catches)) %>%
+  arrange(desc(Total_catches))
+```
 * Create a barplot with the total catches per country, sorted by catch.
+* ```
+# Solution
+data_tuna %>% group_by(Country) %>% 
+  summarise(Total_catches = sum(Catches)) %>%
+  arrange(desc(Total_catches)) %>% 
+  ggplot(aes(x = reorder(Country, Total_catches), y = Total_catches)) +
+  geom_bar(stat="identity") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
 ---
 
 #### The function `mutate()`
