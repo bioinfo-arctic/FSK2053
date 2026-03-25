@@ -85,7 +85,7 @@ data_tuna %>% group_by(Country) %>%
   arrange(desc(Total_catches))
 ```
 * Create a barplot with the total catches per country, sorted by catch.
-* ```
+```
 # Solution
 data_tuna %>% group_by(Country) %>% 
   summarise(Total_catches = sum(Catches)) %>%
