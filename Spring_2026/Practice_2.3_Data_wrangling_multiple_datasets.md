@@ -104,8 +104,7 @@ What would have happened had we applied right_join?
 ```
 merged_right <- right_join(summary_tuna,summary_vessels, by = c("Country_code" = "flag_gfw"))
 ```
-Now we can represent the data and explore the relationships
-We will learn more about how to use ggplot2 to improve our visualizations in the Practice 3
+Now we can represent the data and explore the relationships.
 ```
 install.packages("ggrepel")
 library(ggrepel) # This library allows us to add nice labels to the points in a plot
