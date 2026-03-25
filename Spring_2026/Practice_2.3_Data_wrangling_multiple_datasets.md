@@ -95,7 +95,8 @@ summary_tuna <- summary_tuna %>%
 summary_tuna
 ```
 Finally, we have two datasets with a valid unique key (Country_code and flag_gfw)
-We are going to left-join the table of fishing efforts to the table of tuna catches
+We are going to left-join the table of fishing efforts to the table of tuna catches  
+See more information on types of join in the book [R for Data Science](https://r4ds.hadley.nz/joins.html#sec-mutating-joins)
 ```
 merged_table <- left_join(summary_tuna,summary_vessels, by = c("Country_code" = "flag_gfw"))
 merged_table
