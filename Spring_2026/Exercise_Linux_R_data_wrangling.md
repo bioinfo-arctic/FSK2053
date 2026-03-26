@@ -78,6 +78,6 @@ In the **tidyverse** package, what is the difference between the following funct
 - `right_join()`
 - `full_join()`
 
-Reference: [Joins in R for Data Science](https://r4ds.hadley.nz/joins.html#sec-mutating-joins)
+Reference: [Joins in R for Data Science](https://r4ds.hadley.nz/joins.html#how-do-joins-work)
 
 ---
