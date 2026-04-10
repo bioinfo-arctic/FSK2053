@@ -42,51 +42,68 @@ We need to include relevant sequences when making a reference database. However,
 Next up, we will try to investigate whether sushi restaurants actually used the species they claim to use for preparing the sushi. We will use BLAST to compare DNA sequences obtained from sushi products against known sequences from the database. We will use both online and offline (standalone) BLAST to get you better acquainted with these tools.
 
 ### Using online version of BLAST 
-First locate the tab in NCBI webpage where the blast application is shown. Please explore various blast modules which takes different inputs sequences (nucleotide or protein) and search them against different type of databases (nucleotide or protein sequences).
-This is how whole thing works: Just feed a “unknown” nucleotide or protein sequence to the blast search box and do blast’ing (important: choose right blast module, based on search molecule type and your expectation). It finds the similarities between sequences you provided (which is 'query'), and sequences stored in the database (which is 'subject'). Blast also calculates the statistical significance of that comparison (E-value, which is like p-value, tells how random the query matches with the subject, lesser the E-value, more confidence in the hit is, query coverage etc..). 
+First, locate the tab on the NCBI webpage where the BLAST application is displayed. Take some time to explore the various BLAST modules, each of which accepts different types of input sequences (nucleotide or protein) and searches them against different types of databases (nucleotide or protein sequences).
 
->You may just wonder how did you get sequences in these kind of experiments. For that you need to do some lab work. Remember your lab work for genetics (genetics class). 
+Here’s how the process works: Simply input an "unknown" nucleotide or protein sequence into the BLAST search box and run the BLAST analysis. (Important: Make sure to select the appropriate BLAST module based on the type of molecule you are searching with and your specific expectations.) BLAST identifies similarities between the sequence you provide (referred to as the "query") and the sequences stored in the database (referred to as the "subject"). Additionally, BLAST calculates the statistical significance of the comparison, such as the E-value. The E-value, similar to a p-value, indicates the likelihood that the query matches the subject by random chance. A lower E-value signifies greater confidence in the match. Other metrics, such as query coverage, are also provided to help interpret the results. 
+
+>You may be wondering how we got our sequences in the first place. For that you need to do some lab work, just like most of you did in your genetics class. 
 
 ![Alt Text](https://raw.githubusercontent.com/shri1984/study-images/refs/heads/main/foods-12-02420-ag.webp)
 
 > ## Tips to blast sequences
-> 1. Choose right blast module based on the type of sequence input type and importantly, your objective
-> 2. Try to set the parameters if needed. Generally, default settings work better in most of the situations. So, leave them alone if you don’t have any compelling reason to change them or know what you are doing. 
+> 1. Choose the correct blast module based on the type of sequence input and, importantly, your objective
+> 2. Generally speaking, default settings work well in most situations. Use default settings unless you have a good reason to change them.
 
-Now let’s say we got our sequences back for different sushi samples and now it is time to find out what they are made of. Is declared species name matched with the identified species name? 
+Now that we have retrieved the sequences for different sushi samples, it’s time to determine their identities. Does the declared species name match the identified species name?
 
-Let’s find out in online BLAST. 
+Let’s find out using the online BLAST tool.
 
-One disadvantage of using online BLAST is the potential waiting time. The longer and more numerous your input sequences, and the larger the database you are searching against, the longer the search operation may take. Additionally, during peak usage times, the NCBI servers may experience higher traffic, leading to further delays. The time required for a BLAST search generally increases with the size of the input sequences, the number of sequences, and the size of the database. It is also influenced by the specific BLAST program and parameters used. If you need to process many sequences efficiently, a practical solution is to use local BLAST. Installing BLAST locally allows you to bypass server queues, tailor the search parameters to your specific needs, and generate customized output formats. This makes local BLAST especially useful for large-scale or repetitive analyses.
+One drawback of using online BLAST is the potential waiting time. The duration of a search depends on several factors: the length and number of input sequences, the size of the database being searched, and the specific BLAST program and parameters used. Additionally, during peak usage times, the NCBI servers may experience heavy traffic, which can lead to further delays.
 
-### Using standalone version of BLAST
-Standalone blast works same way as online version. It needs 3 things, NCBI module, sequence to be identified and database to search against and laptop or server or VMs. 
+If you need to process a large number of sequences efficiently, a better alternative is to use local BLAST. By installing BLAST on your local machine, you can avoid server queues, customize search parameters to suit your specific requirements, and generate output in formats tailored to your needs. This makes local BLAST particularly advantageous for large-scale or repetitive analyses.
 
-This time around you no need to install the NCBI module and generate database in linux virtual machine. I have done installation part for you. 
-
-> ### EXTRA: Here is tip to install BLAST modules in a Linux based machine. 
-
->### Install NCBI BLAST+ ##
-> sudo apt-get ncbi-blast+ or conda install # It will download the precompiled latest version of blast+ tools to your system. 
-> Or go to page : https://www.ncbi.nlm.nih.gov/books/NBK52640/ and download BLAST+
+### Using the standalone version of BLAST
+The standalone version of BLAST works in the same way as the online version. It requires three components: the NCBI BLAST module, the sequence to be identified, and a database to search against. Additionally, you will need a laptop, server, or virtual machine (VM) to run the analysis.
+For this session, you do not need to install the NCBI module or generate the database on the Linux virtual machine—I have already completed the installation for you.
+> ### EXTRA: Tip for installing BLAST modules on a Linux-based machine
 >
-> ### Prepare database ##
-> Our database is nucleotide sequences associated with group ‘teleost’. If you need full nucleotide database (arouns 200 GB) go here: Our database is nucleotide sequences associated with group ‘teleost’. If you need full nucleotide database (around 200 GB) go here:
-or 
->download nucleotide or protein (nr) database in fasta format to your system and build database locally using this command: “makeblastdb” to make your own database in future.
+> #### Install NCBI BLAST+
+> Use one of the following commands to install BLAST+ tools:
+> ```bash
+> sudo apt-get install ncbi-blast+
+> ```
+> or
+> ```bash
+> conda install -c bioconda blast
+> ```
+> This will download the precompiled latest version of BLAST+ tools to your system.
+> Alternatively, visit the [NCBI BLAST+ page](https://www.ncbi.nlm.nih.gov/books/NBK52640/) to download the software manually.
+>
+> #### Prepare a database
+> Our database consists of nucleotide sequences associated with the group "teleost".
+> If you need the full nucleotide database (approximately 200 GB), you can download it from the NCBI FTP server.
+> Alternatively, download a nucleotide or protein (nr) database in FASTA format to your system and build the database locally using the following command:
+> ```bash
+> makeblastdb -in <input_file> -dbtype <nucleotide|protein> -out <output_database_name>
+> ```
+> This command allows you to create your own database for future use.
+---
+### Running Standalone BLAST on the Virtual Machine
+Connect to the virtual machine (VM). We are now ready to explore the standalone version of BLAST.
+To verify that BLAST is installed, run the following command:
 
-Connect to the VMs. We are ready to explore the standalone BLAST.
-We will run blast analysis in background of VMs, so that you can use terminal for some other tasks, while you are waiting to finish. We use a inbuilt application called ‘screen’. 
-
-To check if BLAST is installed by running: blastn -h
-
-If it is good, then you should see help message with parameters (arguments to change the behaviour of a command). 
-
-We will write the blastn script together (NB! there are spaces between the different parameters) as below:
-
+```bash
+blastn -h
 ```
+
+We will run the BLAST analysis in the background on the VM, allowing you to use the terminal for other tasks while waiting for the analysis to complete. To do this, we will use an inbuilt application called `screen`.
+
+We will need to modify this command to match our query file and our database path. Let's do it together.
+
+```bash
 blastn -query name_of_the_query_file -db path_to_database -max_target_seqs 5 -out results2.txt -num_threads 1 -evalue 0.000001 -outfmt 6
 ```
+
 Generally, it will take 5-10 minutes to finish. 
 
 > EXTRA: Default column names (-outfmt 6) (look into online help or terminal help)
