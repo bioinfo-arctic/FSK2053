@@ -64,7 +64,7 @@ If you need to process a large number of sequences efficiently, a better alterna
 
 ### Using the standalone version of BLAST
 The standalone version of BLAST works in the same way as the online version. It requires three components: the NCBI BLAST module, the sequence to be identified, and a database to search against. Additionally, you will need a laptop, server, or virtual machine (VM) to run the analysis.
-For this session, you do not need to install the NCBI module or generate the database on the Linux virtual machine—I have already completed the installation for you.
+For this session, you do not need to install the NCBI module or generate the database on the Linux virtual machine — we have already completed the installation for you.
 > ### EXTRA: Tip for installing BLAST modules on a Linux-based machine
 >
 > #### Install NCBI BLAST+
