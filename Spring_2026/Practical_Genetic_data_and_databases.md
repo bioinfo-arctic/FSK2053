@@ -22,7 +22,7 @@ We will explore an alternative approach to addressing this issue by applying gen
 
 First go to the website: https://www.ncbi.nlm.nih.gov. Look at the home page. Home page has much information, very comprehensive and self-explanatory: various databases, browsing windows, sequence (nucleotide, protein etc) submitting and downloading different databases etc…), different applications, literature information. We will spend some to explore the structure of NCBI database.
 
-### Step 2.  Retrieving sequence data and associated information from NCBI
+### Step 2. Retrieving sequence data and associated information from NCBI
 The NCBI is very user-friendly database and genetic data search platform. All the basic operations are meant for traditional biologists, who are not very savvy with advanced computation skills or search skills. So, anyone with minimum biology knowledge can go in there and retrieve information. The only condition is that as a user you need to know what you want, which is dependent on the question. We will download few sequences from NCBI for demonstration purpose. Just download COI (cytochrome c oxidase subunit I) sequences related to family Scombridae (mainly contains mackerels related group). This is an important step in series of steps to solve the problem. 
 
 >COI from mitochondria (around 652 bp) is used as a genetic marker to barcode the species. Barcode is the same thing you see on a packet or box in the shop. More detail about the barcode projects here: https://phe.rockefeller.edu/barcode/index.php.
@@ -43,8 +43,8 @@ Now we will try to find out whether sushi restaurants used the species they are 
 We will use BLAST (Basic Local Alignment Search Tool) 'a find and match' (google for sequence data) application from NCBI to compare DNA sequences against known sequences to find matches from databases. BLAST in NCBI is like using Google’s image search, but instead of pictures, you input a DNA or protein sequence. In this course we will use both online and offline (standalone) version of this tool. 
 
 ### Using online version of BLAST 
-First locate the tab in NCBI webpage where the blast application is shown. Please explore various blast modules which takes different inputs sequences (nucleotide or protein) and search them against different type of databases (nucleotide or protein sequences).  
-This is how whole thing works:  Just feed a “unknown” nucleotide or protein sequence to the blast search box and do blast’ing (important: choose right blast module, based on search molecule type and your expectation). It finds the similarities between sequences you provided (which is 'query'), and sequences stored in the database (which is 'subject'). Blast also calculates the statistical significance of that comparison (E-value, which is like p-value, tells how random the query matches with the subject, lesser the E-value, more confidence in the hit is, query coverage etc..). 
+First locate the tab in NCBI webpage where the blast application is shown. Please explore various blast modules which takes different inputs sequences (nucleotide or protein) and search them against different type of databases (nucleotide or protein sequences).
+This is how whole thing works: Just feed a “unknown” nucleotide or protein sequence to the blast search box and do blast’ing (important: choose right blast module, based on search molecule type and your expectation). It finds the similarities between sequences you provided (which is 'query'), and sequences stored in the database (which is 'subject'). Blast also calculates the statistical significance of that comparison (E-value, which is like p-value, tells how random the query matches with the subject, lesser the E-value, more confidence in the hit is, query coverage etc..). 
 
 >You may just wonder how did you get sequences in these kind of experiments. For that you need to do some lab work. Remember your lab work for genetics (genetics class). 
 
@@ -72,9 +72,9 @@ This time around you no need to install the NCBI module and generate database in
 > Or go to page : https://www.ncbi.nlm.nih.gov/books/NBK52640/ and download BLAST+
 >
 > ### Prepare database ##
-> Our database is nucleotide sequences associated with group ‘teleost’.  If you need full nucleotide database (arouns 200 GB) go here: Our database is nucleotide sequences associated with group ‘teleost’.  If you need full nucleotide database (around 200 GB) go here:
+> Our database is nucleotide sequences associated with group ‘teleost’. If you need full nucleotide database (arouns 200 GB) go here: Our database is nucleotide sequences associated with group ‘teleost’. If you need full nucleotide database (around 200 GB) go here:
 or 
->download nucleotide or protein (nr) database in fasta format to your system and build database locally using this command:  “makeblastdb” to make your own database in future.
+>download nucleotide or protein (nr) database in fasta format to your system and build database locally using this command: “makeblastdb” to make your own database in future.
 
 Connect to the VMs. We are ready to explore the standalone BLAST.
 We will run blast analysis in background of VMs, so that you can use terminal for some other tasks, while you are waiting to finish. We use a inbuilt application called ‘screen’. 
@@ -86,7 +86,7 @@ If it is good, then you should see help message with parameters (arguments to ch
 We will write the blastn script together (NB! there are spaces between the different parameters) as below:
 
 ```
-blastn -query name_of_the_query_file -db  path_to_database  -max_target_seqs 5 -out results2.txt -num_threads 1 -evalue 0.000001 -outfmt 6  
+blastn -query name_of_the_query_file -db path_to_database -max_target_seqs 5 -out results2.txt -num_threads 1 -evalue 0.000001 -outfmt 6
 ```
 Generally, it will take 5-10 minutes to finish. 
 
