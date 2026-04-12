@@ -81,7 +81,7 @@ For this session, you do not need to install the NCBI module or generate the dat
 >
 > #### Prepare a database
 > Our database consists of nucleotide sequences associated with the group "teleost".
-> If you need the full nucleotide database (approximately 200 GB), you can download it from the NCBI FTP server.
+> If you need the full nucleotide database, you can download it from the NCBI FTP server.
 > Alternatively, download a nucleotide or protein (nr) database in FASTA format to your system and build the database locally using the following command:
 > ```bash
 > makeblastdb -in <input_file> -dbtype <nucleotide|protein> -out <output_database_name>
@@ -96,7 +96,7 @@ To verify that BLAST is installed, run the following command:
 blastn -h
 ```
 
-We will run the BLAST analysis in the background on the VM, allowing you to use the terminal for other tasks while waiting for the analysis to complete. To do this, we will use an inbuilt application called `screen`.
+We will run the BLAST analysis in the background on the VM, allowing you to use the terminal for other tasks while waiting for the analysis to complete.
 
 We will need to modify this command to match our query file and our database path. Let's do it together.
 
@@ -127,9 +127,9 @@ qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bits
 > 11. evalue expect value
 > 12. bitscore bit score
 
-Now you run the command and wait for it to finish. In the mean time look into a table in MS excel (sushisamples_metadata.xls) with what species you found in online blast version. 
+Now we run the command and wait for it to finish. In the meantime, look into the excel table (sushisamples_metadata.xls) with what species you found in online blast version.
 
-Now we have output and let’s interpret the table output of BLAST. 
+Now we have output and let’s interpret the table output of BLAST.
 
 Add species names identified through standalone blast to the excel sheet. Compare it with the declared species name. How many (or in percentage) of the species match with the declared species name? At the same please visit: https://www.iucnredlist.org to find out the conservation status of the species you identified. Add that information to the table. 
 
@@ -139,5 +139,5 @@ Now we have all the necessary information to make a meaningful conclusion about 
 - Did any of your samples come from endangered or overfished species? How did that affect your interpretation of the restaurant’s claims?
 - What factors make you confident in your species identification based on BLAST results?
 - What are some real-world applications of these tools beyond seafood fraud?
-- What are some shortcomings of BLAST or barcoding techniques?
+- Do you see any shortcomings of BLAST or barcoding techniques?
 - How could these tools be integrated into food regulation or restaurant inspections?
