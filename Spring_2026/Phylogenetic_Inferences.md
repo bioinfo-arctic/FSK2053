@@ -12,7 +12,7 @@
 
 We will do a fun group exercise before we construct a real phylogenetic tree (20 minutes in groups). Start drawing on a piece of paper or in Paint on your PC - whatever works for you. How would you place these organisms in a phylogenetic tree? Give your rationale for why you would design your tree that way.
 
-![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2026/q1.jpeg)
+![](https://github.com/bioinfo-arctic/FSK2053/blob/main/Spring_2024/images/q1.jpeg)
 
 ## Building a phylogenetic tree using a set of morphological characters
 
